@@ -51,3 +51,18 @@ Next.js (App Router), TypeScript, Tailwind CSS, next-themes, lucide-react. Deplo
 - No commented-out code, no `console.log`, no TODOs left behind.
 - No `any` types. No `// eslint-disable` without a written reason.
 - Prefer deleting code over adding it. Report net lines added/removed in each summary.
+
+## Decision log
+- Maintain `DECISIONS.md` as you work. Log a decision when you:
+  - choose between two or more reasonable approaches
+  - add, remove, or replace a dependency
+  - change structure, file placement, or a pattern used across components
+  - deviate from `DESIGN.md`, `Architecture.md`, or any rule here
+  - skip, defer, or work around something the task asked for
+- Do NOT log trivial edits (typos, spacing, renaming a variable).
+- Write the entry in the same commit as the change. Use the next free `D-XXX` ID and update the Index table.
+- The "Why" must name a concrete reason. "Cleaner" or "better practice" alone is not a reason.
+- Always list at least one rejected alternative. If none existed, it wasn't a decision.
+- Before starting a task, skim `DECISIONS.md` so you don't reverse a past decision without superseding it.
+- Never rewrite history: add a new entry that supersedes the old one.
+- Definition of done includes: decision log updated.
