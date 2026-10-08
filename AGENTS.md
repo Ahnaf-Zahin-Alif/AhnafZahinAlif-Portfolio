@@ -1,25 +1,53 @@
-# AI Agent Workspace Guidelines
+# AGENTS.md
 
-## 1. Auto-Push to GitHub Rule
-- Whenever modifications, new features, bug fixes, or file edits are completed in this repository, always stage (`git add .`), commit with a descriptive message (`git commit -m "..."`), and push to GitHub (`git push origin main`).
+## Stack
+Next.js (App Router), TypeScript, Tailwind CSS, next-themes, lucide-react. Deployed on Vercel.
 
-## 2. Pre-Push Build Rule
-- Before staging and pushing any code to GitHub, you MUST run the local build command (e.g., `npm run build`) to ensure there are no compilation or routing errors. Never push broken builds to the `main` branch.
+## Read first
+- UI or styling work → `DESIGN.md`
+- File placement or structure → `Architecture.md`
+- Any text, bio, project, or link → `Portfolio-content.md` (single source of truth)
 
-## 3. Git Commit Standards
-- Use Conventional Commits for all messages to maintain a clean history (e.g., `feat: added sidebar navigation`, `fix: corrected Tailwind layout on mobile`, `chore: updated vercel.json`).
-- Make atomic commits. Do not lump unrelated features into a single massive commit.
+## Commands
+- Dev: `npm run dev`
+- Lint: `npm run lint`
+- Build: `npm run build`
 
-## 4. Component Modularity Rule
-- Keep React components small, modular, and single-purpose. 
-- Separate UI components (like the Sidebar, Hero section, and Tech Stack badges) into their own distinct files within a `/components` directory.
-- Avoid writing monolithic files exceeding 150-200 lines of code.
+## Definition of done
+1. `npm run lint` has zero errors and zero warnings
+2. `npm run build` succeeds
+3. UI checked in both light and dark themes, and at mobile width
+4. No console errors, no hydration warnings
 
-## 5. Linting and Terminal Checks
-- Monitor the terminal output for ESLint warnings, unused imports, or hydration errors.
-- Resolve any warnings or errors before marking a task as complete or pushing to GitHub.
-- Ensure all Tailwind CSS classes are logical and do not conflict.
+## Git workflow
+- Only commit after "Definition of done" passes. Never push a broken build.
+- Stage specific files (`git add <paths>`), never `git add .`. Run `git status` first.
+- Never stage `.env*`, `node_modules`, or `.next`.
+- Conventional Commits: `feat:`, `fix:`, `chore:`, `docs:`, `refactor:`.
+- One logical change per commit. Don't bundle unrelated work.
+- After a passing build, push: `git push origin main`.
 
-## 6. Content Strictness
-- Do not alter the core portfolio content (Name, Bio, Tech Stack, Social Links) provided in the initial setup. 
-- Do not use "Lorem Ipsum" or generate fake projects. If a section is meant to be populated later, leave the UI clean but empty.
+## Code rules
+- Components are small and single-purpose, one per file in `src/components/`.
+- Split any file approaching 150 lines.
+- Add `"use client"` only when a component needs state, effects, or browser APIs.
+- Theme-dependent UI must be hydration-safe (use the `mounted` pattern in `ThemeToggle.tsx`).
+- Tailwind only. No inline styles, no new CSS files, no new UI libraries without asking.
+- Interactive elements need `aria-label` or visible text, plus a focus style.
+- Remove unused imports. Don't leave dead code.
+
+## Content rules
+- Never change Name, Bio, Tech Stack, or Social Links unless explicitly told to.
+- No Lorem Ipsum, no invented projects, no fake reviews.
+- Sections awaiting content stay clean and empty.
+
+## Quality and bloat rules
+- Default to server components. Add `"use client"` only for state, effects, or browser APIs, and keep that component as small as possible.
+- Images: `next/image` only, with width and height or `fill`. Source files under 200 KB, WebP or AVIF preferred.
+- Before adding any dependency, check whether Tailwind, React, or an installed package already does the job. Ask first.
+- Run `npm run check` before every commit. Zero warnings.
+- Run `npx knip` after refactors and delete anything it flags as unused.
+- Same markup in two places means extract a component.
+- No commented-out code, no `console.log`, no TODOs left behind.
+- No `any` types. No `// eslint-disable` without a written reason.
+- Prefer deleting code over adding it. Report net lines added/removed in each summary.
