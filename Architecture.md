@@ -15,7 +15,7 @@
 * Top Header Navigation:
   * Brand badge 'AZ' on top left
   * Navigation links: Home, Projects, CV, Reviews
-  * Theme Toggle (light / dark mode)
+  * Theme: Warm dark theme default
 * Main Content Sections:
   1. Hero Section (3-Column layout on desktop):
      - Left: Fullstack SWE tag, bold name heading, NOW status block with accent border, and primary/secondary CTA pill buttons.

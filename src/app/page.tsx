@@ -7,7 +7,7 @@ import { ReviewsSection } from "@/components/ReviewsSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#faf8f5] dark:bg-[#12100e] text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+    <div className="min-h-screen bg-[#12100e] text-zinc-100">
       {/* Top Header Navigation */}
       <Navbar />
 

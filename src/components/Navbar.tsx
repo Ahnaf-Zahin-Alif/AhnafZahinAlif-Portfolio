@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ThemeToggle } from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
@@ -17,7 +16,7 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-[#faf8f5]/80 dark:bg-[#12100e]/80 border-b border-zinc-200/50 dark:border-zinc-800/60 transition-colors">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-[#12100e]/85 border-b border-zinc-800/60 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo / Badge */}
         <Link
@@ -42,8 +41,8 @@ export function Navbar() {
                 onClick={() => setActiveItem(item.name)}
                 className={`relative py-1 text-sm font-medium transition-colors hover:text-[#f07b3f] focus:outline-none focus:ring-2 focus:ring-[#f07b3f]/40 rounded ${
                   isActive
-                    ? "text-zinc-900 dark:text-zinc-100 font-semibold"
-                    : "text-zinc-500 dark:text-zinc-400"
+                    ? "text-zinc-100 font-semibold"
+                    : "text-zinc-400"
                 }`}
               >
                 {item.name}
@@ -53,17 +52,13 @@ export function Navbar() {
               </a>
             );
           })}
-          <div className="pl-4 border-l border-zinc-300 dark:border-zinc-800">
-            <ThemeToggle />
-          </div>
         </nav>
 
-        {/* Mobile Menu & ThemeToggle */}
-        <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
+        {/* Mobile Menu Toggle Button */}
+        <div className="flex items-center md:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-xl text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 focus:outline-none focus:ring-2 focus:ring-[#f07b3f]/50"
+            className="p-2 rounded-xl text-zinc-300 hover:bg-zinc-800/60 focus:outline-none focus:ring-2 focus:ring-[#f07b3f]/50"
             aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -73,7 +68,7 @@ export function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-zinc-200 dark:border-zinc-800 bg-[#faf8f5] dark:bg-[#12100e] px-4 pt-2 pb-6 space-y-2">
+        <div className="md:hidden border-b border-zinc-800 bg-[#12100e] px-4 pt-2 pb-6 space-y-2">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -84,8 +79,8 @@ export function Navbar() {
               }}
               className={`block px-3 py-2 rounded-lg text-base font-medium transition-colors ${
                 activeItem === item.name
-                  ? "text-[#f07b3f] bg-zinc-200/50 dark:bg-zinc-800/50 font-semibold"
-                  : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/30"
+                  ? "text-[#f07b3f] bg-zinc-800/50 font-semibold"
+                  : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/30"
               }`}
             >
               {item.name}

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,18 +36,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable} dark`}
     >
-      <body className="bg-[#faf8f5] dark:bg-[#12100e] text-zinc-900 dark:text-zinc-100 min-h-screen antialiased transition-colors duration-300">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+      <body className="bg-[#12100e] text-zinc-100 min-h-screen antialiased selection:bg-[#f07b3f]/30 selection:text-[#f07b3f]">
+        {children}
       </body>
     </html>
   );
