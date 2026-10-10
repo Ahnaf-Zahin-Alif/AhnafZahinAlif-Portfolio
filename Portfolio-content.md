@@ -14,7 +14,7 @@
 * CTAs:
   - See projects → (links to #projects)
   - Download CV (links to #cv)
-* Profile Picture: [PROFILE PHOTO] (Offset card placeholder)
+* Profile Picture: /profile.jpg (Portrait of Md. Ahnaf Zahin Alif)
 
 ## Contact Information
 * Email: [YOUR EMAIL]
