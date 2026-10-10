@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -5,22 +6,49 @@ export function HeroIntro() {
   return (
     <div className="flex flex-col justify-between h-full space-y-6">
       <div className="space-y-4">
-        {/* Subtitle / Role Tag */}
-        <span className="text-xs sm:text-[13px] font-mono font-bold tracking-wider text-[#f07b3f] uppercase block">
-          FULLSTACK SWE
-        </span>
+        {/* Name and Mobile-Only Compact Photo Row */}
+        <div className="flex items-start justify-between gap-3">
+          <div className="space-y-3">
+            {/* Subtitle / Role Tag */}
+            <span className="text-xs sm:text-[13px] font-mono font-bold tracking-wider text-[#f07b3f] uppercase block">
+              FULLSTACK SWE
+            </span>
 
-        {/* Display Heading */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-900 dark:text-zinc-50 tracking-tight leading-[1.05]">
-          Md. Ahnaf<br />Zahin Alif
-        </h1>
+            {/* Display Heading */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-100 tracking-tight leading-[1.08]">
+              Md. Ahnaf<br />Zahin Alif
+            </h1>
+          </div>
+
+          {/* Mobile-Only Compact Profile Photo in Free Space */}
+          <div className="md:hidden shrink-0 pt-1 pl-1">
+            <div className="relative">
+              {/* Offset Yellow/Cream Accent Layer */}
+              <div
+                className="absolute inset-0 translate-x-1 translate-y-1 rounded-2xl bg-[#fce19b] pointer-events-none"
+                aria-hidden="true"
+              />
+              {/* Image Frame */}
+              <div className="relative w-24 h-28 sm:w-28 sm:h-32 rounded-2xl bg-[#1a1715] border border-zinc-700/80 shadow-md overflow-hidden">
+                <Image
+                  src="/profile.jpg"
+                  alt="Md. Ahnaf Zahin Alif"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 96px, 112px"
+                  className="object-cover object-[center_35%]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* NOW Status Block */}
         <div className="border-l-2 border-[#f07b3f] pl-4 py-1 space-y-2 my-6">
-          <span className="text-[11px] font-mono font-bold tracking-widest text-zinc-400 dark:text-zinc-500 uppercase block">
+          <span className="text-[11px] font-mono font-bold tracking-widest text-zinc-500 uppercase block">
             NOW
           </span>
-          <div className="space-y-1 text-sm sm:text-base font-semibold text-zinc-800 dark:text-zinc-200">
+          <div className="space-y-1 text-sm sm:text-base font-semibold text-zinc-200">
             <p>ICT student at BUP</p>
             <p>Specializing in low-level programming and algorithms</p>
             <p>Building full-stack projects</p>
@@ -49,4 +77,3 @@ export function HeroIntro() {
     </div>
   );
 }
-
