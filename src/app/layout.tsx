@@ -40,7 +40,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 min-h-screen antialiased transition-colors duration-300">
+      <body className="bg-[#faf8f5] dark:bg-[#12100e] text-zinc-900 dark:text-zinc-100 min-h-screen antialiased transition-colors duration-300">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

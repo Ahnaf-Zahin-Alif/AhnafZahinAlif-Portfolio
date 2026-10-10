@@ -1,50 +1,34 @@
 # DESIGN.md
 
 ## Principles
-Minimal, neutral, and calm. Zinc does the heavy lifting, accents are rare and intentional.
-Every component must look right in **both** light and dark.
+Warm, editorial, and tactile. Charcoal/dark warm background with bright warm orange and cream/gold accents.
+Every component must look right in **both** light and dark themes.
 
-## Color
-| Role | Light | Dark |
+## Color Palette
+| Role | Dark (Default) | Light |
 |---|---|---|
-| Surface (controls) | `bg-zinc-200/80` | `dark:bg-zinc-800/80` |
-| Surface hover | `hover:bg-zinc-300/80` | `dark:hover:bg-zinc-700/80` |
-| Border | `border-zinc-300/50` | `dark:border-zinc-700/50` |
-| Text / icon | `text-zinc-700` | `dark:text-zinc-200` |
-| Placeholder / skeleton | `bg-zinc-200/50` | `dark:bg-zinc-800/50` |
-| Accent (light-mode cue) | `text-amber-500` | n/a |
-| Accent (dark-mode cue) | n/a | `text-blue-400` |
-| Focus ring | `focus:ring-2 focus:ring-blue-500/50` | same |
+| Background | `bg-[#141210]` or `dark:bg-zinc-950` | `bg-[#fcfaf7]` or `bg-zinc-50` |
+| Card Surface | `bg-[#1c1916]` or `dark:bg-zinc-900/90` | `bg-white` or `bg-zinc-100` |
+| Card Hover | `hover:bg-[#23201c]` | `hover:bg-zinc-50` |
+| Primary Accent | `bg-[#f07b3f]` / `text-[#f07b3f]` / `text-orange-500` | same |
+| Secondary Accent | `bg-[#fce19b]` (cream/gold) | `bg-[#fce19b]` |
+| Subtle Border | `border-[#2e2a25]` / `dark:border-zinc-800` | `border-zinc-200` |
+| Text Primary | `text-zinc-100` / `text-stone-100` | `text-zinc-900` |
+| Text Muted | `text-stone-400` / `text-zinc-400` | `text-zinc-600` |
+| Labels | `text-stone-500` / `text-zinc-500` | `text-zinc-500` |
 
-Page background, primary text, and brand accent: TODO (copy from `globals.css`).
-Do not introduce colors outside the zinc scale, amber, and blue.
-
-## Shape and elevation
-- Radius: `rounded-xl` for controls and cards
-- Shadow: `shadow-sm` only
-- Borders: 1px, semi-transparent (`/50`)
-
-## Spacing
-- Icon buttons: `p-2.5`, icon size `h-5 w-5`
-- Inline gaps: `gap-2`
-- Skeleton size matches the final control (`w-10 h-10`) to prevent layout shift
-
-## Motion
-- Default: `transition-all duration-300`
-- Loading placeholders: `animate-pulse`
-- Icon swaps: rotate plus scale, not fade alone
-- No animation libraries. Tailwind transitions only.
-
-## Interaction
-- Hover: step one shade (200 → 300 light, 800 → 700 dark)
-- Focus: `focus:outline-none` always paired with the blue ring
-- Every icon-only button has `aria-label` and `title`
+## Shape and Depth
+- Buttons / CTA Pills: `rounded-full`
+- Cards: `rounded-2xl` to `rounded-3xl`
+- Offset Depth Effect: Profile card features an offset layer (`bg-[#fce19b]` or amber rounded background shifted 8-10px right and down) to create a distinct tactile depth.
+- Borders: 1px subtle borders on dividers, cards, and input slots.
 
 ## Typography
-TODO: fonts and size scale (check `layout.tsx` and `tailwind.config.ts`).
-Responsive pattern seen so far: hide secondary labels below `sm` (`hidden sm:inline-block`).
+- Primary Font: Inter for titles and descriptive text.
+- Monospace Font: JetBrains Mono for tags, numbers (01, 02, 03), handles, and code annotations.
+- Section tags: uppercase, tracked (`tracking-wider` / `tracking-widest`), small (`text-xs` / `text-[11px]`).
 
-## Don'ts
-- No new colors, shadows, or radii without updating this file
-- No hard-coded hex values
-- No light-only or dark-only styling
+## Interaction
+- Focus: `focus:outline-none focus:ring-2 focus:ring-orange-500/50`
+- Links and interactive elements: interactive hover state with smooth transitions.
+- All icon-only buttons include `aria-label`.

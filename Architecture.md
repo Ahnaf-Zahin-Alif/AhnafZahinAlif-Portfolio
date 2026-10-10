@@ -1,31 +1,34 @@
 # Portfolio Architecture & Design Specification
 
 ## Tech Stack
-* Framework: Next.js or React (Vite)
+* Framework: Next.js (App Router)
 * Styling: Tailwind CSS
 * Deployment Target: Vercel
+* Icons: lucide-react
 
 ## Typography
-* Primary Font: 'Inter' (Google Fonts) - Main text.
-* Monospace Font: 'JetBrains Mono' (Google Fonts) - Code/technical text.
+* Primary Font: 'Inter' (Main text, titles, descriptions)
+* Monospace Font: 'JetBrains Mono' (Tags, badges, status labels, code)
 
 ## UI/UX Requirements & Layout
-* Global Layout: Two-column layout featuring a fixed Left-Hand Dashboard (Sidebar) and a main scrolling content area on the right.
-* Dashboard (Sidebar) Navigation Links:
-  * Home
-  * Projects
-  * CV
-  * Reviews
-* Dark/Light Mode: 
-  * Implement a theme toggle switch (place either at the bottom of the left sidebar or top-right of the main content area).
-  * Default state: Dark Mode.
-  * Use CSS variables or Tailwind's dark mode classes.
-
-## Component Structure
-1. Left Sidebar Dashboard (Navigation Links)
-2. Main Content Area:
-   - Hero Section (Includes Profile Picture Placeholder, Introduction, and Profile Links Panel)
-   - Tech Stack Section
-   - Projects Section (Empty placeholders for future)
-   - CV Section (Empty placeholders for future)
-   - Reviews Section (Empty placeholders for future)
+* Global Layout: Full-width responsive layout with top navigation header and clean horizontal grid sections.
+* Top Header Navigation:
+  * Brand badge 'AZ' on top left
+  * Navigation links: Home, Projects, CV, Reviews
+  * Theme Toggle (light / dark mode)
+* Main Content Sections:
+  1. Hero Section (3-Column layout on desktop):
+     - Left: Fullstack SWE tag, bold name heading, NOW status block with accent border, and primary/secondary CTA pill buttons.
+     - Center: Profile picture card with offset yellow/cream shadow depth effect.
+     - Right: Contact panel with email, phone, and direct platform links (GitHub, X, Codeforces, Codechef).
+  2. Stack Section:
+     - Languages with descriptive role tags.
+     - Frameworks & Databases section with '+ Add skill' slot.
+     - Tools section with '+ Add skill' slot.
+  3. Projects Section ("Selected work"):
+     - Top bar with section tag, 'Selected work' title, and 'All projects →' pill button.
+     - 3-column grid of detailed project cards (Toy Shop, Cinefilm, Gaming Center Network).
+  4. CV Section:
+     - Experience & Education details / placeholder matching the warm palette.
+  5. Reviews Section:
+     - Endorsements / Testimonials placeholder.
