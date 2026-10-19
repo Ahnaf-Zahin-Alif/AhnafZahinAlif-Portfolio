@@ -17,8 +17,7 @@
 * Profile Picture: /profile.jpg (Portrait of Md. Ahnaf Zahin Alif)
 
 ## Contact Information
-* Email: [YOUR EMAIL]
-* Phone: [YOUR PHONE]
+* Email: ahnafzahinalif@gmail.com
 * GitHub: github.com/[HANDLE]
 * X (Twitter): @[HANDLE]
 * Codeforces: [HANDLE]
