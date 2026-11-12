@@ -10,12 +10,12 @@ export function HeroIntro() {
         <div className="flex items-start justify-between gap-3">
           <div className="space-y-3">
             {/* Subtitle / Role Tag */}
-            <span className="text-xs sm:text-[13px] font-mono font-bold tracking-wider text-[#f07b3f] uppercase block">
+            <span className="text-xs font-semibold tracking-widest text-[#f07b3f] uppercase block">
               FULLSTACK SWE
             </span>
 
             {/* Display Heading */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-100 tracking-tight leading-[1.08]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-100 tracking-tight leading-[1.08] text-balance">
               Md. Ahnaf<br />Zahin Alif
             </h1>
           </div>
@@ -29,7 +29,7 @@ export function HeroIntro() {
                 aria-hidden="true"
               />
               {/* Image Frame */}
-              <div className="relative w-24 h-28 sm:w-28 sm:h-32 rounded-2xl bg-[#1a1715] border border-zinc-700/80 shadow-md overflow-hidden">
+              <div className="relative w-24 h-28 sm:w-28 sm:h-32 rounded-2xl bg-[#1a1715] border border-zinc-800 shadow-md overflow-hidden">
                 <Image
                   src="/profile.jpg"
                   alt="Md. Ahnaf Zahin Alif"
@@ -45,10 +45,10 @@ export function HeroIntro() {
 
         {/* NOW Status Block */}
         <div className="border-l-2 border-[#f07b3f] pl-4 py-1 space-y-2 my-6">
-          <span className="text-[11px] font-mono font-bold tracking-widest text-zinc-500 uppercase block">
+          <span className="text-[11px] font-bold tracking-widest text-zinc-400 uppercase block">
             NOW
           </span>
-          <div className="space-y-1 text-sm sm:text-base font-semibold text-zinc-200">
+          <div className="space-y-1 text-sm sm:text-base font-medium text-zinc-200 text-pretty">
             <p>ICT student at BUP</p>
             <p>Specializing in low-level programming and algorithms</p>
             <p>Building full-stack projects</p>
@@ -60,7 +60,7 @@ export function HeroIntro() {
       <div className="flex flex-wrap items-center gap-3 pt-2">
         <Link
           href="#projects"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#f07b3f] hover:bg-[#e06c30] text-zinc-950 font-bold text-sm transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f07b3f]/50"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#f07b3f] hover:bg-[#e06c30] text-zinc-950 font-semibold text-sm transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100e]"
           aria-label="See projects"
         >
           <span>See projects</span>
@@ -68,7 +68,7 @@ export function HeroIntro() {
         </Link>
         <a
           href="#cv"
-          className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#fce19b] hover:bg-[#f6d787] text-zinc-900 font-bold text-sm transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-[#fce19b]/50"
+          className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#fce19b] hover:bg-[#f6d787] text-zinc-950 font-semibold text-sm transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fce19b] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100e]"
           aria-label="Download CV"
         >
           Download CV

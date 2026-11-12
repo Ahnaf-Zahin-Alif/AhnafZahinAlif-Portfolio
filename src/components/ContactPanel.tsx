@@ -11,14 +11,9 @@ interface ContactItem {
 const contactList: ContactItem[] = [
   {
     label: "EMAIL",
-    value: "[YOUR EMAIL]",
-    href: "mailto:contact@example.com",
+    value: "ahnafzahinalif@gmail.com",
+    href: "mailto:ahnafzahinalif@gmail.com",
     highlight: true,
-  },
-  {
-    label: "PHONE",
-    value: "[YOUR PHONE]",
-    href: "tel:+1234567890",
   },
   {
     label: "GITHUB",
@@ -51,17 +46,16 @@ export function ContactPanel() {
     <div className="w-full flex flex-col justify-between h-full pt-1">
       {/* Header */}
       <div>
-        <span className="text-[11px] font-mono font-bold tracking-widest text-zinc-400 dark:text-zinc-500 uppercase block mb-3">
+        <span className="text-[11px] font-bold tracking-widest text-zinc-400 uppercase block pb-3">
           CONTACT
         </span>
-        <div className="border-t border-zinc-200 dark:border-zinc-800/80 mb-2" />
       </div>
 
       {/* Contact Entries */}
-      <div className="divide-y divide-zinc-200 dark:divide-zinc-800/80">
+      <div className="border-t border-zinc-800 divide-y divide-zinc-800/80">
         {contactList.map((item) => (
           <div key={item.label} className="py-2.5 sm:py-3 space-y-0.5">
-            <span className="text-[10px] sm:text-[11px] font-mono font-semibold tracking-wider text-zinc-400 dark:text-zinc-500 uppercase block">
+            <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-zinc-400 uppercase block">
               {item.label}
             </span>
             {item.href ? (
@@ -69,17 +63,17 @@ export function ContactPanel() {
                 href={item.href}
                 target={item.isExternal ? "_blank" : undefined}
                 rel={item.isExternal ? "noopener noreferrer" : undefined}
-                className={`inline-flex items-center gap-1 font-mono text-xs sm:text-sm transition-colors hover:underline ${
+                className={`inline-flex items-center gap-1 font-mono text-xs sm:text-sm transition-colors hover:underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100e] ${
                   item.highlight
                     ? "text-[#f07b3f] font-semibold"
-                    : "text-zinc-800 dark:text-zinc-200 hover:text-[#f07b3f] dark:hover:text-[#f07b3f]"
+                    : "text-zinc-200 hover:text-[#f07b3f]"
                 }`}
               >
                 <span>{item.value}</span>
-                {item.isExternal && <ArrowUpRight className="w-3.5 h-3.5" />}
+                {item.isExternal && <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400" />}
               </a>
             ) : (
-              <span className="font-mono text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 block">
+              <span className="font-mono text-xs sm:text-sm text-zinc-200 block">
                 {item.value}
               </span>
             )}
@@ -89,4 +83,3 @@ export function ContactPanel() {
     </div>
   );
 }
-

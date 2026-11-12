@@ -8,6 +8,7 @@
 | [D-003](#d-003-removal-of-theme-toggle-and-standardization-on-dark-theme) | Removal of Theme Toggle & Standardization on Dark Theme | Accepted | 2026-10-10 |
 | [D-004](#d-004-real-profile-photo-integration-via-nextimage) | Real Profile Photo Integration via next/image | Accepted | 2026-10-10 |
 | [D-005](#d-005-mobile-only-compact-profile-photo-placement) | Mobile-Only Compact Profile Photo Placement | Accepted | 2026-10-10 |
+| [D-006](#d-006-unslop-design-system-polish) | Unslop Design System Polish | Accepted | 2026-11-13 |
 
 ---
 
@@ -53,3 +54,18 @@
 - **Decision**: Add a compact photo frame (`w-24 h-28 sm:w-28 sm:h-32`) alongside the name in `HeroIntro` with `md:hidden`, keeping the signature cream offset accent. Hide the large `ProfileCard` on mobile using `hidden md:flex`.
 - **Why**: Utilizes free horizontal space efficiently on mobile devices, eliminates excessive scrolling, and leaves the desktop 3-column layout untouched.
 - **Rejected Alternatives**: Shrinking the full-size `ProfileCard` in place below the buttons, which would still take excessive vertical space without utilizing the empty area beside the name.
+
+---
+
+### D-006: Unslop Design System Polish
+- **Status**: Accepted
+- **Context**: Overuse of monospace fonts on non-code UI elements, redundant duplicate section eyebrows, gratuitous image hover scaling, duplicate horizontal dividing lines, and unpolished focus rings created an artificial "AI-generated" look.
+- **Decision**:
+  - Confine `font-mono` strictly to technical tokens, code identifiers, handles, and numeric indices (`01`, `02`, `03` with `tabular-nums`).
+  - Drop redundant eyebrows above headings (`RESUME` above `Curriculum Vitae`, `TESTIMONIALS` above `Reviews & Recommendations`).
+  - Remove duplicate dividing lines in `ContactPanel` and `TechStack`.
+  - Remove decorative hover scaling on the profile portrait.
+  - Implement `text-balance` on headings, `text-pretty` on descriptive paragraphs, and accessible `focus-visible:` styling across all interactive controls.
+  - Standardize all colors to clean warm dark theme tokens without leftover unused prefixes.
+- **Why**: Elevates the design to an intentional, human-crafted editorial finish with clean typography and hierarchy.
+- **Rejected Alternatives**: Keeping decorative font-mono everywhere and leaving redundant duplicate borders in place.

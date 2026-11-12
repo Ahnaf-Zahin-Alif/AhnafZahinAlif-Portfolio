@@ -16,16 +16,16 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-[#12100e]/85 border-b border-zinc-800/60 transition-colors">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-[#12100e]/85 border-b border-zinc-800/80 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo / Badge */}
         <Link
           href="#home"
           onClick={() => setActiveItem("Home")}
-          className="group focus:outline-none focus:ring-2 focus:ring-[#f07b3f]/60 rounded-xl"
+          className="group rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100e]"
           aria-label="Md. Ahnaf Zahin Alif Home"
         >
-          <div className="w-10 h-10 rounded-xl bg-[#f07b3f] hover:bg-[#e06c30] transition-colors flex items-center justify-center font-bold text-zinc-950 font-mono text-base shadow-sm">
+          <div className="w-10 h-10 rounded-xl bg-[#f07b3f] hover:bg-[#e06c30] transition-colors flex items-center justify-center font-bold text-zinc-950 text-base tracking-tight shadow-sm">
             AZ
           </div>
         </Link>
@@ -39,7 +39,7 @@ export function Navbar() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setActiveItem(item.name)}
-                className={`relative py-1 text-sm font-medium transition-colors hover:text-[#f07b3f] focus:outline-none focus:ring-2 focus:ring-[#f07b3f]/40 rounded ${
+                className={`relative py-1 text-sm font-medium transition-colors hover:text-[#f07b3f] rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100e] ${
                   isActive
                     ? "text-zinc-100 font-semibold"
                     : "text-zinc-400"
@@ -58,7 +58,7 @@ export function Navbar() {
         <div className="flex items-center md:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-xl text-zinc-300 hover:bg-zinc-800/60 focus:outline-none focus:ring-2 focus:ring-[#f07b3f]/50"
+            className="p-2 rounded-xl text-zinc-300 hover:bg-zinc-800/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100e]"
             aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -68,7 +68,7 @@ export function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-zinc-800 bg-[#12100e] px-4 pt-2 pb-6 space-y-2">
+        <div className="md:hidden border-b border-zinc-800 bg-[#12100e] px-4 pt-2 pb-6 space-y-1">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -77,7 +77,7 @@ export function Navbar() {
                 setActiveItem(item.name);
                 setMobileMenuOpen(false);
               }}
-              className={`block px-3 py-2 rounded-lg text-base font-medium transition-colors ${
+              className={`block px-3 py-2.5 rounded-lg text-base font-medium transition-colors ${
                 activeItem === item.name
                   ? "text-[#f07b3f] bg-zinc-800/50 font-semibold"
                   : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/30"

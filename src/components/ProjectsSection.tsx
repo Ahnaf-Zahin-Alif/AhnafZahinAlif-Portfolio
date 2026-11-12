@@ -39,21 +39,21 @@ const projects: ProjectData[] = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="w-full py-12 border-t border-zinc-200 dark:border-zinc-800/80 scroll-mt-24">
+    <section id="projects" className="w-full py-12 border-t border-zinc-800 scroll-mt-24">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
         <div className="space-y-1">
-          <span className="text-xs font-mono font-bold tracking-widest text-[#f07b3f] uppercase block">
+          <span className="text-xs font-semibold tracking-widest text-[#f07b3f] uppercase block">
             PROJECTS
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-900 dark:text-zinc-50 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-100 tracking-tight text-balance">
             Selected work
           </h2>
         </div>
 
         <a
           href="#projects"
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-zinc-700 bg-[#1e1b18] text-xs sm:text-sm font-medium text-zinc-200 hover:border-zinc-500 transition-colors w-max shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f07b3f]/50"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-zinc-700 bg-[#1a1715] hover:bg-[#221e1a] hover:border-zinc-500 text-xs sm:text-sm font-semibold text-zinc-200 transition-colors w-max shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100e]"
           aria-label="View all projects"
         >
           <span>All projects</span>

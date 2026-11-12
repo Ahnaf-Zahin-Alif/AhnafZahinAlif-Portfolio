@@ -10,18 +10,18 @@ export function ProfileCard() {
       />
 
       {/* Main Profile Card Container */}
-      <div className="relative w-full h-[420px] sm:h-[460px] rounded-[2rem] bg-[#1a1715] border border-zinc-700/80 shadow-xl overflow-hidden group">
+      <div className="relative w-full h-[420px] sm:h-[460px] rounded-[2rem] bg-[#1a1715] border border-zinc-800 shadow-xl overflow-hidden">
         <Image
           src="/profile.jpg"
           alt="Md. Ahnaf Zahin Alif"
           fill
           priority
           sizes="(max-width: 768px) 90vw, (max-width: 1200px) 33vw, 384px"
-          className="object-cover object-[center_45%] group-hover:scale-105 transition-transform duration-500"
+          className="object-cover object-[center_45%]"
         />
 
         {/* Subtle bottom vignette gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
       </div>
     </div>
   );
