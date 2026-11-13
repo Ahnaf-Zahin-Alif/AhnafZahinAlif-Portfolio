@@ -10,6 +10,12 @@
 * Primary Font: 'Inter' (Main text, titles, descriptions)
 * Monospace Font: 'JetBrains Mono' (Tags, badges, status labels, code)
 
+## SEO & Metadata Architecture
+* Canonical Base URL: `https://ahnaf-zahin-alif.vercel.app`
+* Native App Router Metadata: Centralized in `src/app/layout.tsx` with title template `%s | Md. Ahnaf Zahin Alif`
+* Route-Level Overrides: Unique titles, descriptions, and canonical links per route (`/` and `/_not-found`)
+* Social Sharing: Open Graph (image, type, locale, title, description) and Twitter Cards (`summary_large_image`)
+
 ## UI/UX Requirements & Layout
 * Global Layout: Full-width responsive layout with top navigation header and clean horizontal grid sections.
 * Top Header Navigation:

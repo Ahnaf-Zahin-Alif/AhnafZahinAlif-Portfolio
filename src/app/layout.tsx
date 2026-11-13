@@ -15,17 +15,70 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Md. Ahnaf Zahin Alif - Fullstack SWE Portfolio",
+  metadataBase: new URL("https://ahnaf-zahin-alif.vercel.app"),
+  title: {
+    default: "Md. Ahnaf Zahin Alif | Fullstack Software Engineer",
+    template: "%s | Md. Ahnaf Zahin Alif",
+  },
   description:
-    "Personal Portfolio of Md. Ahnaf Zahin Alif - Student specializing in low-level programming and algorithms.",
+    "Fullstack Software Engineer focused on backend development, system design, and competitive programming. Explore systems architecture, algorithms, and projects.",
   keywords: [
     "Ahnaf Zahin Alif",
+    "Md. Ahnaf Zahin Alif",
+    "Fullstack Software Engineer",
     "Fullstack SWE",
-    "Portfolio",
+    "Backend Development",
+    "System Design",
     "Competitive Programming",
+    "Software Engineer Portfolio",
     "Algorithms",
-    "Software Engineer",
+    "BUP",
   ],
+  authors: [
+    {
+      name: "Md. Ahnaf Zahin Alif",
+      url: "https://ahnaf-zahin-alif.vercel.app",
+    },
+  ],
+  creator: "Md. Ahnaf Zahin Alif",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://ahnaf-zahin-alif.vercel.app",
+    siteName: "Md. Ahnaf Zahin Alif Portfolio",
+    title: "Md. Ahnaf Zahin Alif | Fullstack Software Engineer",
+    description:
+      "Fullstack Software Engineer focused on backend development, system design, and competitive programming. Explore systems architecture, algorithms, and projects.",
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 768,
+        height: 1024,
+        alt: "Md. Ahnaf Zahin Alif - Fullstack Software Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Md. Ahnaf Zahin Alif | Fullstack Software Engineer",
+    description:
+      "Fullstack Software Engineer focused on backend development, system design, and competitive programming. Explore systems architecture, algorithms, and projects.",
+    images: ["/profile.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

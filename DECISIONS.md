@@ -9,6 +9,7 @@
 | [D-004](#d-004-real-profile-photo-integration-via-nextimage) | Real Profile Photo Integration via next/image | Accepted | 2026-10-10 |
 | [D-005](#d-005-mobile-only-compact-profile-photo-placement) | Mobile-Only Compact Profile Photo Placement | Accepted | 2026-10-10 |
 | [D-006](#d-006-unslop-design-system-polish) | Unslop Design System Polish | Accepted | 2026-11-13 |
+| [D-007](#d-007-native-app-router-seo-metadata-architecture) | Native App Router SEO Metadata Architecture | Accepted | 2026-11-13 |
 
 ---
 
@@ -69,3 +70,17 @@
   - Standardize all colors to clean warm dark theme tokens without leftover unused prefixes.
 - **Why**: Elevates the design to an intentional, human-crafted editorial finish with clean typography and hierarchy.
 - **Rejected Alternatives**: Keeping decorative font-mono everywhere and leaving redundant duplicate borders in place.
+
+---
+
+### D-007: Native App Router SEO Metadata Architecture
+- **Status**: Accepted
+- **Context**: The site lacked canonical URL resolution, complete Open Graph tags, Twitter card tags, and unique route-level metadata.
+- **Decision**:
+  - Set `metadataBase` to `https://ahnaf-zahin-alif.vercel.app` in `src/app/layout.tsx`.
+  - Establish a title template (`%s | Md. Ahnaf Zahin Alif`) with default `Md. Ahnaf Zahin Alif | Fullstack Software Engineer`.
+  - Add keyword-focused descriptions highlighting backend development, system design, and competitive programming.
+  - Configure full Open Graph (`og:title`, `og:description`, `og:url`, `og:type: website`, `og:image`) and Twitter Card (`summary_large_image`) metadata.
+  - Provide dedicated unique metadata on `src/app/page.tsx` (`canonical: "/"`) and `src/app/not-found.tsx` (`Page Not Found`, `robots: noindex, nofollow`).
+- **Why**: Complies with Next.js App Router best practices, prevents duplicate indexing, and enables rich social previews without modifying any visual CSS or layout.
+- **Rejected Alternatives**: Adding raw `<head>` tags in HTML or using third-party SEO wrapper libraries.
