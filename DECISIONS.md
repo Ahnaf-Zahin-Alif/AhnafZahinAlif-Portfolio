@@ -12,6 +12,7 @@
 | [D-007](#d-007-native-app-router-seo-metadata-architecture) | Native App Router SEO Metadata Architecture | Accepted | 2026-11-13 |
 | [D-008](#d-008-app-router-native-robots-and-sitemap-generation) | App Router Native Robots and Sitemap Generation | Accepted | 2026-11-13 |
 | [D-009](#d-009-semantic-html-hierarchy-and-schemaorg-json-ld-integration) | Semantic HTML Hierarchy and Schema.org JSON-LD Integration | Accepted | 2026-11-13 |
+| [D-010](#d-010-google-site-verification-hook-and-live-seo-production-server-validation) | Google Site Verification Hook and Live SEO Production Server Validation | Accepted | 2026-11-13 |
 
 ---
 
@@ -110,3 +111,14 @@
   - Create `<StructuredData />` in `src/components/StructuredData.tsx` rendering Schema.org `Person` (with GitHub, Codeforces, Codechef, LinkedIn, X, and BUP) and `WebSite` graph entities.
 - **Why**: Establishes a strict, accessible single-`<h1>` document outline and provides rich structured snippets without altering any visual styling or layout.
 - **Rejected Alternatives**: Leaving sections as generic non-semantic `span` wrappers.
+
+---
+
+### D-010: Google Site Verification Hook and Live SEO Production Server Validation
+- **Status**: Accepted
+- **Context**: Search Console verification requires a `google-site-verification` meta tag or DNS TXT record. The user needs an easy mechanism to insert their verification code cleanly without hardcoding credentials into source control if using environment variables. Furthermore, the complete SEO setup (native metadata, Open Graph, Twitter cards, JSON-LD structured data, robots.txt, and sitemap.xml) required validation against a real production build server.
+- **Decision**:
+  - Add `verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || process.env.GOOGLE_SITE_VERIFICATION || "YOUR_GOOGLE_SITE_VERIFICATION_CODE" }` in `src/app/layout.tsx`.
+  - Validate the compiled production build with `next start` on a local port, inspecting the raw HTTP response of `/`, `/robots.txt`, and `/sitemap.xml`.
+- **Why**: Allows zero-config deployment with a placeholder fallback or secure injection via Vercel/local environment variables. Validating the live server response ensures that search crawlers receive all metadata tags and JSON-LD structured data in the initial static HTML response without relying on client-side JS hydration.
+- **Rejected Alternatives**: Forcing DNS verification (which requires domain registrar access) or hardcoding a dummy code without an environment variable fallback.
