@@ -1,4 +1,7 @@
+"use client";
+
 import { Quote } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Endorsement {
   quote: string;
@@ -33,15 +36,19 @@ const endorsements: Endorsement[] = [
 
 export function ReviewsSection() {
   return (
-    <section
+    <motion.section
       id="reviews"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="w-full py-14 border-t border-white/[0.08] scroll-mt-24"
       aria-labelledby="reviews-heading"
     >
       {/* Section Header */}
       <div className="mb-10">
-        <span className="text-[11px] font-bold tracking-widest text-[#f07b3f] uppercase block pb-1">
-          PEER REVIEWS & ENDORSEMENTS
+        <span className="text-[11px] font-bold tracking-widest text-[#f07b3f] uppercase block pb-1 font-mono">
+          PEER REVIEWS &amp; ENDORSEMENTS
         </span>
         <h2
           id="reviews-heading"
@@ -56,7 +63,7 @@ export function ReviewsSection() {
         {endorsements.map((item, idx) => (
           <article
             key={idx}
-            className="rounded-3xl bg-[#151311] border border-white/[0.08] p-6 sm:p-7 flex flex-col justify-between space-y-6 transition-colors hover:border-white/[0.16] shadow-lg"
+            className="rounded-3xl bg-[#151311] border border-white/[0.08] p-6 sm:p-7 flex flex-col justify-between space-y-6 transition-colors hover:border-white/[0.18] shadow-lg"
           >
             <div className="space-y-4">
               <Quote className="w-6 h-6 text-[#f07b3f]/70" strokeWidth={1.5} aria-hidden="true" />
@@ -81,6 +88,6 @@ export function ReviewsSection() {
           </article>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

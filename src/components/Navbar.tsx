@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
+import { motion } from "framer-motion";
+import { LiveClock } from "./LiveClock";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -11,30 +13,16 @@ const navItems = [
   { name: "Reviews", href: "#reviews" },
 ];
 
-export function Navbar() {
+interface NavbarProps {
+  onOpenCommandPalette?: () => void;
+}
+
+export function Navbar({ onOpenCommandPalette }: NavbarProps) {
   const [activeItem, setActiveItem] = useState("Home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [time, setTime] = useState<string>("");
-
-  useEffect(() => {
-    const updateClock = () => {
-      setTime(
-        new Intl.DateTimeFormat("en-US", {
-          timeZone: "Asia/Dhaka",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: false,
-        }).format(new Date())
-      );
-    };
-    updateClock();
-    const timer = setInterval(updateClock, 1000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-[#0c0a09]/85 border-b border-white/[0.08] transition-colors">
+    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-[#0c0a09]/85 border-b border-white/[0.08] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Monogram */}
         <Link
@@ -48,8 +36,8 @@ export function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+        {/* Desktop Navigation with Sliding Framer Motion Pill */}
+        <nav className="hidden md:flex items-center gap-1.5 p-1 rounded-full bg-[#151311] border border-white/[0.08]" aria-label="Main navigation">
           {navItems.map((item) => {
             const isActive = activeItem === item.name;
             return (
@@ -57,31 +45,55 @@ export function Navbar() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setActiveItem(item.name)}
-                className={`relative py-1 text-sm font-medium transition-colors hover:text-[#f07b3f] rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] ${
-                  isActive ? "text-zinc-100 font-semibold" : "text-zinc-400"
+                className={`relative px-4 py-1.5 text-xs font-medium transition-colors rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] ${
+                  isActive ? "text-zinc-100 font-semibold" : "text-zinc-400 hover:text-zinc-200"
                 }`}
               >
                 {item.name}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#f07b3f] rounded-full shadow-[0_0_8px_rgba(240,123,63,0.6)]" />
+                  <motion.div
+                    layoutId="active-nav-pill"
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                    className="absolute inset-0 rounded-full bg-white/[0.08] border border-white/[0.12] -z-10 shadow-sm"
+                  />
                 )}
               </a>
             );
           })}
         </nav>
 
-        {/* Live Clock & Status Badge */}
-        <div className="hidden md:flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#151311] border border-white/[0.08] text-xs font-mono">
-          <span className="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse" aria-hidden="true" />
-          <span className="text-zinc-400 font-medium">DHAKA</span>
-          <span className="text-zinc-200 tabular-nums font-semibold">
-            {time || "22:00:00"}
-          </span>
-          <span className="text-zinc-500 text-[10px]">GMT+6</span>
+        {/* Utilities: Cmd+K Search + Live Dhaka Clock */}
+        <div className="hidden md:flex items-center gap-3">
+          {onOpenCommandPalette && (
+            <button
+              type="button"
+              onClick={onOpenCommandPalette}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#151311] border border-white/[0.08] text-xs font-mono text-zinc-400 hover:text-zinc-200 hover:border-white/[0.16] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f]"
+              aria-label="Open command palette (Ctrl+K or Cmd+K)"
+            >
+              <Search className="w-3.5 h-3.5 text-zinc-400" strokeWidth={1.5} />
+              <span>Search</span>
+              <kbd className="px-1.5 py-0.5 rounded bg-zinc-900 border border-white/[0.08] text-[10px] text-zinc-400">
+                ⌘K
+              </kbd>
+            </button>
+          )}
+
+          <LiveClock />
         </div>
 
-        {/* Mobile Menu Toggle Button */}
-        <div className="flex items-center md:hidden">
+        {/* Mobile Menu Button */}
+        <div className="flex items-center gap-2 md:hidden">
+          {onOpenCommandPalette && (
+            <button
+              type="button"
+              onClick={onOpenCommandPalette}
+              className="p-2 rounded-xl text-zinc-300 hover:bg-white/[0.06] transition-colors"
+              aria-label="Open search palette"
+            >
+              <Search className="w-5 h-5" strokeWidth={1.5} />
+            </button>
+          )}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-xl text-zinc-300 hover:bg-white/[0.06] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f]"
@@ -96,7 +108,7 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-white/[0.08] bg-[#0c0a09] px-4 pt-2 pb-6 space-y-2">
           {navItems.map((item) => (
@@ -116,13 +128,6 @@ export function Navbar() {
               {item.name}
             </a>
           ))}
-
-          {/* Mobile Live Clock */}
-          <div className="pt-3 border-t border-white/[0.06] flex items-center gap-2 text-xs font-mono text-zinc-400 px-3">
-            <span className="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse" aria-hidden="true" />
-            <span>Dhaka, GMT+6:</span>
-            <span className="text-zinc-200 tabular-nums font-semibold">{time || "22:00:00"}</span>
-          </div>
         </div>
       )}
     </header>

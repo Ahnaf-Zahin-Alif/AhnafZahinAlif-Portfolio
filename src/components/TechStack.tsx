@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 interface StackGroup {
   category: string;
   skills: { name: string; detail: string }[];
@@ -39,17 +43,24 @@ const stackGroups: StackGroup[] = [
 
 export function TechStack() {
   return (
-    <section className="w-full py-12 border-t border-white/[0.08]" aria-labelledby="stack-heading">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="w-full py-12 border-t border-white/[0.08]"
+      aria-labelledby="stack-heading"
+    >
       <div className="mb-6 flex items-center justify-between">
         <div>
           <h2
             id="stack-heading"
-            className="text-[11px] font-bold tracking-widest text-[#f07b3f] uppercase block pb-1"
+            className="text-[11px] font-bold tracking-widest text-[#f07b3f] uppercase block pb-1 font-mono"
           >
             TECHNICAL CAPABILITIES
           </h2>
           <p className="text-xl sm:text-2xl font-bold text-zinc-100 tracking-tight text-balance">
-            Core Languages, Systems & Engineering Stack
+            Core Languages, Systems &amp; Engineering Stack
           </p>
         </div>
       </div>
@@ -61,7 +72,7 @@ export function TechStack() {
             className="py-5 sm:py-6 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-start"
           >
             <div className="lg:col-span-3">
-              <h3 className="text-xs font-semibold tracking-wider text-zinc-400 uppercase pt-1.5">
+              <h3 className="text-xs font-semibold tracking-wider text-zinc-400 uppercase pt-1.5 font-mono">
                 {group.category}
               </h3>
             </div>
@@ -69,7 +80,7 @@ export function TechStack() {
               {group.skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#151311] border border-white/[0.08] text-xs sm:text-sm text-zinc-200 shadow-sm transition-colors hover:border-white/[0.18]"
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#151311] border border-white/[0.08] text-xs sm:text-sm text-zinc-200 shadow-sm transition-colors hover:border-white/[0.22]"
                 >
                   <span className="font-bold text-zinc-100 font-mono text-xs">
                     {skill.name}
@@ -84,6 +95,6 @@ export function TechStack() {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

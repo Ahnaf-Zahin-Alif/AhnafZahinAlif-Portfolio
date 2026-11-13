@@ -1,44 +1,51 @@
+"use client";
+
 import { FlagshipProjectCard } from "./FlagshipProjectCard";
 import { ProjectCard, SecondaryProjectData } from "./ProjectCard";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const secondaryProjects: SecondaryProjectData[] = [
   {
     index: "02",
-    badge: "UAV & SYSTEMS",
-    title: "Orion Sentinel — Swarm SOS Interface",
+    badge: "JAVA OOP & HEALTHCARE",
+    title: "MediCare — Hospital Management System",
     description:
-      "Decentralized UAV swarm communication mesh for emergency coordinate broadcasting and low-bandwidth telemetry synchronization.",
-    tags: ["C++", "Python", "Mesh Network", "Telemetry", "Socket.IO"],
-    type: "uav",
-    link: "https://github.com/Ahnaf-Zahin-Alif",
+      "Full-featured Java OOP hospital administration suite for patient admissions, ward occupancy management, doctor duty schedules, and medical billing.",
+    tags: ["Java", "OOP", "Swing / AWT", "Relational DB", "Healthcare"],
+    type: "hospital",
+    link: "https://github.com/Ahnaf-Zahin-Alif/Hospital-Management-System",
   },
   {
     index: "03",
-    badge: "ACADEMIC PORTAL",
-    title: "BICE '25 Portal & CGPA Calculator",
+    badge: "PRODUCTIVITY & WEB",
+    title: "ProjectTracker — Milestone Velocity Engine",
     description:
-      "Academic resource management system for BUP ICT students featuring real-time credit auditing and grade point forecasting.",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
-    type: "academic",
-    link: "https://github.com/Ahnaf-Zahin-Alif",
+      "Task tracking and sprint milestone engine with progress analytics, lead time metrics, and priority scheduling for engineering projects.",
+    tags: ["JavaScript", "Full-Stack", "Task Flow", "Analytics"],
+    type: "tracker",
+    link: "https://github.com/Ahnaf-Zahin-Alif/ProjectTracker",
   },
   {
     index: "04",
-    badge: "PRODUCTIVITY",
-    title: "Focus & Habit Tracker",
+    badge: "ALGORITHMS & AUTOMATION",
+    title: "30DaysOfPython — Algorithmic Suite",
     description:
-      "Algorithmic habit consistency platform with streak velocity analytics, spaced interval reminders, and offline-first persistence.",
-    tags: ["React", "TypeScript", "Local-First", "Tailwind CSS"],
-    type: "habit",
-    link: "https://github.com/Ahnaf-Zahin-Alif",
+      "Comprehensive Python codebase demonstrating functional programming, data structures, automated unit testing, and algorithmic problem solutions.",
+    tags: ["Python", "Algorithms", "Automation", "Unit Testing"],
+    type: "python",
+    link: "https://github.com/Ahnaf-Zahin-Alif/30DaysOfPython",
   },
 ];
 
 export function ProjectsSection() {
   return (
-    <section
+    <motion.section
       id="projects"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="w-full py-14 border-t border-white/[0.08] scroll-mt-24"
       aria-labelledby="projects-heading"
     >
@@ -52,7 +59,7 @@ export function ProjectsSection() {
             id="projects-heading"
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-100 tracking-tight text-balance"
           >
-            Selected Systems & Projects
+            Selected Systems &amp; Projects
           </h2>
         </div>
 
@@ -63,12 +70,12 @@ export function ProjectsSection() {
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/[0.12] bg-[#151311] hover:bg-[#1d1916] text-xs sm:text-sm font-semibold text-zinc-200 transition-colors w-max shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f]"
           aria-label="View all repositories on GitHub"
         >
-          <span>All GitHub Repos</span>
+          <span>All GitHub Repositories</span>
           <ArrowRight className="w-4 h-4" strokeWidth={1.5} aria-hidden="true" />
         </a>
       </div>
 
-      {/* Flagship Dominant Feature Showcase */}
+      {/* Flagship Dominant Feature Showcase (CineFilm) */}
       <div className="mb-8">
         <FlagshipProjectCard />
       </div>
@@ -79,6 +86,6 @@ export function ProjectsSection() {
           <ProjectCard key={project.index} project={project} />
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

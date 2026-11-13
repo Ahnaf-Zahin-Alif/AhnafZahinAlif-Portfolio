@@ -3,10 +3,17 @@ import tsEslint from "typescript-eslint";
 
 const eslintConfig = [
   {
-    ignores: [".next/**", "node_modules/**", "out/**", "build/**"],
+    ignores: [".next/**", "node_modules/**", "out/**", "build/**", "next-env.d.ts"],
   },
   ...tsEslint.configs.recommended,
-  nextPlugin.configs["core-web-vitals"],
+  {
+    plugins: {
+      "@next/next": nextPlugin,
+    },
+    rules: {
+      ...nextPlugin.configs["core-web-vitals"].rules,
+    },
+  },
 ];
 
 export default eslintConfig;

@@ -1,4 +1,7 @@
-import { ArrowUpRight, Film } from "lucide-react";
+"use client";
+
+import { ArrowUpRight, Film, Database } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function FlagshipProjectCard() {
   const seats = [
@@ -8,33 +11,37 @@ export function FlagshipProjectCard() {
   ];
 
   return (
-    <article className="rounded-3xl bg-[#151311] border border-white/[0.08] p-6 sm:p-8 transition-colors hover:border-white/[0.16] shadow-xl">
+    <motion.article
+      whileHover={{ y: -3 }}
+      transition={{ type: "spring", stiffness: 280, damping: 24 }}
+      className="rounded-3xl bg-[#151311] border border-white/[0.08] p-6 sm:p-8 transition-colors hover:border-white/[0.18] shadow-2xl"
+    >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Column: Details & Tech */}
         <div className="lg:col-span-7 space-y-6">
           <div className="flex items-center gap-3">
             <span className="font-mono text-xs font-bold tabular-nums text-[#f07b3f] tracking-wider">
-              01 / FLAGSHIP PROJECT
+              01 / FLAGSHIP SYSTEM
             </span>
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#f07b3f]/15 border border-[#f07b3f]/30 text-[#f07b3f] text-[11px] font-semibold uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#f07b3f]/15 border border-[#f07b3f]/30 text-[#f07b3f] text-[11px] font-semibold uppercase tracking-wider font-mono">
               <Film className="w-3 h-3" strokeWidth={1.5} aria-hidden="true" />
-              <span>IN DEVELOPMENT</span>
+              <span>LIVE REPO</span>
             </span>
           </div>
 
           <div className="space-y-2">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-100 tracking-tight text-balance">
-              CineFilm — Cinema Ticketing & Reservation Platform
+              CineFilm — Cinema Ticketing &amp; DBMS Engine
             </h3>
             <p className="text-sm sm:text-base text-zinc-300 leading-relaxed text-pretty">
-              Full-stack transactional ticketing engine featuring real-time theater seat reservation,
-              ACID-compliant concurrency locking in MariaDB, secure REST APIs, and an admin box-office dashboard.
+              Full-stack transactional ticketing engine with real-time auditorium seat allocation,
+              ACID-compliant concurrency locking in relational SQL, JWT auth, and an administrative box-office dashboard.
             </p>
           </div>
 
           {/* Tech Badges */}
           <div className="flex flex-wrap gap-2 pt-1" aria-label="Technologies used in CineFilm">
-            {["Django", "React", "MariaDB", "REST API", "Tailwind CSS", "JWT Auth"].map((tech) => (
+            {["JavaScript", "SQL", "DBMS", "REST API", "Tailwind CSS", "Relational Schema"].map((tech) => (
               <span
                 key={tech}
                 className="text-xs font-mono px-3 py-1 rounded-full bg-[#1d1916] border border-white/[0.08] text-zinc-200"
@@ -44,21 +51,22 @@ export function FlagshipProjectCard() {
             ))}
           </div>
 
-          {/* Actions & Live Telemetry */}
+          {/* Actions & Real Repo Link */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href="https://github.com/Ahnaf-Zahin-Alif"
+              href="https://github.com/Ahnaf-Zahin-Alif/Dbms-Project"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f07b3f] hover:bg-[#e06c30] text-zinc-950 font-semibold text-xs sm:text-sm transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f]"
-              aria-label="View CineFilm repository"
+              aria-label="View CineFilm Dbms-Project on GitHub"
             >
-              <span>Explore Architecture</span>
+              <Database className="w-4 h-4" strokeWidth={1.5} aria-hidden="true" />
+              <span>View GitHub: Dbms-Project</span>
               <ArrowUpRight className="w-4 h-4" strokeWidth={1.5} aria-hidden="true" />
             </a>
             <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
               <span className="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse" aria-hidden="true" />
-              <span className="tabular-nums">MariaDB Latency: ~38ms • ACID Safe</span>
+              <span className="tabular-nums">SQL Latency: ~38ms • ACID Safe</span>
             </div>
           </div>
         </div>
@@ -114,6 +122,6 @@ export function FlagshipProjectCard() {
           </div>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

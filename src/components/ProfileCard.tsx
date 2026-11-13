@@ -1,8 +1,16 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export function ProfileCard() {
   return (
-    <div className="relative w-full max-w-sm mx-auto flex items-center justify-center py-4">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95, y: 12 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 0.55, ease: "easeOut", delay: 0.08 }}
+      className="relative w-full max-w-sm mx-auto flex items-center justify-center py-4"
+    >
       {/* Subtle Radial Spotlight Lighting */}
       <div
         className="absolute -inset-6 bg-[radial-gradient(ellipse_at_center,rgba(240,123,63,0.16),transparent_70%)] blur-2xl pointer-events-none -z-10"
@@ -32,6 +40,6 @@ export function ProfileCard() {
           aria-hidden="true"
         />
       </div>
-    </div>
+    </motion.div>
   );
 }

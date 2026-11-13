@@ -14,6 +14,7 @@
 | [D-009](#d-009-semantic-html-hierarchy-and-schemaorg-json-ld-integration) | Semantic HTML Hierarchy and Schema.org JSON-LD Integration | Accepted | 2026-11-13 |
 | [D-010](#d-010-google-site-verification-hook-and-live-seo-production-server-validation) | Google Site Verification Hook and Live SEO Production Server Validation | Accepted | 2026-11-13 |
 | [D-011](#d-011-obsidian-studio-surfaces-concentric-geometry-and-real-showcase-architecture) | Obsidian Studio Surfaces, Concentric Geometry, and Real Showcase Architecture | Accepted | 2026-11-13 |
+| [D-012](#d-012-framer-motion-kinetic-choreography-domain-marquee-and-real-repo-wiring) | Framer Motion Kinetic Choreography, Domain Marquee, and Real Repo Wiring | Accepted | 2026-11-13 |
 
 ---
 
@@ -137,3 +138,19 @@
   - Add utility micro-interactions including a live Dhaka (GMT+6) clock with `tabular-nums` and a one-click "Copy email" button with tactile checkmark confirmation.
 - **Why**: Delivers a high-craft, distinct art direction with deep visual hierarchy, authentic project substance, and zero generic template filler while maintaining 100% adherence to performance and SEO.
 - **Rejected Alternatives**: Using generic 3-column equal-weight card grids or leaving empty placeholder boxes.
+
+---
+
+### D-012: Framer Motion Kinetic Choreography, Domain Marquee, and Real Repo Wiring
+- **Status**: Accepted
+- **Context**: The user requested Phase 3 fluid motion and utility micro-interactions (staggered hero entrances, whileInView section reveals, sliding layoutId active pill, pause-on-hover domain marquee, Cmd+K command palette, spring back-to-top button), along with wiring real GitHub repositories for CineFilm (`Dbms-Project`) and MediCare (`Hospital-Management-System`).
+- **Decision**:
+  - Install `framer-motion` and wrap in `<MotionConfig reducedMotion="user">` via `<PortfolioShell />` to preserve Server Component architecture and native SEO metadata on `src/app/page.tsx`.
+  - Implement GPU-composited animations (`opacity`, `transform`) only: 60ms staggered hero intro variants, `whileInView` reveals across sections (`viewport={{ once: true, amount: 0.15 }}`), and spring hover elevations (`stiffness: 280, damping: 24`).
+  - Add `layoutId="active-nav-pill"` for sliding active navigation background in `Navbar`.
+  - Create `<DomainMarquee />` highlighting core engineering disciplines with pause-on-hover.
+  - Create `<CommandPalette />` for keyboard navigation (`Cmd/Ctrl+K`) and quick actions (Copy Email, Jump to sections, External profile links).
+  - Create `<BackToTop />` with spring physics and scroll visibility threshold (>400px).
+  - Wire real GitHub repository links to project showcases: CineFilm (`Dbms-Project`), MediCare (`Hospital-Management-System`), ProjectTracker (`ProjectTracker`), and 30DaysOfPython (`30DaysOfPython`).
+- **Why**: Delivers modern studio fluid interactivity, tactile feedback, and direct access to authentic code repositories without degrading Web Vitals or breaking native SEO.
+- **Rejected Alternatives**: Relying on bloated full-page animation frameworks or CSS marquee hacks that cause layout jank.

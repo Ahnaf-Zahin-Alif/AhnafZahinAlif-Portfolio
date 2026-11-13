@@ -1,23 +1,30 @@
+"use client";
+
 import { Download, GraduationCap, Code2, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function CvSection() {
   return (
-    <section
+    <motion.section
       id="cv"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="w-full py-14 border-t border-white/[0.08] scroll-mt-24"
       aria-labelledby="cv-heading"
     >
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
         <div>
-          <span className="text-[11px] font-bold tracking-widest text-[#f07b3f] uppercase block pb-1">
-            EXPERIENCE & EDUCATION
+          <span className="text-[11px] font-bold tracking-widest text-[#f07b3f] uppercase block pb-1 font-mono">
+            EXPERIENCE &amp; EDUCATION
           </span>
           <h2
             id="cv-heading"
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-100 tracking-tight text-balance"
           >
-            Academic & Systems Journey
+            Academic &amp; Systems Journey
           </h2>
         </div>
 
@@ -80,17 +87,17 @@ export function CvSection() {
             </div>
             <div>
               <span className="text-xs font-mono text-zinc-400 block uppercase">ENGINEERING FOCUS</span>
-              <h3 className="text-lg font-bold text-zinc-100">Algorithms & Architecture</h3>
+              <h3 className="text-lg font-bold text-zinc-100">Algorithms &amp; Architecture</h3>
             </div>
           </div>
 
           <div className="space-y-1">
             <p className="text-sm font-semibold text-zinc-200">
-              Competitive Programming & Systems
+              Competitive Programming &amp; Systems
             </p>
             <div className="flex items-center gap-2 text-xs font-mono text-[#f07b3f]">
               <Calendar className="w-3.5 h-3.5" strokeWidth={1.5} aria-hidden="true" />
-              <span className="tabular-nums">Codeforces & CodeChef Active Contestant</span>
+              <span className="tabular-nums">Codeforces &amp; CodeChef Active Contestant</span>
             </div>
           </div>
 
@@ -111,6 +118,6 @@ export function CvSection() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
