@@ -4,6 +4,22 @@
   :root {
     --font-inter: 'Inter', sans-serif;
     --font-jetbrains: 'JetBrains Mono', monospace;
+
+    /* 3-Tier Obsidian Surface System */
+    --surface-canvas: #0c0a09;
+    --surface-card: #151311;
+    --surface-interactive: #1d1916;
+    --surface-elevated: #24201c;
+
+    /* Hairline Borders */
+    --border-hairline: rgba(255, 255, 255, 0.08);
+    --border-hairline-hover: rgba(255, 255, 255, 0.16);
+
+    /* Accents */
+    --accent-primary: #f07b3f;
+    --accent-primary-hover: #e06c30;
+    --accent-cyan: #38bdf8;
+    --accent-cream: #fce19b;
   }
 }
 
@@ -19,6 +35,8 @@ html {
 
 body {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  background-color: #0c0a09;
+  color: #f4f4f5;
   overflow-x: hidden;
 }
 

@@ -43,15 +43,18 @@ export function HeroIntro() {
           </div>
         </div>
 
-        {/* NOW Status Block */}
+        {/* NOW Status Block with Cyan Live Pulse */}
         <div className="border-l-2 border-[#f07b3f] pl-4 py-1 space-y-2 my-6">
-          <span className="text-[11px] font-bold tracking-widest text-zinc-400 uppercase block">
-            NOW
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse" aria-hidden="true" />
+            <span className="text-[11px] font-bold tracking-widest text-[#38bdf8] uppercase">
+              ACTIVE STATUS
+            </span>
+          </div>
           <div className="space-y-1 text-sm sm:text-base font-medium text-zinc-200 text-pretty">
             <p>ICT student at BUP</p>
-            <p>Specializing in low-level programming and algorithms</p>
-            <p>Building full-stack projects</p>
+            <p>Specializing in low-level programming & algorithms</p>
+            <p>Architecting full-stack & backend systems</p>
           </div>
         </div>
       </div>

@@ -1,89 +1,88 @@
-interface LanguageItem {
-  name: string;
-  role: string;
+interface StackGroup {
+  category: string;
+  skills: { name: string; detail: string }[];
 }
 
-const languages: LanguageItem[] = [
-  { name: "C", role: "System Programming" },
-  { name: "C++", role: "Competitive Programming" },
-  { name: "Java", role: "Object-Oriented Programming" },
-  { name: "Python", role: "Scripting & Automation" },
+const stackGroups: StackGroup[] = [
+  {
+    category: "SYSTEMS & LANGUAGES",
+    skills: [
+      { name: "C", detail: "Low-Level & System Architecture" },
+      { name: "C++", detail: "Algorithms & Competitive Programming" },
+      { name: "Java", detail: "Object-Oriented Programming" },
+      { name: "Python", detail: "Automation & Scripting" },
+      { name: "SQL", detail: "Relational Schemas & Queries" },
+    ],
+  },
+  {
+    category: "BACKEND & FULL-STACK",
+    skills: [
+      { name: "Django", detail: "REST APIs & ORM" },
+      { name: "React", detail: "Component Architecture" },
+      { name: "Next.js", detail: "App Router & SSR" },
+      { name: "TypeScript", detail: "Type-Safe Systems" },
+      { name: "Node.js", detail: "Server Environments" },
+    ],
+  },
+  {
+    category: "DATABASES & ENGINEERING TOOLS",
+    skills: [
+      { name: "PostgreSQL", detail: "Relational Database" },
+      { name: "MariaDB", detail: "Transactional Storage" },
+      { name: "Docker", detail: "Containerization" },
+      { name: "Git & GitHub", detail: "Version Control & CI" },
+      { name: "Linux / Bash", detail: "System Environment" },
+      { name: "Packet Tracer", detail: "Network Routing & ACLs" },
+    ],
+  },
 ];
 
 export function TechStack() {
   return (
-    <section className="w-full py-10 border-t border-zinc-800" aria-labelledby="stack-heading">
-      {/* Section Header */}
-      <div className="mb-4">
-        <h2
-          id="stack-heading"
-          className="text-[11px] font-bold tracking-widest text-zinc-400 uppercase block pb-3"
-        >
-          STACK
-        </h2>
+    <section className="w-full py-12 border-t border-white/[0.08]" aria-labelledby="stack-heading">
+      <div className="mb-6 flex items-center justify-between">
+        <div>
+          <h2
+            id="stack-heading"
+            className="text-[11px] font-bold tracking-widest text-[#f07b3f] uppercase block pb-1"
+          >
+            TECHNICAL CAPABILITIES
+          </h2>
+          <p className="text-xl sm:text-2xl font-bold text-zinc-100 tracking-tight text-balance">
+            Core Languages, Systems & Engineering Stack
+          </p>
+        </div>
       </div>
 
-      <div className="border-t border-zinc-800 divide-y divide-zinc-800/80">
-        {/* Row 1: Languages */}
-        <div className="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-          <div className="md:col-span-3">
-            <h3 className="text-xs font-semibold tracking-wider text-zinc-400 uppercase">
-              LANGUAGES
-            </h3>
+      <div className="border-t border-white/[0.08] divide-y divide-white/[0.06]">
+        {stackGroups.map((group) => (
+          <div
+            key={group.category}
+            className="py-5 sm:py-6 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-start"
+          >
+            <div className="lg:col-span-3">
+              <h3 className="text-xs font-semibold tracking-wider text-zinc-400 uppercase pt-1.5">
+                {group.category}
+              </h3>
+            </div>
+            <div className="lg:col-span-9 flex flex-wrap items-center gap-2 sm:gap-2.5">
+              {group.skills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#151311] border border-white/[0.08] text-xs sm:text-sm text-zinc-200 shadow-sm transition-colors hover:border-white/[0.18]"
+                >
+                  <span className="font-bold text-zinc-100 font-mono text-xs">
+                    {skill.name}
+                  </span>
+                  <span className="text-zinc-600 text-xs" aria-hidden="true">•</span>
+                  <span className="text-zinc-400 text-[11px] sm:text-xs">
+                    {skill.detail}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="md:col-span-9 flex flex-wrap items-center gap-2.5">
-            {languages.map((item) => (
-              <div
-                key={item.name}
-                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-[#181513] border border-zinc-800 text-xs sm:text-sm text-zinc-200 shadow-sm"
-              >
-                <span className="font-bold text-zinc-100 font-mono">
-                  {item.name}
-                </span>
-                <span className="text-zinc-600" aria-hidden="true">—</span>
-                <span className="text-zinc-400 text-xs">
-                  {item.role}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Row 2: Frameworks & Databases */}
-        <div className="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-          <div className="md:col-span-3">
-            <h3 className="text-xs font-semibold tracking-wider text-zinc-400 uppercase">
-              FRAMEWORKS & DATABASES
-            </h3>
-          </div>
-          <div className="md:col-span-9 flex items-center">
-            <button
-              type="button"
-              className="inline-flex items-center px-4 py-1.5 rounded-full border border-dashed border-zinc-700 text-xs font-medium text-zinc-400 hover:text-zinc-200 hover:border-zinc-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100e]"
-              aria-label="Add framework or database skill"
-            >
-              + Add skill
-            </button>
-          </div>
-        </div>
-
-        {/* Row 3: Tools */}
-        <div className="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-          <div className="md:col-span-3">
-            <h3 className="text-xs font-semibold tracking-wider text-zinc-400 uppercase">
-              TOOLS
-            </h3>
-          </div>
-          <div className="md:col-span-9 flex items-center">
-            <button
-              type="button"
-              className="inline-flex items-center px-4 py-1.5 rounded-full border border-dashed border-zinc-700 text-xs font-medium text-zinc-400 hover:text-zinc-200 hover:border-zinc-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100e]"
-              aria-label="Add tool skill"
-            >
-              + Add skill
-            </button>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

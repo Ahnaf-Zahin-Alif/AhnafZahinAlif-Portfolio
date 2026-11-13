@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#12100e] text-zinc-100">
+    <div className="min-h-screen bg-[#0c0a09] text-zinc-100">
       {/* Top Header Navigation */}
       <Navbar />
 
@@ -54,10 +54,10 @@ export default function Home() {
         <ReviewsSection />
 
         {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
+        <footer className="mt-16 pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
           <p>© 2026 Md. Ahnaf Zahin Alif. All rights reserved.</p>
-          <p className="text-zinc-400">
-            Crafted with Next.js & Tailwind CSS
+          <p className="text-zinc-500 font-mono text-[11px]">
+            Obsidian Studio Architecture • Next.js & Tailwind
           </p>
         </footer>
       </main>

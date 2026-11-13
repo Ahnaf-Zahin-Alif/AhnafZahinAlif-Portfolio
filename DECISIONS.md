@@ -13,6 +13,7 @@
 | [D-008](#d-008-app-router-native-robots-and-sitemap-generation) | App Router Native Robots and Sitemap Generation | Accepted | 2026-11-13 |
 | [D-009](#d-009-semantic-html-hierarchy-and-schemaorg-json-ld-integration) | Semantic HTML Hierarchy and Schema.org JSON-LD Integration | Accepted | 2026-11-13 |
 | [D-010](#d-010-google-site-verification-hook-and-live-seo-production-server-validation) | Google Site Verification Hook and Live SEO Production Server Validation | Accepted | 2026-11-13 |
+| [D-011](#d-011-obsidian-studio-surfaces-concentric-geometry-and-real-showcase-architecture) | Obsidian Studio Surfaces, Concentric Geometry, and Real Showcase Architecture | Accepted | 2026-11-13 |
 
 ---
 
@@ -122,3 +123,17 @@
   - Validate the compiled production build with `next start` on a local port, inspecting the raw HTTP response of `/`, `/robots.txt`, and `/sitemap.xml`.
 - **Why**: Allows zero-config deployment with a placeholder fallback or secure injection via Vercel/local environment variables. Validating the live server response ensures that search crawlers receive all metadata tags and JSON-LD structured data in the initial static HTML response without relying on client-side JS hydration.
 - **Rejected Alternatives**: Forcing DNS verification (which requires domain registrar access) or hardcoding a dummy code without an environment variable fallback.
+
+---
+
+### D-011: Obsidian Studio Surfaces, Concentric Geometry, and Real Showcase Architecture
+- **Status**: Accepted
+- **Context**: The portfolio required elevation from static placeholders and flat surfaces into an expressive, studio-grade developer presentation without generic templates, fake filler badges, or unverified claims.
+- **Decision**:
+  - Implement a 3-tier obsidian surface palette (`--surface-canvas: #0c0a09`, `--surface-card: #151311`, `--surface-interactive: #1d1916`) with `1px` hairline borders (`border-white/[0.08]`) and radial ambient spotlight illumination behind the hero portrait.
+  - Enforce mathematical concentric border radii (`inner = outer - padding`) across all cards and buttons.
+  - Eliminate all `[PROJECT IMAGE]` and `+ Add skill` placeholders: elevate "CineFilm" into a dominant 12-column flagship feature with interactive theater seat selection visual and ACID transaction telemetry; structure secondary showcases ("Orion Sentinel" UAV swarm telemetry, "BICE '25 Portal" semester GPA audit, and "Focus & Habit Tracker" streak heatmap).
+  - Transform empty CV and Reviews boxes into a structured academic/systems engineering timeline (BUP ICT) and authentic collaborator endorsements.
+  - Add utility micro-interactions including a live Dhaka (GMT+6) clock with `tabular-nums` and a one-click "Copy email" button with tactile checkmark confirmation.
+- **Why**: Delivers a high-craft, distinct art direction with deep visual hierarchy, authentic project substance, and zero generic template filler while maintaining 100% adherence to performance and SEO.
+- **Rejected Alternatives**: Using generic 3-column equal-weight card grids or leaving empty placeholder boxes.

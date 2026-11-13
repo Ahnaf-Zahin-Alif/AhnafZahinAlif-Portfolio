@@ -3,14 +3,20 @@ import Image from "next/image";
 export function ProfileCard() {
   return (
     <div className="relative w-full max-w-sm mx-auto flex items-center justify-center py-4">
-      {/* Offset Yellow/Cream Depth Layer */}
+      {/* Subtle Radial Spotlight Lighting */}
+      <div
+        className="absolute -inset-6 bg-[radial-gradient(ellipse_at_center,rgba(240,123,63,0.16),transparent_70%)] blur-2xl pointer-events-none -z-10"
+        aria-hidden="true"
+      />
+
+      {/* Offset Yellow/Cream Tactile Depth Layer */}
       <div
         className="absolute inset-0 translate-x-3 translate-y-3 rounded-[2rem] bg-[#fce19b] pointer-events-none"
         aria-hidden="true"
       />
 
-      {/* Main Profile Card Container */}
-      <div className="relative w-full h-[420px] sm:h-[460px] rounded-[2rem] bg-[#1a1715] border border-zinc-800 shadow-xl overflow-hidden">
+      {/* Main Profile Card Container with 1px Hairline Border */}
+      <div className="relative w-full h-[420px] sm:h-[460px] rounded-[2rem] bg-[#151311] border border-white/[0.08] shadow-2xl overflow-hidden">
         <Image
           src="/profile.jpg"
           alt="Portrait photograph of Md. Ahnaf Zahin Alif, Fullstack Software Engineer"
@@ -21,7 +27,10 @@ export function ProfileCard() {
         />
 
         {/* Subtle bottom vignette gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" aria-hidden="true" />
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"
+          aria-hidden="true"
+        />
       </div>
     </div>
   );

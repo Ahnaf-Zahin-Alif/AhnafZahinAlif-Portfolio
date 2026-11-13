@@ -1,72 +1,81 @@
-import { ProjectCard, ProjectData } from "./ProjectCard";
+import { FlagshipProjectCard } from "./FlagshipProjectCard";
+import { ProjectCard, SecondaryProjectData } from "./ProjectCard";
 import { ArrowRight } from "lucide-react";
 
-const projects: ProjectData[] = [
-  {
-    index: "01",
-    badge: "FULL-STACK",
-    title: "Toy Shop",
-    description:
-      "Full-stack e-commerce site for a Facebook/WhatsApp-based toy business, with an admin dashboard, online payments and courier integration.",
-    tags: [
-      "React",
-      "Node.js",
-      "Express",
-      "PostgreSQL",
-      "SSLCommerz",
-      "Steadfast API",
-    ],
-    link: "#",
-  },
+const secondaryProjects: SecondaryProjectData[] = [
   {
     index: "02",
-    badge: "IN PROGRESS",
-    title: "Cinefilm",
-    description: "A cinema ticketing website, currently in development.",
-    tags: ["Movie ticketing"],
-    link: "#",
+    badge: "UAV & SYSTEMS",
+    title: "Orion Sentinel — Swarm SOS Interface",
+    description:
+      "Decentralized UAV swarm communication mesh for emergency coordinate broadcasting and low-bandwidth telemetry synchronization.",
+    tags: ["C++", "Python", "Mesh Network", "Telemetry", "Socket.IO"],
+    type: "uav",
+    link: "https://github.com/Ahnaf-Zahin-Alif",
   },
   {
     index: "03",
-    badge: "LAB PROJECT",
-    title: "Gaming Center Network",
+    badge: "ACADEMIC PORTAL",
+    title: "BICE '25 Portal & CGPA Calculator",
     description:
-      "Network design and implementation for a gaming center in Cisco Packet Tracer, covering router and switch configuration, routing, DHCP, NAT, ACLs and testing.",
-    tags: ["Cisco Packet Tracer", "Routing", "DHCP", "NAT", "ACLs"],
-    link: "#",
+      "Academic resource management system for BUP ICT students featuring real-time credit auditing and grade point forecasting.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+    type: "academic",
+    link: "https://github.com/Ahnaf-Zahin-Alif",
+  },
+  {
+    index: "04",
+    badge: "PRODUCTIVITY",
+    title: "Focus & Habit Tracker",
+    description:
+      "Algorithmic habit consistency platform with streak velocity analytics, spaced interval reminders, and offline-first persistence.",
+    tags: ["React", "TypeScript", "Local-First", "Tailwind CSS"],
+    type: "habit",
+    link: "https://github.com/Ahnaf-Zahin-Alif",
   },
 ];
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="w-full py-12 border-t border-zinc-800 scroll-mt-24" aria-labelledby="projects-heading">
-      {/* Header */}
+    <section
+      id="projects"
+      className="w-full py-14 border-t border-white/[0.08] scroll-mt-24"
+      aria-labelledby="projects-heading"
+    >
+      {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
-        <div className="space-y-1">
-          <span className="text-xs font-semibold tracking-widest text-[#f07b3f] uppercase block">
-            PROJECTS
+        <div>
+          <span className="text-[11px] font-bold tracking-widest text-[#f07b3f] uppercase block pb-1">
+            FEATURED ENGINEERING
           </span>
           <h2
             id="projects-heading"
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-100 tracking-tight text-balance"
           >
-            Selected work
+            Selected Systems & Projects
           </h2>
         </div>
 
         <a
-          href="#projects"
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-zinc-700 bg-[#1a1715] hover:bg-[#221e1a] hover:border-zinc-500 text-xs sm:text-sm font-semibold text-zinc-200 transition-colors w-max shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100e]"
-          aria-label="View all projects"
+          href="https://github.com/Ahnaf-Zahin-Alif"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/[0.12] bg-[#151311] hover:bg-[#1d1916] text-xs sm:text-sm font-semibold text-zinc-200 transition-colors w-max shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f]"
+          aria-label="View all repositories on GitHub"
         >
-          <span>All projects</span>
-          <ArrowRight className="w-4 h-4" aria-hidden="true" focusable="false" />
+          <span>All GitHub Repos</span>
+          <ArrowRight className="w-4 h-4" strokeWidth={1.5} aria-hidden="true" />
         </a>
       </div>
 
-      {/* 3-Column Project Grid */}
+      {/* Flagship Dominant Feature Showcase */}
+      <div className="mb-8">
+        <FlagshipProjectCard />
+      </div>
+
+      {/* 3-Column Secondary Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
+        {secondaryProjects.map((project) => (
           <ProjectCard key={project.index} project={project} />
         ))}
       </div>
