@@ -10,6 +10,7 @@
 | [D-005](#d-005-mobile-only-compact-profile-photo-placement) | Mobile-Only Compact Profile Photo Placement | Accepted | 2026-10-10 |
 | [D-006](#d-006-unslop-design-system-polish) | Unslop Design System Polish | Accepted | 2026-11-13 |
 | [D-007](#d-007-native-app-router-seo-metadata-architecture) | Native App Router SEO Metadata Architecture | Accepted | 2026-11-13 |
+| [D-008](#d-008-app-router-native-robots-and-sitemap-generation) | App Router Native Robots and Sitemap Generation | Accepted | 2026-11-13 |
 
 ---
 
@@ -84,3 +85,14 @@
   - Provide dedicated unique metadata on `src/app/page.tsx` (`canonical: "/"`) and `src/app/not-found.tsx` (`Page Not Found`, `robots: noindex, nofollow`).
 - **Why**: Complies with Next.js App Router best practices, prevents duplicate indexing, and enables rich social previews without modifying any visual CSS or layout.
 - **Rejected Alternatives**: Adding raw `<head>` tags in HTML or using third-party SEO wrapper libraries.
+
+---
+
+### D-008: App Router Native Robots and Sitemap Generation
+- **Status**: Accepted
+- **Context**: Search engine bots and crawlers require `/robots.txt` and `/sitemap.xml` endpoints returning HTTP 200 to discover, crawl, and index the portfolio.
+- **Decision**:
+  - Implement `src/app/robots.ts` using Next.js MetadataRoute API: allow all user agents (`Allow: /`), disallow `/api/` and `/private/`, and reference `https://ahnaf-zahin-alif.vercel.app/sitemap.xml`.
+  - Implement `src/app/sitemap.ts` using Next.js MetadataRoute API: include `https://ahnaf-zahin-alif.vercel.app` with `lastModified: new Date()`, `changeFrequency: "monthly"`, and `priority: 1.0`.
+- **Why**: Native App Router conventions automatically generate static `/robots.txt` and `/sitemap.xml` endpoints during build without requiring custom server routes, preventing 404 interception and ensuring proper crawler indexing.
+- **Rejected Alternatives**: Placing manual static text/xml files in `public/`, which are prone to desync and lack typed schema validation.
