@@ -39,14 +39,17 @@ const projects: ProjectData[] = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="w-full py-12 border-t border-zinc-800 scroll-mt-24">
+    <section id="projects" className="w-full py-12 border-t border-zinc-800 scroll-mt-24" aria-labelledby="projects-heading">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
         <div className="space-y-1">
           <span className="text-xs font-semibold tracking-widest text-[#f07b3f] uppercase block">
             PROJECTS
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-100 tracking-tight text-balance">
+          <h2
+            id="projects-heading"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-100 tracking-tight text-balance"
+          >
             Selected work
           </h2>
         </div>
@@ -57,7 +60,7 @@ export function ProjectsSection() {
           aria-label="View all projects"
         >
           <span>All projects</span>
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="w-4 h-4" aria-hidden="true" focusable="false" />
         </a>
       </div>
 

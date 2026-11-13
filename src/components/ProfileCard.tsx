@@ -13,7 +13,7 @@ export function ProfileCard() {
       <div className="relative w-full h-[420px] sm:h-[460px] rounded-[2rem] bg-[#1a1715] border border-zinc-800 shadow-xl overflow-hidden">
         <Image
           src="/profile.jpg"
-          alt="Md. Ahnaf Zahin Alif"
+          alt="Portrait photograph of Md. Ahnaf Zahin Alif, Fullstack Software Engineer"
           fill
           priority
           sizes="(max-width: 768px) 90vw, (max-width: 1200px) 33vw, 384px"
@@ -21,7 +21,7 @@ export function ProfileCard() {
         />
 
         {/* Subtle bottom vignette gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" aria-hidden="true" />
       </div>
     </div>
   );

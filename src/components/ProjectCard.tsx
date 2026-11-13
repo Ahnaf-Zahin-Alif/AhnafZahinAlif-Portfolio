@@ -46,7 +46,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </p>
 
           {/* Tech Tags */}
-          <div className="flex flex-wrap gap-1.5 pt-2">
+          <div className="flex flex-wrap gap-1.5 pt-2" aria-label={`Technologies used in ${project.title}`}>
             {project.tags.map((tag) => (
               <span
                 key={tag}
@@ -66,7 +66,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             aria-label={`View project details for ${project.title}`}
           >
             <span>View project</span>
-            <ArrowUpRight className="w-4 h-4" />
+            <ArrowUpRight className="w-4 h-4" aria-hidden="true" focusable="false" />
           </a>
         </div>
       </div>

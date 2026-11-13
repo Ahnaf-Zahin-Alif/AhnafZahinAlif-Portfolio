@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { StructuredData } from "@/components/StructuredData";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -92,6 +93,7 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} dark`}
     >
       <body className="bg-[#12100e] text-zinc-100 min-h-screen antialiased selection:bg-[#f07b3f]/30 selection:text-[#f07b3f]">
+        <StructuredData />
         {children}
       </body>
     </html>

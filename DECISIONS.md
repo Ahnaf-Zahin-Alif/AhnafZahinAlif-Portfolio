@@ -11,6 +11,7 @@
 | [D-006](#d-006-unslop-design-system-polish) | Unslop Design System Polish | Accepted | 2026-11-13 |
 | [D-007](#d-007-native-app-router-seo-metadata-architecture) | Native App Router SEO Metadata Architecture | Accepted | 2026-11-13 |
 | [D-008](#d-008-app-router-native-robots-and-sitemap-generation) | App Router Native Robots and Sitemap Generation | Accepted | 2026-11-13 |
+| [D-009](#d-009-semantic-html-hierarchy-and-schemaorg-json-ld-integration) | Semantic HTML Hierarchy and Schema.org JSON-LD Integration | Accepted | 2026-11-13 |
 
 ---
 
@@ -96,3 +97,16 @@
   - Implement `src/app/sitemap.ts` using Next.js MetadataRoute API: include `https://ahnaf-zahin-alif.vercel.app` with `lastModified: new Date()`, `changeFrequency: "monthly"`, and `priority: 1.0`.
 - **Why**: Native App Router conventions automatically generate static `/robots.txt` and `/sitemap.xml` endpoints during build without requiring custom server routes, preventing 404 interception and ensuring proper crawler indexing.
 - **Rejected Alternatives**: Placing manual static text/xml files in `public/`, which are prone to desync and lack typed schema validation.
+
+---
+
+### D-009: Semantic HTML Hierarchy and Schema.org JSON-LD Integration
+- **Status**: Accepted
+- **Context**: Search engine scrapers and screen readers encountered non-semantic `<span>` elements for major sections, decorative icons lacking `aria-hidden`, and no structured data for knowledge graph indexing.
+- **Decision**:
+  - Convert `STACK` and `CONTACT` labels to semantic `<h2>` elements and row categories (`LANGUAGES`, `FRAMEWORKS & DATABASES`, `TOOLS`) to `<h3>` elements, preserving their exact CSS classes.
+  - Enhance `alt` attributes on profile images in `ProfileCard` and `HeroIntro`.
+  - Add `aria-hidden="true"` and `focusable="false"` to non-interactive decorative SVG icons.
+  - Create `<StructuredData />` in `src/components/StructuredData.tsx` rendering Schema.org `Person` (with GitHub, Codeforces, Codechef, LinkedIn, X, and BUP) and `WebSite` graph entities.
+- **Why**: Establishes a strict, accessible single-`<h1>` document outline and provides rich structured snippets without altering any visual styling or layout.
+- **Rejected Alternatives**: Leaving sections as generic non-semantic `span` wrappers.

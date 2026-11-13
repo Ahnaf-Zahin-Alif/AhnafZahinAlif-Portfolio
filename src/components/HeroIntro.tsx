@@ -32,7 +32,7 @@ export function HeroIntro() {
               <div className="relative w-24 h-28 sm:w-28 sm:h-32 rounded-2xl bg-[#1a1715] border border-zinc-800 shadow-md overflow-hidden">
                 <Image
                   src="/profile.jpg"
-                  alt="Md. Ahnaf Zahin Alif"
+                  alt="Portrait of Md. Ahnaf Zahin Alif, Fullstack Software Engineer"
                   fill
                   priority
                   sizes="(max-width: 640px) 96px, 112px"
@@ -64,7 +64,7 @@ export function HeroIntro() {
           aria-label="See projects"
         >
           <span>See projects</span>
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="w-4 h-4" aria-hidden="true" focusable="false" />
         </Link>
         <a
           href="#cv"

@@ -61,7 +61,11 @@ export function Navbar() {
             className="p-2 rounded-xl text-zinc-300 hover:bg-zinc-800/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100e]"
             aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" aria-hidden="true" focusable="false" />
+            ) : (
+              <Menu className="w-6 h-6" aria-hidden="true" focusable="false" />
+            )}
           </button>
         </div>
       </div>

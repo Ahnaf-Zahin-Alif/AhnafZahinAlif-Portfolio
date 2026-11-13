@@ -12,21 +12,24 @@ const languages: LanguageItem[] = [
 
 export function TechStack() {
   return (
-    <section className="w-full py-10 border-t border-zinc-800">
+    <section className="w-full py-10 border-t border-zinc-800" aria-labelledby="stack-heading">
       {/* Section Header */}
       <div className="mb-4">
-        <span className="text-[11px] font-bold tracking-widest text-zinc-400 uppercase block pb-3">
+        <h2
+          id="stack-heading"
+          className="text-[11px] font-bold tracking-widest text-zinc-400 uppercase block pb-3"
+        >
           STACK
-        </span>
+        </h2>
       </div>
 
       <div className="border-t border-zinc-800 divide-y divide-zinc-800/80">
         {/* Row 1: Languages */}
         <div className="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
           <div className="md:col-span-3">
-            <span className="text-xs font-semibold tracking-wider text-zinc-400 uppercase">
+            <h3 className="text-xs font-semibold tracking-wider text-zinc-400 uppercase">
               LANGUAGES
-            </span>
+            </h3>
           </div>
           <div className="md:col-span-9 flex flex-wrap items-center gap-2.5">
             {languages.map((item) => (
@@ -37,7 +40,7 @@ export function TechStack() {
                 <span className="font-bold text-zinc-100 font-mono">
                   {item.name}
                 </span>
-                <span className="text-zinc-600">—</span>
+                <span className="text-zinc-600" aria-hidden="true">—</span>
                 <span className="text-zinc-400 text-xs">
                   {item.role}
                 </span>
@@ -49,9 +52,9 @@ export function TechStack() {
         {/* Row 2: Frameworks & Databases */}
         <div className="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
           <div className="md:col-span-3">
-            <span className="text-xs font-semibold tracking-wider text-zinc-400 uppercase">
+            <h3 className="text-xs font-semibold tracking-wider text-zinc-400 uppercase">
               FRAMEWORKS & DATABASES
-            </span>
+            </h3>
           </div>
           <div className="md:col-span-9 flex items-center">
             <button
@@ -67,9 +70,9 @@ export function TechStack() {
         {/* Row 3: Tools */}
         <div className="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
           <div className="md:col-span-3">
-            <span className="text-xs font-semibold tracking-wider text-zinc-400 uppercase">
+            <h3 className="text-xs font-semibold tracking-wider text-zinc-400 uppercase">
               TOOLS
-            </span>
+            </h3>
           </div>
           <div className="md:col-span-9 flex items-center">
             <button

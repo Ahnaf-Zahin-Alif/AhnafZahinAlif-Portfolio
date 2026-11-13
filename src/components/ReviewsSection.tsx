@@ -1,8 +1,8 @@
 export function ReviewsSection() {
   return (
-    <section id="reviews" className="w-full py-12 border-t border-zinc-800 scroll-mt-24">
+    <section id="reviews" className="w-full py-12 border-t border-zinc-800 scroll-mt-24" aria-labelledby="reviews-heading">
       <div className="mb-8">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-100 tracking-tight text-balance">
+        <h2 id="reviews-heading" className="text-2xl sm:text-3xl font-extrabold text-zinc-100 tracking-tight text-balance">
           Reviews & Recommendations
         </h2>
       </div>

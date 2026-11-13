@@ -43,12 +43,15 @@ const contactList: ContactItem[] = [
 
 export function ContactPanel() {
   return (
-    <div className="w-full flex flex-col justify-between h-full pt-1">
+    <div className="w-full flex flex-col justify-between h-full pt-1" aria-labelledby="contact-heading">
       {/* Header */}
       <div>
-        <span className="text-[11px] font-bold tracking-widest text-zinc-400 uppercase block pb-3">
+        <h2
+          id="contact-heading"
+          className="text-[11px] font-bold tracking-widest text-zinc-400 uppercase block pb-3"
+        >
           CONTACT
-        </span>
+        </h2>
       </div>
 
       {/* Contact Entries */}
@@ -70,7 +73,9 @@ export function ContactPanel() {
                 }`}
               >
                 <span>{item.value}</span>
-                {item.isExternal && <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400" />}
+                {item.isExternal && (
+                  <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400" aria-hidden="true" focusable="false" />
+                )}
               </a>
             ) : (
               <span className="font-mono text-xs sm:text-sm text-zinc-200 block">
