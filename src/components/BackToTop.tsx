@@ -29,7 +29,7 @@ export function BackToTop() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 16, scale: 0.9 }}
           whileHover={{ y: -3 }}
-          whileTap={{ scale: 0.95 }}
+          whileTap={{ scale: 0.97 }}
           transition={{ type: "spring", stiffness: 280, damping: 26 }}
           className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#151311] border border-white/[0.12] text-[#f07b3f] hover:text-zinc-100 hover:border-white/[0.24] shadow-2xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f]"
           aria-label="Back to top of page"

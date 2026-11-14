@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
 import { PortfolioShell } from "@/components/PortfolioShell";
-import { HeroSection } from "@/components/HeroSection";
-import { DomainMarquee } from "@/components/DomainMarquee";
-import { TechStack } from "@/components/TechStack";
-import { ProjectsSection } from "@/components/ProjectsSection";
-import { CvSection } from "@/components/CvSection";
-import { ReviewsSection } from "@/components/ReviewsSection";
 
 export const metadata: Metadata = {
   title: "Md. Ahnaf Zahin Alif | Fullstack Software Engineer",
@@ -41,26 +35,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return (
-    <PortfolioShell>
-      <div className="min-h-screen bg-[#0c0a09] text-zinc-100">
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          <HeroSection />
-          <DomainMarquee />
-          <TechStack />
-          <ProjectsSection />
-          <CvSection />
-          <ReviewsSection />
-
-          {/* Footer */}
-          <footer className="mt-16 pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
-            <p>© 2026 Md. Ahnaf Zahin Alif. All rights reserved.</p>
-            <p className="text-zinc-500 font-mono text-[11px]">
-              Obsidian Studio Architecture • Next.js &amp; Tailwind
-            </p>
-          </footer>
-        </main>
-      </div>
-    </PortfolioShell>
-  );
+  return <PortfolioShell />;
 }

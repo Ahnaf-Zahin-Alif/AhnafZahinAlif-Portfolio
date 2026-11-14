@@ -15,6 +15,7 @@
 | [D-010](#d-010-google-site-verification-hook-and-live-seo-production-server-validation) | Google Site Verification Hook and Live SEO Production Server Validation | Accepted | 2026-11-13 |
 | [D-011](#d-011-obsidian-studio-surfaces-concentric-geometry-and-real-showcase-architecture) | Obsidian Studio Surfaces, Concentric Geometry, and Real Showcase Architecture | Accepted | 2026-11-13 |
 | [D-012](#d-012-framer-motion-kinetic-choreography-domain-marquee-and-real-repo-wiring) | Framer Motion Kinetic Choreography, Domain Marquee, and Real Repo Wiring | Accepted | 2026-11-13 |
+| [D-013](#d-013-asymmetric-split-viewport-studio-architecture-and-20-motion-craft-rules) | Asymmetric Split-Viewport Studio Architecture and 20 Motion Craft Rules | Accepted | 2026-11-14 |
 
 ---
 
@@ -154,3 +155,17 @@
   - Wire real GitHub repository links to project showcases: CineFilm (`Dbms-Project`), MediCare (`Hospital-Management-System`), ProjectTracker (`ProjectTracker`), and 30DaysOfPython (`30DaysOfPython`).
 - **Why**: Delivers modern studio fluid interactivity, tactile feedback, and direct access to authentic code repositories without degrading Web Vitals or breaking native SEO.
 - **Rejected Alternatives**: Relying on bloated full-page animation frameworks or CSS marquee hacks that cause layout jank.
+
+---
+
+### D-013: Asymmetric Split-Viewport Studio Architecture and 20 Motion Craft Rules
+- **Status**: Accepted
+- **Context**: The portfolio's single-column stacked layout felt conventional and static. The user requested a complete architectural transformation into an Asymmetric Split-Viewport Studio Layout with a sticky desktop identity rail (~38%) and a scrollable interactive project workbench (~62%), shared-element `layoutId` modal expansion for projects, a filterable technical stack explorer (`popLayout` with 30ms row staggers), an academic & engineering ledger, and execution of the 20 motion craft rules (critically damped springs, directional easing, scale 0.97 press physics, 12% knob flight stretch, and email copy blur crossfade).
+- **Decision**:
+  - Restructure desktop into an Asymmetric Split-Viewport grid: `<StudioIdentityRail />` fixed on the left (identity, live clock, studio section index, theme switch, email copy micro-UI) and `<StudioWorkbench />` on the right (flagship CineFilm showcase, 2-column shared-element project cards, `<TechStackExplorer />`, `<EngineeringLedger />`, `<SystemsProof />`), collapsing into a stacked mobile layout.
+  - Implement shared-element morphing: secondary project cards morph into `<ProjectModal />` via Framer Motion `layoutId`, with inner technical specifications staggering in at 40ms intervals as the modal settles.
+  - Implement `<TechStackExplorer />` with category tabs and `AnimatePresence mode="popLayout"`, introducing 30ms row staggers.
+  - Implement `<ThemeToggle />` supporting Studio Obsidian (default) and Studio Alabaster with a 12% stretch (`scaleX: 1.12`) on knob flight.
+  - Preserve 100% of native Next.js App Router SEO metadata on `src/app/page.tsx` as a Server Component, delegating motion to `<PortfolioShell />`.
+- **Why**: Replaces the generic stacked template with a bespoke, tactile studio experience that emphasizes systems engineering and real project substance while meeting all WCAG AA contrast and performance requirements.
+- **Rejected Alternatives**: Retaining a full-screen stacked hero and generic card grids or using unperformant CSS scroll-jack libraries.

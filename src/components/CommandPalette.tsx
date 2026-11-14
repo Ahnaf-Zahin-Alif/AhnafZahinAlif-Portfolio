@@ -40,10 +40,10 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
   };
 
   const commands: CommandItem[] = [
-    { id: "nav-home", title: "Home Section", category: "Navigation", action: () => nav("#home"), icon: Hash },
-    { id: "nav-projects", title: "Projects & Showcases", category: "Navigation", action: () => nav("#projects"), icon: Hash },
-    { id: "nav-cv", title: "Curriculum Vitae", category: "Navigation", action: () => nav("#cv"), icon: Hash },
-    { id: "nav-reviews", title: "Reviews & Endorsements", category: "Navigation", action: () => nav("#reviews"), icon: Hash },
+    { id: "nav-workbench", title: "01 // Systems Workbench & CineFilm", category: "Navigation", action: () => nav("#workbench"), icon: Hash },
+    { id: "nav-stack", title: "02 // Technical Capabilities & Stack", category: "Navigation", action: () => nav("#stack"), icon: Hash },
+    { id: "nav-ledger", title: "03 // Academic & Engineering Ledger", category: "Navigation", action: () => nav("#ledger"), icon: Hash },
+    { id: "nav-proof", title: "04 // Systems Proof & Peer Reviews", category: "Navigation", action: () => nav("#proof"), icon: Hash },
     { id: "act-email", title: copied ? "Email Copied ✓" : "Copy Email Address", category: "Action", action: copyEmail, icon: copied ? Check : Copy },
     { id: "soc-github", title: "Open GitHub Profile", category: "Social", action: () => { window.open("https://github.com/Ahnaf-Zahin-Alif", "_blank"); onClose(); }, icon: ExternalLink },
     { id: "soc-cf", title: "Open Codeforces Profile", category: "Social", action: () => { window.open("https://codeforces.com", "_blank"); onClose(); }, icon: ExternalLink },
@@ -64,10 +64,10 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
             aria-hidden="true"
           />
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: -8 }}
+            initial={{ opacity: 0, scale: 0.95, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.96, y: -8 }}
-            transition={{ type: "spring", stiffness: 300, damping: 28 }}
+            exit={{ opacity: 0, scale: 0.95, y: -8 }}
+            transition={{ duration: 0.18, ease: "easeOut" }}
             role="dialog"
             aria-modal="true"
             aria-label="Command Palette"
