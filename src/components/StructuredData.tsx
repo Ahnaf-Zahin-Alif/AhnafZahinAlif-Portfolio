@@ -1,3 +1,5 @@
+import { LINKS } from "@/lib/links";
+
 export function StructuredData() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -17,10 +19,10 @@ export function StructuredData() {
           name: "Bangladesh University of Professionals (BUP)",
         },
         sameAs: [
-          "https://github.com/Ahnaf-Zahin-Alif",
-          "https://codeforces.com",
-          "https://codechef.com",
-          "https://linkedin.com",
+          LINKS.github,
+          LINKS.codeforces,
+          LINKS.codechef,
+          LINKS.linkedin,
           "https://x.com",
         ],
         knowsAbout: [

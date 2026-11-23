@@ -90,12 +90,17 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.svg",
   },
-  verification: {
-    google:
-      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
-      process.env.GOOGLE_SITE_VERIFICATION ||
-      "YOUR_GOOGLE_SITE_VERIFICATION_CODE",
-  },
+  // TODO: Add Google Search Console verification code once domain property is created
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+  process.env.GOOGLE_SITE_VERIFICATION
+    ? {
+        verification: {
+          google:
+            process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+            process.env.GOOGLE_SITE_VERIFICATION,
+        },
+      }
+    : {}),
 };
 
 export default function RootLayout({

@@ -22,9 +22,10 @@ export function StudioEmailCopy() {
     <motion.button
       type="button"
       onClick={handleCopy}
-      whileTap={{ scale: 0.97 }}
-      animate={copied ? { scale: [1, 1.04, 1] } : {}}
-      transition={{ duration: 0.25 }}
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.96 }}
+      animate={copied ? { scale: [1, 1.03, 1] } : {}}
+      transition={{ duration: 0.2 }}
       className="w-full flex items-center justify-between p-3 rounded-xl bg-[#0f121a] dark:bg-[#0f121a] light:bg-white border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] hover:border-white/[0.18] transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f6bff]"
       aria-label={copied ? "Email copied" : "Copy email address"}
     >

@@ -32,7 +32,7 @@ const ledgerRows: LedgerRow[] = [
     institution: "Competitive Programming & Problem Solving",
     title: "Algorithmic Complexity & Graph Systems",
     summary:
-      "Active problem solver on Codeforces & CodeChef, training in dynamic programming, combinatorics, number theory, and asymptotic time-space bounds.",
+      "Active problem solver on Codeforces & CodeChef, training in dynamic programming, combinatorics, number theory, and asymptotic time-space bounds. Current rating: [TODO: Add Current Rating, e.g. Specialist/Pupil] with [TODO: Add Solved Problems Count, e.g. 250+] problems solved across contests.",
     modules: [
       "Shortest Path & Graph Traversal (Dijkstra, BFS, DFS)",
       "Dynamic Programming Optimization",

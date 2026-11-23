@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Award, Terminal, Code2, ArrowUpRight } from "lucide-react";
+import { LINKS } from "@/lib/links";
 
 export function TasteAlgorithmsProof() {
   const reviews = [
@@ -27,7 +28,7 @@ export function TasteAlgorithmsProof() {
       {/* Competitive Programming Handle Grid */}
       <div className="grid grid-cols-2 gap-3">
         <a
-          href="https://codeforces.com"
+          href={LINKS.codeforces}
           target="_blank"
           rel="noopener noreferrer"
           className="p-4 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-[#0f121a]/60 dark:bg-[#0f121a]/60 light:bg-slate-100/60 hover:border-white/20 transition-all group"
@@ -48,7 +49,7 @@ export function TasteAlgorithmsProof() {
         </a>
 
         <a
-          href="https://codechef.com"
+          href={LINKS.codechef}
           target="_blank"
           rel="noopener noreferrer"
           className="p-4 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-[#0f121a]/60 dark:bg-[#0f121a]/60 light:bg-slate-100/60 hover:border-white/20 transition-all group"

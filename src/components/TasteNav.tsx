@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Command } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { LiveClock } from "./LiveClock";
@@ -10,7 +11,33 @@ interface TasteNavProps {
   onOpenCommandPalette: () => void;
 }
 
+const navItems = [
+  { id: "cinefilm", label: "01 // CINEFILM" },
+  { id: "systems", label: "02 // SYSTEMS" },
+  { id: "matrix", label: "03 // STACK & LEDGER" },
+  { id: "closing", label: "04 // CONTACT" },
+];
+
 export function TasteNav({ onOpenCommandPalette }: TasteNavProps) {
+  const [activeSection, setActiveSection] = useState<string>("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 200;
+      const sectionIds = ["hero", "cinefilm", "systems", "matrix", "closing"];
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(sectionIds[i]);
+          break;
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#08090d]/80 dark:bg-[#08090d]/80 light:bg-[#f8fafc]/80 backdrop-blur-md border-b border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08]">
       <div className="taste-wrap h-16 flex items-center justify-between">
@@ -34,40 +61,41 @@ export function TasteNav({ onOpenCommandPalette }: TasteNavProps) {
           </div>
         </div>
 
-        {/* Center / Right: Screen Navigation */}
+        {/* Center / Right: Screen Navigation with Sliding Indicator */}
         <nav
-          className="hidden lg:flex items-center gap-6 text-xs font-mono tracking-wider text-slate-400 dark:text-slate-400 light:text-slate-600"
+          className="hidden lg:flex items-center gap-1.5 text-xs font-mono tracking-wider text-slate-400 dark:text-slate-400 light:text-slate-600"
           aria-label="Section navigation"
         >
-          <a
-            href="#cinefilm"
-            className="hover:text-slate-100 dark:hover:text-slate-100 light:hover:text-slate-950 transition-colors"
-          >
-            01 // CINEFILM
-          </a>
-          <a
-            href="#systems"
-            className="hover:text-slate-100 dark:hover:text-slate-100 light:hover:text-slate-950 transition-colors"
-          >
-            02 // SYSTEMS
-          </a>
-          <a
-            href="#matrix"
-            className="hover:text-slate-100 dark:hover:text-slate-100 light:hover:text-slate-950 transition-colors"
-          >
-            03 // STACK &amp; LEDGER
-          </a>
-          <a
-            href="#closing"
-            className="hover:text-slate-100 dark:hover:text-slate-100 light:hover:text-slate-950 transition-colors"
-          >
-            04 // CONTACT
-          </a>
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={`relative px-3 py-1.5 rounded-lg text-xs font-mono tracking-wider transition-colors ${
+                  isActive
+                    ? "text-[#5fd4ff] font-semibold"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="active-nav-indicator"
+                    className="absolute inset-0 rounded-lg bg-[#2f6bff]/15 border border-[#2f6bff]/30 -z-0"
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10">{item.label}</span>
+              </a>
+            );
+          })}
         </nav>
 
         {/* Controls: Command Palette & Theme Toggle */}
         <div className="flex items-center gap-2.5 sm:gap-3">
-          <button
+          <motion.button
+            whileHover={{ y: -1 }}
+            whileTap={{ scale: 0.96 }}
             onClick={onOpenCommandPalette}
             className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-slate-900/60 dark:bg-slate-900/60 light:bg-slate-100/60 hover:border-white/20 transition-all text-xs font-mono text-slate-400 hover:text-slate-200"
             aria-label="Open Command Palette"
@@ -75,7 +103,7 @@ export function TasteNav({ onOpenCommandPalette }: TasteNavProps) {
             <Command className="w-3.5 h-3.5 text-[#5fd4ff]" aria-hidden="true" />
             <span className="hidden sm:inline">Search</span>
             <kbd className="text-[10px] bg-white/[0.06] px-1.5 py-0.5 rounded border border-white/10">⌘K</kbd>
-          </button>
+          </motion.button>
           <ThemeToggle />
         </div>
       </div>

@@ -18,6 +18,7 @@
 | [D-013](#d-013-asymmetric-split-viewport-studio-architecture-and-20-motion-craft-rules) | Asymmetric Split-Viewport Studio Architecture and 20 Motion Craft Rules | Accepted | 2026-11-14 |
 | [D-014](#d-014-taste-skill-25-evolution-5-screen-full-viewport-architecture) | Taste-Skill 2.5 Evolution: 5-Screen Full-Viewport Architecture | Accepted | 2026-11-23 |
 | [D-015](#d-015-color-theory-palette-redesign-electric-cobalt--deep-obsidian) | Color Theory Palette Redesign (Electric Cobalt & Deep Obsidian) | Accepted | 2026-11-23 |
+| [D-016](#d-016-framer-motion-primitives-and-phase-1-systems-choreography) | Framer Motion Primitives and Phase 1 Systems Choreography | Accepted | 2026-11-23 |
 
 ---
 
@@ -208,3 +209,21 @@
 - **Rejected Alternatives**:
   - Direction 2 (Monochrome Carbon & Acid Lime): Rejected due to overly aggressive high-contrast cyberpunk tone that detracts from professional systems engineering.
   - Direction 3 (Graphite & International Klein Blue): Rejected due to darker blue value having reduced contrast against deep slate backgrounds.
+
+---
+
+### D-016: Framer Motion Primitives and Phase 1 Systems Choreography
+- **Status**: Accepted
+- **Context**: The portfolio required tactile, high-craft motion choreography adhering to `@design-taste-frontend` (`DESIGN_VARIANCE=6`, `MOTION_INTENSITY=4`, `VISUAL_DENSITY=4`) without layout thrashing, content degradation, or breaking SEO and accessibility. The user requested dividing execution into Phase 1 (content fixes, shared motion primitives, hero entrance, marquee, sliding nav indicator, scroll reveals) and Phase 2.
+- **Decision**:
+  - Execute Phase 1:
+    - Create shared motion primitives in `src/components/motion/`: `Reveal.tsx` (fade + 24px upward slide), `Stagger.tsx` (0.06s children stagger), and `Marquee.tsx` (seamless infinite scroll loop with pause on hover), all strictly respecting `prefers-reduced-motion` via `useReducedMotion()`.
+    - Apply content fixes: replace hardcoded Google verification placeholder with env checks and a TODO comment; create centralized `src/lib/links.ts` with placeholder env constants (`LINKEDIN_URL`, `CODEFORCES_URL`, `CODECHEF_URL`); add CP timeline body with TODO markers; cap `next/image` sizes for `profile.jpg` at 44px.
+    - Choreograph Hero entrance with staggered typography/action variants, gentle ambient float on SQL transaction frame, and seamless engineering domain Marquee strip.
+    - Implement tactile micro-interactions: sliding active section indicator in `TasteNav` using Framer Motion `layoutId="active-nav-indicator"`, enhanced email copy tap animation, and global button hover elevations.
+    - Wrap sections `#cinefilm`, `#systems`, `#matrix`, `#closing` in `Reveal` wrappers with progressive delay cascades.
+    - Maintain strict single-purpose modular architecture with all components under 135 lines.
+- **Why**: Delivers fluid, production-grade 60fps micro-interactions and scroll awareness with zero cumulative layout shift (CLS = 0) and zero accessibility regressions.
+- **Rejected Alternatives**:
+  - Animating height/margin: Rejected due to layout reflow thrashing.
+  - Third-party heavy animation libraries (GSAP, Three.js): Explicitly forbidden by stack rules.

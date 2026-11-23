@@ -4,25 +4,30 @@ import React from "react";
 import { Terminal, Code, Mail } from "lucide-react";
 import { StudioEmailCopy } from "./StudioEmailCopy";
 import { LiveClock } from "./LiveClock";
+import { LINKS } from "@/lib/links";
+import { Reveal } from "./motion/Reveal";
 
 export function TasteClosingStation() {
   return (
     <section id="closing" className="min-h-[100svh] flex flex-col justify-center py-20 relative">
       <div className="taste-wrap space-y-10">
         {/* Section Header */}
-        <div className="space-y-2 border-b border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] pb-6">
-          <div className="flex items-center gap-3 font-mono text-xs text-[#5fd4ff] tracking-widest font-semibold">
-            <span>04 // CONTACT, DISPATCH &amp; VERIFICATION</span>
-            <span className="text-slate-600">•</span>
-            <span className="text-slate-400">STATUS READY</span>
+        <Reveal>
+          <div className="space-y-2 border-b border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] pb-6">
+            <div className="flex items-center gap-3 font-mono text-xs text-[#5fd4ff] tracking-widest font-semibold">
+              <span>04 // CONTACT, DISPATCH &amp; VERIFICATION</span>
+              <span className="text-slate-600">•</span>
+              <span className="text-slate-400">STATUS READY</span>
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-100 dark:text-slate-100 light:text-slate-950 uppercase text-balance">
+              Initialize Systems Transmission
+            </h2>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-100 dark:text-slate-100 light:text-slate-950 uppercase text-balance">
-            Initialize Systems Transmission
-          </h2>
-        </div>
+        </Reveal>
 
         {/* Terminal Station Card */}
-        <div className="rounded-2xl border border-white/[0.12] dark:border-white/[0.12] light:border-black/[0.12] bg-[#0f121a] dark:bg-[#0f121a] light:bg-white p-6 sm:p-8 card-specular space-y-8">
+        <Reveal delay={0.15}>
+          <div className="rounded-2xl border border-white/[0.12] dark:border-white/[0.12] light:border-black/[0.12] bg-[#0f121a] dark:bg-[#0f121a] light:bg-white p-6 sm:p-8 card-specular space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left: Terminal Prompt & Clock */}
             <div className="lg:col-span-7 space-y-4 font-mono">
@@ -73,7 +78,7 @@ export function TasteClosingStation() {
                 </div>
                 <div className="flex flex-wrap gap-2.5">
                   <a
-                    href="https://github.com/Ahnaf-Zahin-Alif"
+                    href={LINKS.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-[#161b26]/40 dark:bg-[#161b26]/40 light:bg-slate-100/40 hover:border-[#2f6bff]/50 text-xs font-mono text-slate-200 hover:text-white transition-all"
@@ -84,7 +89,7 @@ export function TasteClosingStation() {
                     <span>GitHub</span>
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href={LINKS.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-[#161b26]/40 dark:bg-[#161b26]/40 light:bg-slate-100/40 hover:border-[#2f6bff]/50 text-xs font-mono text-slate-200 hover:text-white transition-all"
@@ -95,7 +100,7 @@ export function TasteClosingStation() {
                     <span>LinkedIn</span>
                   </a>
                   <a
-                    href="https://codeforces.com"
+                    href={LINKS.codeforces}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-[#161b26]/40 dark:bg-[#161b26]/40 light:bg-slate-100/40 hover:border-[#2f6bff]/50 text-xs font-mono text-slate-200 hover:text-white transition-all"
@@ -118,6 +123,7 @@ export function TasteClosingStation() {
             </div>
           </div>
         </div>
+        </Reveal>
       </div>
     </section>
   );
