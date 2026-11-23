@@ -14,7 +14,7 @@ export function WorkbenchCard({ project, onSelect }: WorkbenchCardProps) {
   return (
     <div
       onClick={() => onSelect(project)}
-      className="group relative rounded-3xl bg-[#1F1E1D] border border-[#2E2C29] hover:border-[#C85A32] hover:shadow-2xl hover:shadow-[#C85A32]/10 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer"
+      className="w-full group relative rounded-3xl bg-[#1F1E1D] border border-[#2E2C29] hover:border-[#C85A32] hover:shadow-2xl hover:shadow-[#C85A32]/10 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer"
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {

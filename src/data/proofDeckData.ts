@@ -3,20 +3,20 @@ import { LINKS } from "@/lib/links";
 
 export const deckItems: DeckItem[] = [
   {
-    id: "review-tanvir",
+    id: "review-systems",
     type: "review",
-    authorOrTitle: "Tanvir Ahmed",
-    roleOrHandle: "BUP ICT Systems Peer",
+    authorOrTitle: "SYSTEMS PEER — BUP ICT",
+    roleOrHandle: "Collaborator Endorsement",
     textOrSpecialty:
       "Collaborated on low-level socket programming and database architectures. Exceptionally rigorous on ACID isolation and edge cases.",
     highlight: "ACID Rigor & Sockets",
     icon: "award",
   },
   {
-    id: "review-mahir",
+    id: "review-fullstack",
     type: "review",
-    authorOrTitle: "Mahir Faysal",
-    roleOrHandle: "Fullstack Collab Partner",
+    authorOrTitle: "FULL-STACK COLLAB — CINEFILM",
+    roleOrHandle: "Project Collab Endorsement",
     textOrSpecialty:
       "Engineered robust backend API contracts with clean data normalization. Always prioritizes schema sanity before touching UI code.",
     highlight: "Schema Sanity & APIs",
@@ -45,10 +45,10 @@ export const deckItems: DeckItem[] = [
     icon: "code",
   },
   {
-    id: "review-samin",
+    id: "review-algo",
     type: "review",
-    authorOrTitle: "Samin Yasar",
-    roleOrHandle: "Algorithms & CP Collaborator",
+    authorOrTitle: "ALGORITHMIC PEER — CP",
+    roleOrHandle: "Competitive Programming Peer",
     textOrSpecialty:
       "Consistent algorithmic rigor in C++. Strong grasp of asymptotic complexity, shortest path optimizations, and state machines.",
     highlight: "C++ Asymptotics",

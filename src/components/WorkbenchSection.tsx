@@ -35,14 +35,24 @@ export function WorkbenchSection({ onSelectProject }: WorkbenchSectionProps) {
           </p>
         </div>
 
-        {/* 5-Card Dark Grid (#1F1E1D surface, #2E2C29 border) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-          {secondaryProjects.map((project) => (
-            <WorkbenchCard
+        {/* 5-Card Dark Grid: 6-Column Desktop Bento (3 cards col-span-2, 2 cards col-span-3) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 items-stretch">
+          {secondaryProjects.map((project, idx) => (
+            <div
               key={project.id}
-              project={project}
-              onSelect={onSelectProject}
-            />
+              className={
+                idx < 3
+                  ? "col-span-1 md:col-span-1 lg:col-span-2 flex"
+                  : idx === 4
+                  ? "col-span-1 md:col-span-2 lg:col-span-3 flex"
+                  : "col-span-1 md:col-span-1 lg:col-span-3 flex"
+              }
+            >
+              <WorkbenchCard
+                project={project}
+                onSelect={onSelectProject}
+              />
+            </div>
           ))}
         </div>
 

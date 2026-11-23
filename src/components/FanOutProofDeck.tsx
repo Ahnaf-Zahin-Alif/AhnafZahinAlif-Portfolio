@@ -16,26 +16,31 @@ export function FanOutProofDeck() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     gsap.registerPlugin(ScrollTrigger);
-    const rotations = [-18, -9, 0, 9, 18];
-    const xOffsets = [-120, -60, 0, 60, 120];
-    const yOffsets = [16, 4, 0, 4, 16];
+    const rotations = [-12, -6, 0, 6, 12];
+    const yOffsets = [18, 6, 0, 6, 18];
+
+    const isMobile = window.innerWidth < 640;
+    const isTablet = window.innerWidth < 1024;
+    const spread = isMobile ? 65 : isTablet ? 110 : 160;
+    const xOffsets = [-2 * spread, -1 * spread, 0, 1 * spread, 2 * spread];
 
     const ctx = gsap.context(() => {
       cardRefs.current.forEach((el, idx) => {
         if (!el) return;
         gsap.fromTo(
           el,
-          { rotation: 0, x: 0, y: 0 },
+          { rotation: 0, x: 0, y: 0, scale: 0.96 },
           {
             rotation: rotations[idx],
             x: xOffsets[idx],
             y: yOffsets[idx],
-            ease: "power2.out",
+            scale: 1,
+            ease: "power1.out",
             scrollTrigger: {
               trigger: containerRef.current,
-              start: "top 70%",
-              end: "bottom 85%",
-              scrub: 1.2,
+              start: "top 75%",
+              end: "center center",
+              scrub: 1,
             },
           }
         );
@@ -67,15 +72,16 @@ export function FanOutProofDeck() {
         </div>
 
         {/* 5-Card Curved Fan-Out Container */}
-        <div className="relative min-h-[440px] flex items-center justify-center pt-8 pb-12 overflow-x-auto lg:overflow-visible">
-          <div className="flex items-center justify-center -space-x-16 sm:-space-x-12 lg:space-x-0">
+        <div className="relative min-h-[460px] sm:min-h-[480px] flex items-center justify-center pt-8 pb-12 overflow-x-clip">
+          <div className="relative w-full max-w-5xl h-[390px] flex items-center justify-center">
             {deckItems.map((item, idx) => (
               <div
                 key={item.id}
                 ref={(el) => {
                   cardRefs.current[idx] = el;
                 }}
-                className="transition-transform duration-300 hover:!scale-105 hover:!z-30 cursor-pointer origin-bottom"
+                style={{ zIndex: idx === 2 ? 10 : 5 - Math.abs(idx - 2) }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer origin-bottom transition-all duration-300 hover:!z-50 hover:!scale-105 hover:!-translate-y-6 hover:shadow-2xl hover:shadow-[#C85A32]/20"
               >
                 <ProofDeckCard item={item} index={idx} />
               </div>

@@ -35,25 +35,25 @@ export function InteractiveHero() {
         </div>
       </div>
 
-      {/* Center Hero Stage: Giant Condensed Headline Framing the Portrait */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto my-auto py-6 sm:py-8 flex flex-col items-center">
-        {/* Giant Condensed Display Typography - Line 1 */}
-        <h1 className="font-display font-black text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter uppercase leading-[0.88] select-none text-[#1B1B1C] w-full">
-          CRAFTING SCALABLE
-        </h1>
+      {/* Center Hero Stage: Giant Condensed Headline with Cutout Portrait Layered Directly Over */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto my-auto py-4 sm:py-6 flex flex-col items-center">
+        {/* Giant Condensed Headline (Layer 1 - z-10) */}
+        <div className="w-full text-center select-none space-y-1 sm:space-y-2 relative z-10">
+          <h1 className="font-display font-black text-center text-4xl sm:text-6xl md:text-8xl lg:text-9xl tracking-tighter uppercase leading-[0.85] text-[#1B1B1C] w-full">
+            CRAFTING SCALABLE
+          </h1>
+          <h2 className="font-display font-black text-center text-4xl sm:text-6xl md:text-8xl lg:text-9xl tracking-tighter uppercase leading-[0.85] text-[#1B1B1C] w-full">
+            DIGITAL ARCHITECTURE
+          </h2>
+        </div>
 
-        {/* Framed Portrait with Liquid Blob Reveal Mask */}
-        <div className="relative my-4 sm:my-6 z-20">
+        {/* Cutout Portrait Layered Directly Over Headline (Layer 2 - z-20) */}
+        <div className="relative -mt-24 sm:-mt-40 md:-mt-52 lg:-mt-64 z-20 pointer-events-auto">
           <HeroPortraitBlob />
         </div>
 
-        {/* Giant Condensed Display Typography - Line 2 */}
-        <h2 className="font-display font-black text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter uppercase leading-[0.88] select-none text-[#1B1B1C] w-full">
-          DIGITAL ARCHITECTURE
-        </h2>
-
         {/* Sub-Manifesto & CTAs */}
-        <div className="mt-6 flex flex-col sm:flex-row items-center gap-4 text-center">
+        <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center gap-4 text-center z-30">
           <p className="max-w-md text-xs sm:text-sm font-mono text-[#5C5852] leading-relaxed">
             Md. Ahnaf Zahin Alif — BUP ICT. Designing low-latency backends, ACID relational storage, and deterministic algorithms.
           </p>

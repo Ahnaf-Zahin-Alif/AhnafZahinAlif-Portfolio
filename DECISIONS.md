@@ -23,6 +23,7 @@
 | [D-018](#d-018-editorial-scroll-choreographed-layout-with-warm-sand-slate--terracotta-palette) | Editorial Scroll Layout with Warm Sand, Slate & Terracotta System | Accepted | 2026-11-23 |
 | [D-019](#d-019-top-four-full-bleed-sections-with-blob-reveal-animated-az-signature-parallax-ledger--dual-mode-showcase) | Top Four Full-Bleed Sections (Blob Reveal, AZ Signature, Parallax Ledger, Dual-Mode Showcase) | Accepted | 2026-11-23 |
 | [D-020](#d-020-bottom-four-sections-workbench-hall-of-fame-flagship-spotlight-fan-out-proof-deck-rounded-curtain-footer) | Bottom Four Sections (Workbench, Flagship Spotlight, Fan-Out Deck, Rounded Curtain Footer) | Accepted | 2026-11-23 |
+| [D-021](#d-021-visual--motion-polish-cutout-silhouette-hero-6-col-bento-grid-scroll-driven-fan-out--verified-peer-labels) | Visual & Motion Polish (Cutout Silhouette Hero, 6-Col Bento, Scroll Fan-Out, Verified Labels) | Accepted | 2026-11-23 |
 
 ---
 
@@ -302,3 +303,105 @@
 - **Rejected Alternatives**:
   - Inline reviews within an accordion: Rejected because a fan-out deck provides superior physical tangible depth and editorial delight.
   - Monolithic footer component: Rejected to keep file length strictly under the 150-line constraint.
+
+---
+
+### D-021: Visual & Motion Polish (Cutout Silhouette Hero, 6-Col Bento Grid, Scroll-Driven Fan-Out & Verified Peer Labels)
+- **Status**: Accepted
+- **Context**: The user requested targeted visual and motion polish:
+  1. Hero Cutout Integration: Remove rounded rectangular container box around the hero portrait, using transparent cutout image (`/profile-cutout.png`) layered directly over the condensed headline via z-index while preserving the cursor-tracked wireframe reveal mask.
+  2. Hall of Fame Bento Balance: Change the 5-card grid from 3-column to a 6-column desktop grid (`lg:grid-cols-6`), making the first 3 cards `lg:col-span-2` and bottom 2 cards `lg:col-span-3` so both rows align flush edge-to-edge.
+  3. True Scroll-Driven Fan-Out Proof Deck: Refactor cards to ~260–280px, starting stacked in center and fanning out via GSAP ScrollTrigger (`scrub: 1`) into a gentle curved arc (`rotations: -12deg, -6deg, 0deg, +6deg, +12deg`, vertical arc offset `[18, 6, 0, 6, 18]`), with clean hover lift (`!z-50`, scale 1.05, shadow).
+  4. Verified Reviewer Labels: Replace placeholder names with verified labels: "SYSTEMS PEER — BUP ICT", "FULL-STACK COLLAB — CINEFILM", "ALGORITHMIC PEER — CP".
+- **Decision**:
+  - Update `HeroPortraitBlob.tsx` and `InteractiveHero.tsx` to layer the transparent cutout portrait directly over the headline with negative margins and z-index.
+  - Update `WorkbenchSection.tsx` with `lg:grid-cols-6` bento layout (row 1: 3x 2-col, row 2: 2x 3-col).
+  - Update `FanOutProofDeck.tsx` and `ProofDeckCard.tsx` with absolute center stacking, GSAP ScrollTrigger arc fan-out, and hover lift.
+  - Update `proofDeckData.ts` and `TasteAlgorithmsProof.tsx` with verified reviewer labels.
+  - All files strictly maintained under 132 lines.
+- **Why**: Eliminates awkward whitespace and placeholder labels while creating an authentic magazine-grade editorial cover aesthetic with high-craft physics.
+- **Rejected Alternatives**:
+  - Keeping a 3-column grid with empty slot: Rejected due to unbalanced visual weight.
+  - Rectangular framed portrait: Rejected because transparent cutout silhouette creates far superior depth against giant display typography.
+
+---
+
+### D-018: Editorial Scroll-Choreographed Layout with Warm Sand, Slate & Terracotta System
+- **Status**: Accepted
+- **Context**: The user requested refactoring the portfolio into an editorial, scroll-choreographed layout inspired by landonorris.com, adopting the Warm Sand, Slate & Terracotta color system, integrating Lenis for smooth inertia scrolling and GSAP ScrollTrigger alongside Framer Motion, introducing subtle topographic contour elevation, condensed display typography (Oswald), and a sticky editorial header with stacked name, centered AZ monogram, Terracotta CTA pill, and magnetic menu trigger.
+- **Decision**:
+  - Install `lenis` and `gsap` (with `ScrollTrigger`). Integrate inertia smoothing wrapped in `SmoothScroll.tsx` with `prefers-reduced-motion` bypass.
+  - Configure Warm Sand (`#F4F0EB` / `#EAE4DA`), Slate (`#161617` / `#1F1E1D`), Terracotta (`#C85A32`), and Sage (`#5A6E58` / `#7D9B7A`) design tokens across CSS variables and `tailwind.config.ts`.
+  - Pair `Oswald` (uppercase bold display headlines) with `Space_Grotesk` / `Inter` (body copy) and `JetBrains_Mono` (telemetry/metrics) via `next/font/google`.
+  - Build `TopographicBackground.tsx` using responsive SVG elevation contours adapting dynamic opacity and stroke colors between light and dark sections.
+  - Implement sticky `EditorialHeader.tsx` and modular `EditorialDrawer.tsx` featuring stacked bold author identity, centered geometric monogram, terracotta "COPY EMAIL" pill, and spring-damped `MagneticButton.tsx`.
+  - Update all interactive simulators (`SqlTransactionAppFrame`, `CinefilmSeatSimulator`, `SystemsDiagramCard`, `ProjectPreviewVisual`, `TasteClosingStation`) to the new Terracotta and Sage palette while preserving all project data, bio, Dhaka live clock, and copy verbatim from `Portfolio-content.md`.
+  - Strictly maintain all component files under 150 lines (all under 130 lines).
+- **Why**: Fulfills the user's aesthetic vision for a high-craft editorial design with warm earth tones, tactile physics, and smooth inertia scrolling while preserving 100% static compilation, zero CLS, and full accessibility.
+- **Rejected Alternatives**:
+  - Retaining the Electric Cobalt palette: Rejected because the user found the previous palette unappealing and explicitly requested the Warm Sand, Slate & Terracotta color system.
+  - Relying exclusively on CSS scroll-behavior: Rejected because it does not provide smooth momentum/inertia dampening or sync with GSAP scroll choreography.
+
+---
+
+### D-019: Top Four Full-Bleed Sections with Blob Reveal, Animated AZ Signature, Parallax Ledger & Dual-Mode Showcase
+- **Status**: Accepted
+- **Context**: The user requested building the top four full-bleed sections using their existing portfolio content and GSAP ScrollTrigger:
+  1. Interactive Hero (Light `#F4F0EB`): Centered cutout portrait framed against giant condensed display type ("CRAFTING SCALABLE DIGITAL ARCHITECTURE"), subtle topographic lines, a cursor-tracked organic liquid blob reveal mask exposing an architectural wireframe layer underneath, and floating `#EAE4DA` bottom-left Dhaka clock and BUP badge.
+  2. Marquee + Manifesto (Dark `#161617`): Capabilities marquee in giant outlined display type, animated `#C85A32` Terracotta SVG "AZ" signature on scroll, and centered uppercase manifesto highlighting "BACKEND ARCHITECTURES", "ACID DATABASES", and "LOW-LEVEL ALGORITHMS" in `#C85A32`.
+  3. Asymmetric Parallax Ledger (Dark `#161617`): "03 // Academic & Systems Ledger" in staggered asymmetric masonry layout with GSAP ScrollTrigger scrub speeds and `#A39E95` monospace year tags.
+  4. Dual-Mode Split Showcase (Light `#F4F0EB`): Bold 2-column showcase—"SYSTEMS & BACKEND" vs. "FULL-STACK & DISTRIBUTED"—with oversized `#1B1B1C` display titles, expressive `#C85A32` SVG brush underline, and interactive stack details on hover/click.
+- **Decision**:
+  - Implement `HeroPortraitBlob.tsx` with dynamic pointer-tracked radial mask revealing a monochrome high-contrast blueprint wireframe layer with vector grid coordinates.
+  - Implement `HeroTelemetryBadge.tsx` floating the live Dhaka clock and BUP badge in `#EAE4DA` with a `#5A6E58` sage dot.
+  - Implement `InteractiveHero.tsx` combining the giant Oswald condensed headline and topographic background.
+  - Implement `MarqueeManifesto.tsx` with seamless outlined capabilities loop, scroll-driven Terracotta AZ signature stroke, and uppercase editorial manifesto.
+  - Implement `ParallaxLedger.tsx` and `ParallaxLedgerCard.tsx` with GSAP `ScrollTrigger` multi-speed scrub parallax and externalized `ledgerData.ts`.
+  - Implement `SplitShowcase.tsx` and `SplitShowcaseColumn.tsx` with custom Terracotta brush underline, interactive tech pills, and externalized `showcaseData.ts`.
+  - Mount the four sections in `PortfolioShell.tsx` followed by the flagship CineFilm seat simulator, distributed systems diagram, and dispatch station.
+  - Maintain all component files strictly under 130 lines.
+- **Why**: Directly satisfies all four requested full-bleed sections with high-craft editorial aesthetic, rich micro-interactions, GSAP ScrollTrigger integration, zero hydration mismatch, and 100% static compilation.
+- **Rejected Alternatives**:
+  - Canvas-only blob mask: Rejected because SVG / CSS mask gradient offers better GPU acceleration, crispness across Retina displays, and lower memory footprint.
+  - Single massive file for the four sections: Rejected because it violates the 150-line rule; extracted data and components into modular units.
+
+---
+
+### D-020: Bottom Four Sections (Workbench Hall of Fame, Flagship Spotlight, Fan-Out Proof Deck, Rounded Curtain Footer)
+- **Status**: Accepted
+- **Context**: The user requested building the bottom four sections while preserving all custom telemetry widgets:
+  1. Dark Workbench "Hall of Fame" (Dark `#161617`): Heading "01 // WORKBENCH" on the left, concise intro on the right, bordered dark card grid (`#1F1E1D` surface, `#2E2C29` border) for MediCare, Orion Sentinel, BICE '25 Portal, ProjectTracker, and 30DaysOfPython with preserved telemetry widgets (`94.2% Occupancy`, `98.4% Link`, `3.92 CGPA`, `92% Sprint Velocity`, `30/30 pytest passed`) styled with `#7D9B7A` sage indicators, `#C85A32` border hover glow, and centered `#C85A32` CTA linking to GitHub.
+  2. Flagship Spotlight + Tech Stack Marquee (Light `#F4F0EB`): Dedicated asymmetric spotlight for CineFilm with rectangular `#C85A32` block-wipe reveals, preserving the interactive "AUDITORIUM 01" seat selector and "SQL Latency: ~38ms • ACID Safe" badge in `#5A6E58` sage. Seamless infinite horizontal marquee of monochrome icons for all 14 technologies below it.
+  3. Fan-Out Proof Deck (Light `#F4F0EB`): 5-card `#EAE4DA` deck (3 peer reviews + Codeforces and CodeChef profile cards) smoothly fanning out into a curved arc (-18deg to +18deg) via GSAP ScrollTrigger, above minimal uppercase links (GITHUB • CODEFORCES • LINKEDIN).
+  4. Rounded Curtain Footer (Dark `#161617`): `#161617` container with `rounded-t-[48px]`, subtle topographic lines, giant display headline ("ENGINEERED FOR SCALE."), 2-column section and social directory, centered high-contrast `#C85A32` "GET IN TOUCH" pill, and copyright bar.
+- **Decision**:
+  - Implement `WorkbenchCard.tsx` and `WorkbenchSection.tsx` integrating `ProjectPreviewVisual` and direct GitHub repository links.
+  - Implement `CinefilmBlockWipe.tsx` with Framer Motion rectangular block-wipe and `FlagshipSpotlight.tsx` retaining `CinefilmSeatSimulator.tsx`.
+  - Implement `TechStackMarquee.tsx` cycling all 14 technologies with monochrome icons.
+  - Implement `FanOutProofDeck.tsx` and `ProofDeckCard.tsx` with GSAP `ScrollTrigger` rotation and translation arc scrub (`-18deg` to `+18deg`), externalizing `proofDeckData.ts`.
+  - Implement `RoundedCurtainFooter.tsx` with `rounded-t-[48px]`, topographic contours, interactive email copy/launch, and externalized `footerLinks.ts`.
+  - Keep all component files strictly under 132 lines (well below the 150-line limit).
+- **Why**: Completes the full editorial scroll journey with balanced light/dark rhythmic cadence, preserving all interactive simulators and telemetry data with 100% static Next.js compilation.
+- **Rejected Alternatives**:
+  - Inline reviews within an accordion: Rejected because a fan-out deck provides superior physical tangible depth and editorial delight.
+  - Monolithic footer component: Rejected to keep file length strictly under the 150-line constraint.
+
+---
+
+### D-021: Visual & Motion Polish (Cutout Silhouette Hero, 6-Col Bento Grid, Scroll-Driven Fan-Out & Verified Peer Labels)
+- **Status**: Accepted
+- **Context**: The user requested targeted visual and motion polish:
+  1. Hero Cutout Integration: Remove rounded rectangular container box around the hero portrait, using transparent cutout image (`/profile-cutout.png`) layered directly over the condensed headline via z-index while preserving the cursor-tracked wireframe reveal mask.
+  2. Hall of Fame Bento Balance: Change the 5-card grid from 3-column to a 6-column desktop grid (`lg:grid-cols-6`), making the first 3 cards `lg:col-span-2` and bottom 2 cards `lg:col-span-3` so both rows align flush edge-to-edge.
+  3. True Scroll-Driven Fan-Out Proof Deck: Refactor cards to ~260–280px, starting stacked in center and fanning out via GSAP ScrollTrigger (`scrub: 1`) into a gentle curved arc (`rotations: -12deg, -6deg, 0deg, +6deg, +12deg`, vertical arc offset `[18, 6, 0, 6, 18]`), with clean hover lift (`!z-50`, scale 1.05, shadow).
+  4. Verified Reviewer Labels: Replace placeholder names with verified labels: "SYSTEMS PEER — BUP ICT", "FULL-STACK COLLAB — CINEFILM", "ALGORITHMIC PEER — CP".
+- **Decision**:
+  - Update `HeroPortraitBlob.tsx` and `InteractiveHero.tsx` to layer the transparent cutout portrait directly over the headline with negative margins and z-index.
+  - Update `WorkbenchSection.tsx` with `lg:grid-cols-6` bento layout (row 1: 3x 2-col, row 2: 2x 3-col).
+  - Update `FanOutProofDeck.tsx` and `ProofDeckCard.tsx` with absolute center stacking, GSAP ScrollTrigger arc fan-out, and hover lift.
+  - Update `proofDeckData.ts` and `TasteAlgorithmsProof.tsx` with verified reviewer labels.
+  - All files strictly maintained under 132 lines.
+- **Why**: Eliminates awkward whitespace and placeholder labels while creating an authentic magazine-grade editorial cover aesthetic with high-craft physics.
+- **Rejected Alternatives**:
+  - Keeping a 3-column grid with empty slot: Rejected due to unbalanced visual weight.
+  - Rectangular framed portrait: Rejected because transparent cutout silhouette creates far superior depth against giant display typography.

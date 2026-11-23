@@ -7,18 +7,18 @@ import { LINKS } from "@/lib/links";
 export function TasteAlgorithmsProof() {
   const reviews = [
     {
-      author: "Tanvir Ahmed",
-      role: "BUP ICT Systems Peer",
+      author: "SYSTEMS PEER — BUP ICT",
+      role: "Collaborator Endorsement",
       text: "Collaborated on low-level socket programming and database architectures. Exceptionally rigorous on ACID isolation and edge cases.",
     },
     {
-      author: "Mahir Faysal",
-      role: "Fullstack Partner",
+      author: "FULL-STACK COLLAB — CINEFILM",
+      role: "Project Collab Endorsement",
       text: "Engineered robust backend API contracts with clean data normalization. Always prioritizes schema sanity before touching UI code.",
     },
     {
-      author: "Samin Yasar",
-      role: "Algorithms & CP Collaborator",
+      author: "ALGORITHMIC PEER — CP",
+      role: "Competitive Programming Peer",
       text: "Consistent algorithmic rigor in C++. Strong grasp of asymptotic complexity, shortest path optimizations, and dynamic programming.",
     },
   ];
