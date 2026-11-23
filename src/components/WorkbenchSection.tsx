@@ -51,6 +51,7 @@ export function WorkbenchSection({ onSelectProject }: WorkbenchSectionProps) {
               <WorkbenchCard
                 project={project}
                 onSelect={onSelectProject}
+                index={idx}
               />
             </div>
           ))}

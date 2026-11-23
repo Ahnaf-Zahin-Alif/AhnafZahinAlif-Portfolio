@@ -13,11 +13,11 @@ export function FanOutProofDeck() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     gsap.registerPlugin(ScrollTrigger);
-    const rotations = [-12, -6, 0, 6, 12];
-    const yOffsets = [18, 6, 0, 6, 18];
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const rotations = prefersReducedMotion ? [-4, -2, 0, 2, 4] : [-12, -6, 0, 6, 12];
+    const yOffsets = prefersReducedMotion ? [6, 2, 0, 2, 6] : [18, 6, 0, 6, 18];
 
     const isMobile = window.innerWidth < 640;
     const isTablet = window.innerWidth < 1024;
@@ -46,6 +46,8 @@ export function FanOutProofDeck() {
         );
       });
     }, containerRef);
+
+    ScrollTrigger.refresh();
 
     return () => ctx.revert();
   }, []);

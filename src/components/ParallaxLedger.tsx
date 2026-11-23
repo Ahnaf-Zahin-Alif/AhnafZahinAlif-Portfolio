@@ -14,32 +14,37 @@ export function ParallaxLedger() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     gsap.registerPlugin(ScrollTrigger);
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const yLeft = prefersReducedMotion ? -12 : -35;
+    const yRight = prefersReducedMotion ? 12 : 35;
+
     const ctx = gsap.context(() => {
       gsap.to(colLeftRef.current, {
-        y: -35,
+        y: yLeft,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top bottom",
           end: "bottom top",
-          scrub: 1.0,
+          scrub: true,
         },
       });
 
       gsap.to(colRightRef.current, {
-        y: 35,
+        y: yRight,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top bottom",
           end: "bottom top",
-          scrub: 1.6,
+          scrub: true,
         },
       });
     }, containerRef);
+
+    ScrollTrigger.refresh();
 
     return () => ctx.revert();
   }, []);

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { ProjectItem } from "@/types/projects";
 import { ProjectPreviewVisual } from "./ProjectPreviewVisual";
@@ -8,13 +9,19 @@ import { ProjectPreviewVisual } from "./ProjectPreviewVisual";
 interface WorkbenchCardProps {
   project: ProjectItem;
   onSelect: (project: ProjectItem) => void;
+  index?: number;
 }
 
-export function WorkbenchCard({ project, onSelect }: WorkbenchCardProps) {
+export function WorkbenchCard({ project, onSelect, index = 0 }: WorkbenchCardProps) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1], delay: (index % 3) * 0.08 }}
+      whileHover={{ y: -4 }}
       onClick={() => onSelect(project)}
-      className="w-full group relative rounded-3xl bg-[#1F1E1D] border border-[#2E2C29] hover:border-[#C85A32] hover:shadow-2xl hover:shadow-[#C85A32]/10 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer"
+      className="w-full group relative rounded-3xl bg-[#1F1E1D] border border-[#2E2C29] hover:border-[#C85A32] hover:shadow-2xl hover:shadow-[#C85A32]/10 transition-colors duration-300 flex flex-col justify-between overflow-hidden cursor-pointer"
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
@@ -70,6 +77,6 @@ export function WorkbenchCard({ project, onSelect }: WorkbenchCardProps) {
           <ArrowUpRight className="w-3.5 h-3.5" />
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 }

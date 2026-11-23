@@ -5,8 +5,10 @@ import { Clock } from "lucide-react";
 
 export function HeroTelemetryBadge() {
   const [dhakaTime, setDhakaTime] = useState<string>("");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const updateTime = () => {
       setDhakaTime(
         new Intl.DateTimeFormat("en-US", {
@@ -35,7 +37,9 @@ export function HeroTelemetryBadge() {
       <div className="flex items-center gap-1.5 text-[#5C5852] tabular-nums text-[11px]">
         <Clock className="w-3 h-3 text-[#5A6E58]" />
         <span>DHAKA</span>
-        <strong className="text-[#1B1B1C] font-semibold">{dhakaTime || "10:00:00 PM"}</strong>
+        <strong suppressHydrationWarning className="text-[#1B1B1C] font-semibold">
+          {mounted && dhakaTime ? dhakaTime : "10:00:00 PM"}
+        </strong>
         <span className="text-[10px] text-[#5C5852]/80">GMT+6</span>
       </div>
     </div>

@@ -24,6 +24,7 @@
 | [D-019](#d-019-top-four-full-bleed-sections-with-blob-reveal-animated-az-signature-parallax-ledger--dual-mode-showcase) | Top Four Full-Bleed Sections (Blob Reveal, AZ Signature, Parallax Ledger, Dual-Mode Showcase) | Accepted | 2026-11-23 |
 | [D-020](#d-020-bottom-four-sections-workbench-hall-of-fame-flagship-spotlight-fan-out-proof-deck-rounded-curtain-footer) | Bottom Four Sections (Workbench, Flagship Spotlight, Fan-Out Deck, Rounded Curtain Footer) | Accepted | 2026-11-23 |
 | [D-021](#d-021-visual--motion-polish-cutout-silhouette-hero-6-col-bento-grid-scroll-driven-fan-out--verified-peer-labels) | Visual & Motion Polish (Cutout Silhouette Hero, 6-Col Bento, Scroll Fan-Out, Verified Labels) | Accepted | 2026-11-23 |
+| [D-022](#d-022-animation-pipeline-and-smoothscrollprovider-overhaul) | Animation Pipeline & SmoothScrollProvider Overhaul | Accepted | 2026-11-24 |
 
 ---
 
@@ -405,3 +406,27 @@
 - **Rejected Alternatives**:
   - Keeping a 3-column grid with empty slot: Rejected due to unbalanced visual weight.
   - Rectangular framed portrait: Rejected because transparent cutout silhouette creates far superior depth against giant display typography.
+
+---
+
+### D-022: Animation Pipeline and SmoothScrollProvider Overhaul
+- **Status**: Accepted
+- **Context**: The portfolio was rendering static with Framer Motion and GSAP ScrollTrigger animations failing to fire. Root cause audit revealed:
+  1. `SmoothScroll.tsx`, `ParallaxLedger.tsx`, and `FanOutProofDeck.tsx` had early exits `if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;` which completely skipped `gsap.registerPlugin(ScrollTrigger)` on systems where animations are reduced or disabled by default in OS accessibility.
+  2. `<MotionConfig reducedMotion="user">` in `PortfolioShell.tsx` blanket-suppressed all Framer Motion entrance animations.
+  3. `globals.css` lacked `@keyframes marquee` and `.animate-marquee` definitions, rendering both capabilities and tech stack marquees static.
+  4. `html { scroll-behavior: smooth; }` and `body { overflow-x: hidden; }` fought with Lenis virtual scroll and broke ScrollTrigger trigger calculations.
+  5. `InteractiveHero` headlines were static `<h1>` and `<h2>` elements without Framer Motion entrance variants.
+- **Decision**:
+  - Build dedicated `SmoothScrollProvider.tsx` initializing `Lenis`, registering `ScrollTrigger`, syncing with `gsap.ticker.add((time) => lenis.raf(time * 1000))` and `gsap.ticker.lagSmoothing(0)`, and cleaning up both ticker and Lenis instances on unmount.
+  - Remove `scroll-behavior: smooth` and `body { overflow-x: hidden }` from `globals.css`; use `overflow-x-clip` on wrapper and main container.
+  - Define `@keyframes marquee` and `.animate-marquee` in `globals.css` with seamless `-50%` horizontal translation.
+  - Remove `<MotionConfig reducedMotion="user">` from `PortfolioShell.tsx`.
+  - Add staggered entrance reveals (`motion.h1`, `motion.h2`, `motion.div`) in `InteractiveHero.tsx`.
+  - Add `mounted` hydration safety and `suppressHydrationWarning` in `HeroTelemetryBadge.tsx`.
+  - Add `whileInView={{ opacity: 1, y: 0 }}` and `whileHover` in `WorkbenchCard.tsx` with staggered index.
+  - Wrap ScrollTrigger in `gsap.context()` in `ParallaxLedger.tsx` and `FanOutProofDeck.tsx` with `ScrollTrigger.refresh()`, substituting gentle motion instead of bailing out completely.
+- **Why**: Ensures all 5 key animation choreographies (Hero staggered text reveal, continuous marquees, parallax ledger vertical scrub, workbench card reveals, and fan-out proof deck arc) execute reliably and smoothly with 0 hydration warnings and 0 lint errors.
+- **Rejected Alternatives**:
+  - Retaining native CSS smooth scroll: Breaks Lenis interpolation and causes desynchronized GSAP pinning and triggers.
+  - Blanket disabling of animations under reduced-motion: Instead of completely disabling GSAP and ScrollTrigger, damped gentle offsets are provided so layout never breaks.

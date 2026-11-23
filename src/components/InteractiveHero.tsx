@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { ArrowDownRight, FolderGit2 } from "lucide-react";
 import { HeroPortraitBlob } from "./HeroPortraitBlob";
 import { HeroTelemetryBadge } from "./HeroTelemetryBadge";
@@ -37,23 +38,43 @@ export function InteractiveHero() {
 
       {/* Center Hero Stage: Giant Condensed Headline with Cutout Portrait Layered Directly Over */}
       <div className="relative z-10 w-full max-w-6xl mx-auto my-auto py-4 sm:py-6 flex flex-col items-center">
-        {/* Giant Condensed Headline (Layer 1 - z-10) */}
+        {/* Giant Condensed Headline (Layer 1 - z-10) with Staggered Text Reveal */}
         <div className="w-full text-center select-none space-y-1 sm:space-y-2 relative z-10">
-          <h1 className="font-display font-black text-center text-4xl sm:text-6xl md:text-8xl lg:text-9xl tracking-tighter uppercase leading-[0.85] text-[#1B1B1C] w-full">
+          <motion.h1
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
+            className="font-display font-black text-center text-4xl sm:text-6xl md:text-8xl lg:text-9xl tracking-tighter uppercase leading-[0.85] text-[#1B1B1C] w-full"
+          >
             CRAFTING SCALABLE
-          </h1>
-          <h2 className="font-display font-black text-center text-4xl sm:text-6xl md:text-8xl lg:text-9xl tracking-tighter uppercase leading-[0.85] text-[#1B1B1C] w-full">
+          </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.25 }}
+            className="font-display font-black text-center text-4xl sm:text-6xl md:text-8xl lg:text-9xl tracking-tighter uppercase leading-[0.85] text-[#1B1B1C] w-full"
+          >
             DIGITAL ARCHITECTURE
-          </h2>
+          </motion.h2>
         </div>
 
         {/* Cutout Portrait Layered Directly Over Headline (Layer 2 - z-20) */}
-        <div className="relative -mt-24 sm:-mt-40 md:-mt-52 lg:-mt-64 z-20 pointer-events-auto">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.85, ease: [0.19, 1, 0.22, 1], delay: 0.2 }}
+          className="relative -mt-24 sm:-mt-40 md:-mt-52 lg:-mt-64 z-20 pointer-events-auto"
+        >
           <HeroPortraitBlob />
-        </div>
+        </motion.div>
 
         {/* Sub-Manifesto & CTAs */}
-        <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center gap-4 text-center z-30">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1], delay: 0.4 }}
+          className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center gap-4 text-center z-30"
+        >
           <p className="max-w-md text-xs sm:text-sm font-mono text-[#5C5852] leading-relaxed">
             Md. Ahnaf Zahin Alif — BUP ICT. Designing low-latency backends, ACID relational storage, and deterministic algorithms.
           </p>
@@ -73,7 +94,7 @@ export function InteractiveHero() {
               <span>Stack Specs</span>
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Bottom Floating Bar */}
