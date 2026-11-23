@@ -49,7 +49,7 @@ export function EngineeringLedger() {
     <section id="ledger" className="w-full space-y-6 scroll-mt-24" aria-labelledby="ledger-heading">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <span className="text-[11px] font-bold tracking-widest text-[#f07b3f] uppercase block pb-1 font-mono">
+          <span className="text-[11px] font-bold tracking-widest text-[#5fd4ff] uppercase block pb-1 font-mono">
             03 // ACADEMIC &amp; SYSTEMS LEDGER
           </span>
           <h2 id="ledger-heading" className="text-2xl sm:text-3xl font-extrabold text-zinc-100 tracking-tight text-balance">
@@ -59,7 +59,7 @@ export function EngineeringLedger() {
 
         <a
           href="mailto:ahnafzahinalif@gmail.com?subject=Request%20CV%20-%20Md.%20Ahnaf%20Zahin%20Alif"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#fce19b] hover:bg-[#f6d787] text-zinc-950 font-semibold text-xs font-mono transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fce19b]"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#161b26] hover:bg-[#2f6bff] hover:text-white border border-white/[0.12] text-zinc-200 font-semibold text-xs font-mono transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f6bff]"
           aria-label="Request CV via email"
         >
           <Download className="w-3.5 h-3.5 text-zinc-950" strokeWidth={1.5} />
@@ -67,7 +67,7 @@ export function EngineeringLedger() {
         </a>
       </div>
 
-      <div className="rounded-3xl bg-[#151311] border border-white/[0.08] divide-y divide-white/[0.06] overflow-hidden shadow-lg">
+      <div className="rounded-3xl bg-[#0f121a] border border-white/[0.08] divide-y divide-white/[0.06] overflow-hidden shadow-lg">
         {ledgerRows.map((row, idx) => {
           const isExpanded = expandedIdx === idx;
           return (
@@ -75,12 +75,12 @@ export function EngineeringLedger() {
               <button
                 type="button"
                 onClick={() => setExpandedIdx(isExpanded ? null : idx)}
-                className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f]"
+                className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f6bff]"
                 aria-expanded={isExpanded}
               >
                 <div className="space-y-1.5 flex-1">
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="font-mono text-xs text-[#38bdf8] tabular-nums font-semibold flex items-center gap-1.5">
+                    <span className="font-mono text-xs text-[#5fd4ff] tabular-nums font-semibold flex items-center gap-1.5">
                       <Calendar className="w-3 h-3" />
                       {row.period}
                     </span>
@@ -90,7 +90,7 @@ export function EngineeringLedger() {
                 </div>
                 <ChevronDown
                   className={`w-5 h-5 text-zinc-400 transition-transform duration-200 mt-1 shrink-0 ${
-                    isExpanded ? "rotate-180 text-[#f07b3f]" : ""
+                    isExpanded ? "rotate-180 text-[#2f6bff]" : ""
                   }`}
                   strokeWidth={1.5}
                 />
@@ -116,7 +116,7 @@ export function EngineeringLedger() {
                         {row.modules.map((mod) => (
                           <span
                             key={mod}
-                            className="text-[11px] font-mono px-3 py-1 rounded-full bg-[#0c0a09] border border-white/[0.08] text-zinc-300"
+                            className="text-[11px] font-mono px-3 py-1 rounded-full bg-[#08090d] border border-white/[0.08] text-zinc-300"
                           >
                             {mod}
                           </span>

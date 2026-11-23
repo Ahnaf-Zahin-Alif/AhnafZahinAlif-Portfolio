@@ -30,19 +30,19 @@ export function TasteAlgorithmsProof() {
           href="https://codeforces.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-4 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-100/40 hover:border-white/20 transition-all group"
+          className="p-4 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-[#0f121a]/60 dark:bg-[#0f121a]/60 light:bg-slate-100/60 hover:border-white/20 transition-all group"
         >
-          <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
+          <div className="flex items-center justify-between text-xs font-mono text-slate-400">
             <span className="flex items-center gap-1.5">
-              <Terminal className="w-3.5 h-3.5 text-[#38bdf8]" />
+              <Terminal className="w-3.5 h-3.5 text-[#2f6bff]" />
               CODEFORCES
             </span>
             <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
-          <div className="mt-2 text-base font-bold font-mono text-zinc-100 dark:text-zinc-100 light:text-zinc-900">
+          <div className="mt-2 text-base font-bold font-mono text-slate-100 dark:text-slate-100 light:text-slate-900">
             C++ Algorithms
           </div>
-          <div className="text-[11px] font-mono text-emerald-400 mt-1 tabular-nums">
+          <div className="text-[11px] font-mono text-[#5fd4ff] mt-1 tabular-nums">
             Graph Theory • DP • Bitmasking
           </div>
         </a>
@@ -51,19 +51,19 @@ export function TasteAlgorithmsProof() {
           href="https://codechef.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-4 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-zinc-900/40 dark:bg-zinc-900/40 light:bg-zinc-100/40 hover:border-white/20 transition-all group"
+          className="p-4 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-[#0f121a]/60 dark:bg-[#0f121a]/60 light:bg-slate-100/60 hover:border-white/20 transition-all group"
         >
-          <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
+          <div className="flex items-center justify-between text-xs font-mono text-slate-400">
             <span className="flex items-center gap-1.5">
-              <Code2 className="w-3.5 h-3.5 text-[#f07b3f]" />
+              <Code2 className="w-3.5 h-3.5 text-[#5fd4ff]" />
               CODECHEF
             </span>
             <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
-          <div className="mt-2 text-base font-bold font-mono text-zinc-100 dark:text-zinc-100 light:text-zinc-900">
+          <div className="mt-2 text-base font-bold font-mono text-slate-100 dark:text-slate-100 light:text-slate-900">
             Competitive Track
           </div>
-          <div className="text-[11px] font-mono text-[#f07b3f] mt-1 tabular-nums">
+          <div className="text-[11px] font-mono text-[#5fd4ff] mt-1 tabular-nums">
             Asymptotic Optimization
           </div>
         </a>
@@ -71,8 +71,8 @@ export function TasteAlgorithmsProof() {
 
       {/* Peer Review Cards */}
       <div className="space-y-3">
-        <div className="text-xs font-mono text-zinc-400 uppercase tracking-widest flex items-center gap-2">
-          <Award className="w-3.5 h-3.5 text-amber-400" />
+        <div className="text-xs font-mono text-slate-400 uppercase tracking-widest flex items-center gap-2">
+          <Award className="w-3.5 h-3.5 text-[#2f6bff]" />
           <span>COLLABORATOR VERIFICATION</span>
         </div>
 
@@ -80,13 +80,13 @@ export function TasteAlgorithmsProof() {
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="p-3.5 rounded-xl border border-white/[0.06] dark:border-white/[0.06] light:border-black/[0.06] bg-[#12100e] dark:bg-[#12100e] light:bg-white text-xs font-mono space-y-1.5"
+              className="p-3.5 rounded-xl border border-white/[0.06] dark:border-white/[0.06] light:border-black/[0.06] bg-[#0f121a] dark:bg-[#0f121a] light:bg-white text-xs font-mono space-y-1.5"
             >
               <div className="flex items-center justify-between">
-                <span className="font-bold text-zinc-200 dark:text-zinc-200 light:text-zinc-900">{rev.author}</span>
-                <span className="text-[10px] text-zinc-500">{rev.role}</span>
+                <span className="font-bold text-slate-200 dark:text-slate-200 light:text-slate-900">{rev.author}</span>
+                <span className="text-[10px] text-slate-500">{rev.role}</span>
               </div>
-              <p className="text-zinc-400 dark:text-zinc-400 light:text-zinc-600 font-sans leading-relaxed text-[11px]">
+              <p className="text-slate-400 dark:text-slate-400 light:text-slate-600 font-sans leading-relaxed text-[11px]">
                 &ldquo;{rev.text}&rdquo;
               </p>
             </div>

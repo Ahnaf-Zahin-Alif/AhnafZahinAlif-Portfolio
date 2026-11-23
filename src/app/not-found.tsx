@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-[#12100e] text-zinc-100 flex flex-col items-center justify-center px-4 text-center">
-      <span className="text-xs font-semibold tracking-widest text-[#f07b3f] uppercase block mb-3">
+    <div className="min-h-screen bg-[#08090d] text-zinc-100 flex flex-col items-center justify-center px-4 text-center">
+      <span className="text-xs font-semibold tracking-widest text-[#5fd4ff] uppercase block mb-3 font-mono">
         404
       </span>
       <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-100 mb-2">
@@ -25,7 +25,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#f07b3f] hover:bg-[#e06c30] text-zinc-950 font-semibold text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100e]"
+        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#2f6bff] hover:bg-[#1a56f0] text-white font-semibold text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f6bff] focus-visible:ring-offset-2 focus-visible:ring-offset-[#08090d]"
       >
         <ArrowLeft className="w-4 h-4" aria-hidden="true" focusable="false" />
         <span>Return Home</span>

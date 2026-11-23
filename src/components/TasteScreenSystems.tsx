@@ -15,12 +15,12 @@ export function TasteScreenSystems({ onSelectProject }: TasteScreenSystemsProps)
       <div className="taste-wrap space-y-8">
         {/* Section Header */}
         <div className="space-y-2 border-b border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] pb-6">
-          <div className="flex items-center gap-3 font-mono text-xs text-[#38bdf8] tracking-widest font-semibold">
+          <div className="flex items-center gap-3 font-mono text-xs text-[#5fd4ff] tracking-widest font-semibold">
             <span>02 // DISTRIBUTED SYSTEMS &amp; ALGORITHMIC PROOF</span>
-            <span className="text-zinc-600">•</span>
-            <span className="text-zinc-400">DATAFLOW TOPOLOGY</span>
+            <span className="text-slate-600">•</span>
+            <span className="text-slate-400">DATAFLOW TOPOLOGY</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-zinc-100 dark:text-zinc-100 light:text-zinc-950 uppercase text-balance">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-100 dark:text-slate-100 light:text-slate-950 uppercase text-balance">
             Systems Architecture &amp; Algorithmic Verification
           </h2>
         </div>

@@ -19,7 +19,7 @@ export function DomainMarquee() {
   return (
     <section
       aria-label="Core Engineering Domains"
-      className="w-full py-4 my-8 border-y border-white/[0.08] bg-[#0f0d0b] overflow-hidden group select-none"
+      className="w-full py-4 my-8 border-y border-white/[0.08] bg-[#0f121a]/60 backdrop-blur-sm overflow-hidden group select-none"
     >
       <div className="relative w-full flex overflow-x-hidden">
         <motion.div
@@ -36,7 +36,7 @@ export function DomainMarquee() {
               <span className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-zinc-300 uppercase">
                 {domain}
               </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#f07b3f] shadow-[0_0_8px_rgba(240,123,63,0.8)]" aria-hidden="true" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2f6bff] shadow-[0_0_8px_rgba(47,107,255,0.7)]" aria-hidden="true" />
             </div>
           ))}
         </motion.div>

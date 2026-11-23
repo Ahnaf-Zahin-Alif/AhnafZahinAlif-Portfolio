@@ -15,12 +15,12 @@ export function TasteFlagshipCinefilm({ onSelectProject }: TasteFlagshipCinefilm
       <div className="taste-wrap space-y-8">
         {/* Section Header (Top-Aligned) */}
         <div className="space-y-2 border-b border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] pb-6">
-          <div className="flex items-center gap-3 font-mono text-xs text-[#f07b3f] tracking-widest font-semibold">
+          <div className="flex items-center gap-3 font-mono text-xs text-[#5fd4ff] tracking-widest font-semibold">
             <span>01 // FLAGSHIP SYSTEM ARCHITECTURE</span>
-            <span className="text-zinc-600">•</span>
-            <span className="text-zinc-400">MARIADB ACID ENGINE</span>
+            <span className="text-slate-600">•</span>
+            <span className="text-slate-400">MARIADB ACID ENGINE</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-zinc-100 dark:text-zinc-100 light:text-zinc-950 uppercase text-balance">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-100 dark:text-slate-100 light:text-slate-950 uppercase text-balance">
             CineFilm — Cinema Ticketing &amp; DBMS Engine
           </h2>
         </div>
@@ -29,19 +29,19 @@ export function TasteFlagshipCinefilm({ onSelectProject }: TasteFlagshipCinefilm
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Details & Technical Depth */}
           <div className="lg:col-span-6 space-y-6">
-            <p className="text-sm sm:text-base text-zinc-300 dark:text-zinc-300 light:text-zinc-700 leading-relaxed font-sans">
+            <p className="text-sm sm:text-base text-slate-300 dark:text-slate-300 light:text-slate-700 leading-relaxed font-sans">
               Full-stack transactional ticketing engine featuring atomic auditorium seat reservation, relational database schema architecture, ACID-compliant concurrency locking, and JWT administrative authentication.
             </p>
 
             {/* Architectural Highlights */}
             <div className="grid grid-cols-2 gap-3 text-xs font-mono">
-              <div className="p-3 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-zinc-900/50 dark:bg-zinc-900/50 light:bg-zinc-100/50">
-                <span className="text-zinc-400 block text-[10px] uppercase">Concurrency Model</span>
-                <span className="font-bold text-zinc-100 dark:text-zinc-100 light:text-zinc-900">SELECT ... FOR UPDATE</span>
+              <div className="p-3 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-[#0f121a]/50 dark:bg-[#0f121a]/50 light:bg-slate-100/50">
+                <span className="text-slate-400 block text-[10px] uppercase">Concurrency Model</span>
+                <span className="font-bold text-slate-100 dark:text-slate-100 light:text-slate-900">SELECT ... FOR UPDATE</span>
               </div>
-              <div className="p-3 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-zinc-900/50 dark:bg-zinc-900/50 light:bg-zinc-100/50">
-                <span className="text-zinc-400 block text-[10px] uppercase">Isolation Level</span>
-                <span className="font-bold text-emerald-400">REPEATABLE READ</span>
+              <div className="p-3 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-[#0f121a]/50 dark:bg-[#0f121a]/50 light:bg-slate-100/50">
+                <span className="text-slate-400 block text-[10px] uppercase">Isolation Level</span>
+                <span className="font-bold text-[#5fd4ff]">REPEATABLE READ</span>
               </div>
             </div>
 
@@ -50,7 +50,7 @@ export function TasteFlagshipCinefilm({ onSelectProject }: TasteFlagshipCinefilm
               {["Python", "Django REST", "MariaDB", "React", "Tailwind CSS", "ACID SQL"].map((t) => (
                 <span
                   key={t}
-                  className="px-2.5 py-1 rounded-lg text-xs font-mono bg-zinc-800/60 dark:bg-zinc-800/60 light:bg-zinc-200/60 border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] text-zinc-300 dark:text-zinc-300 light:text-zinc-800"
+                  className="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-800/60 dark:bg-slate-800/60 light:bg-slate-200/60 border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] text-slate-300 dark:text-slate-300 light:text-slate-800"
                 >
                   {t}
                 </span>
@@ -63,7 +63,7 @@ export function TasteFlagshipCinefilm({ onSelectProject }: TasteFlagshipCinefilm
                 href="https://github.com/Ahnaf-Zahin-Alif/Dbms-Project"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#f07b3f] hover:bg-[#e06c30] text-zinc-950 font-mono font-bold text-xs tracking-tight transition-all active:scale-95 shadow-lg shadow-[#f07b3f]/20"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2f6bff] hover:bg-[#1a56f0] text-white font-mono font-bold text-xs tracking-tight transition-all active:scale-95 shadow-lg shadow-[#2f6bff]/25"
                 aria-label="Inspect Dbms-Project on GitHub"
               >
                 <Database className="w-4 h-4" />
@@ -97,7 +97,7 @@ export function TasteFlagshipCinefilm({ onSelectProject }: TasteFlagshipCinefilm
                     },
                   })
                 }
-                className="text-xs font-mono text-zinc-400 hover:text-zinc-200 underline underline-offset-4 decoration-zinc-600 hover:decoration-[#f07b3f] transition-all"
+                className="text-xs font-mono text-slate-400 hover:text-slate-200 underline underline-offset-4 decoration-slate-600 hover:decoration-[#2f6bff] transition-all"
               >
                 Inspect Schema Breakdown →
               </button>

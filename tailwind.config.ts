@@ -15,9 +15,18 @@ const config: Config = {
         display: ["var(--font-unbounded)", "var(--font-inter)", "sans-serif"],
       },
       colors: {
+        canvas: "var(--surface-canvas)",
+        card: {
+          DEFAULT: "var(--surface-card)",
+          interactive: "var(--surface-interactive)",
+          elevated: "var(--surface-elevated)",
+        },
+        hairline: "var(--border-hairline)",
         accent: {
-          light: "#3b82f6",
-          dark: "#60a5fa",
+          DEFAULT: "var(--accent-primary)",
+          hover: "var(--accent-primary-hover)",
+          cyan: "var(--accent-cyan)",
+          cream: "var(--accent-cream)",
         },
       },
     },

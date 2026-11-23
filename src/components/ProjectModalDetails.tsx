@@ -33,7 +33,7 @@ export function ProjectModalDetails({ project }: { project: ProjectItem }) {
         <h3 id="modal-title" className="text-2xl sm:text-3xl font-extrabold text-zinc-100 tracking-tight text-balance">
           {project.title}
         </h3>
-        <p className="text-xs sm:text-sm font-mono text-[#38bdf8]">
+        <p className="text-xs sm:text-sm font-mono text-[#5fd4ff]">
           {project.tagline}
         </p>
         <p className="text-sm text-zinc-300 leading-relaxed text-pretty pt-1">
@@ -48,8 +48,8 @@ export function ProjectModalDetails({ project }: { project: ProjectItem }) {
         </span>
         <div className="grid grid-cols-1 gap-2.5">
           {project.architectureDetails.map((detail, idx) => (
-            <div key={idx} className="p-3 rounded-xl bg-[#0c0a09] border border-white/[0.06] flex items-start gap-3">
-              <CheckCircle2 className="w-4 h-4 text-[#f07b3f] shrink-0 mt-0.5" strokeWidth={1.5} />
+            <div key={idx} className="p-3 rounded-xl bg-[#08090d] border border-white/[0.06] flex items-start gap-3">
+              <CheckCircle2 className="w-4 h-4 text-[#5fd4ff] shrink-0 mt-0.5" strokeWidth={1.5} />
               <span className="text-xs text-zinc-300 leading-relaxed font-mono">
                 {detail}
               </span>
@@ -67,7 +67,7 @@ export function ProjectModalDetails({ project }: { project: ProjectItem }) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-xs font-mono px-3 py-1 rounded-full bg-[#1d1916] border border-white/[0.08] text-zinc-200"
+              className="text-xs font-mono px-3 py-1 rounded-full bg-[#161b26] border border-white/[0.08] text-zinc-200"
             >
               {tag}
             </span>
@@ -79,14 +79,14 @@ export function ProjectModalDetails({ project }: { project: ProjectItem }) {
       <motion.div variants={innerItem} className="pt-4 border-t border-white/[0.08] flex items-center justify-between">
         <div className="text-xs font-mono text-zinc-400">
           <span className="text-zinc-500">{project.metrics.label}:</span>{" "}
-          <span className="text-[#38bdf8] font-semibold tabular-nums">{project.metrics.value}</span>
+          <span className="text-[#5fd4ff] font-semibold tabular-nums">{project.metrics.value}</span>
         </div>
         <motion.a
           href={project.repoUrl}
           target="_blank"
           rel="noopener noreferrer"
           whileTap={{ scale: 0.97 }}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f07b3f] hover:bg-[#e06c30] text-zinc-950 font-semibold text-xs transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f]"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2f6bff] hover:bg-[#1a56f0] text-white font-semibold text-xs transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f6bff]"
           aria-label={`Open repository for ${project.title}`}
         >
           <GitBranch className="w-4 h-4" strokeWidth={1.5} />

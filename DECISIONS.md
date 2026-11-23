@@ -17,6 +17,7 @@
 | [D-012](#d-012-framer-motion-kinetic-choreography-domain-marquee-and-real-repo-wiring) | Framer Motion Kinetic Choreography, Domain Marquee, and Real Repo Wiring | Accepted | 2026-11-13 |
 | [D-013](#d-013-asymmetric-split-viewport-studio-architecture-and-20-motion-craft-rules) | Asymmetric Split-Viewport Studio Architecture and 20 Motion Craft Rules | Accepted | 2026-11-14 |
 | [D-014](#d-014-taste-skill-25-evolution-5-screen-full-viewport-architecture) | Taste-Skill 2.5 Evolution: 5-Screen Full-Viewport Architecture | Accepted | 2026-11-23 |
+| [D-015](#d-015-color-theory-palette-redesign-electric-cobalt--deep-obsidian) | Color Theory Palette Redesign (Electric Cobalt & Deep Obsidian) | Accepted | 2026-11-23 |
 
 ---
 
@@ -189,3 +190,21 @@
   - Keep all components single-purpose and strictly under 135 lines in `src/components/`, while removing superseded split-layout components (`StudioIdentityRail`, `StudioWorkbench`, `TechStackExplorer`, `SystemsProof`, `FlagshipProjectCard`).
 - **Why**: Replaces uneven scroll density with the figma.com / x.ai design bar: equal container edges, live interactive engineering UI on every screen, physical material depth, zero AI slop words, and 100% native App Router SSR SEO preservation.
 - **Rejected Alternatives**: Remaining in the pinned sidebar layout or copying non-functional art-school gimmicks (like random ticker tapes) that obscure real engineering substance.
+
+---
+
+### D-015: Color Theory Palette Redesign (Electric Cobalt & Deep Obsidian)
+- **Status**: Accepted
+- **Context**: The previous color palette suffered from muddy warm-brown dark tones (`#0c0a09`, `#151311`) and a multi-accent "fruit salad" (simultaneous warm orange `#f07b3f`, bright cyan `#38bdf8`, emerald green, amber yellow, purple), violating tasteskill 2.5 Rule 5 (90–95% neutral surface with a single intentional accent and strict 60-30-10 distribution). The user requested applying color theory to overhaul the site's colors and approved Direction 1 (Electric Cobalt & Deep Obsidian).
+- **Decision**:
+  - Transform color system to an intentional 60-30-10 hierarchy:
+    - 60% Dominant Base: Deep Obsidian canvas (`#08090d`), elevated slate cards (`#0f121a`), and subtle hairlines (`rgba(255,255,255,0.08)` / slate-800).
+    - 30% Structural Secondary: Slate neutrals (`#161b26`), crisp typography (zinc-100 titles, zinc-400 technical metadata), and Ice Cyan (`#5fd4ff`) for telemetry badges and status pings.
+    - 10% High-Energy Accent: Electric Cobalt Blue (`#2f6bff`, hover `#1a56f0`), reserved strictly for primary interactive CTAs, focus rings, seat selection, and monogram branding.
+  - Update CSS variables in `src/app/globals.css` and `tailwind.config.ts` (`canvas`, `card`, `hairline`, `accent`).
+  - Overhaul all components (`TasteNav`, `TasteHero`, `SqlTransactionAppFrame`, `LiveClock`, `StudioEmailCopy`, `CinefilmSeatSimulator`, `TasteFlagshipCinefilm`, `SystemsDiagramCard`, `TasteAlgorithmsProof`, `TasteScreenSystems`, `TasteScreenMatrix`, `TasteCapabilityMatrix`, `TasteClosingStation`, `CommandPalette`, `BackToTop`, `DomainMarquee`, `ThemeToggle`, `EngineeringLedger`, `ProjectCard`, `ProjectModal`, `ProjectModalDetails`, `ProjectPreviewVisual`, `not-found.tsx`, and `public/icon.svg`).
+  - Maintain dual-theme support (Obsidian Dark and Alabaster Light) while strictly keeping every component under 135 lines.
+- **Why**: Replaces muddy chromatic noise with a disciplined, cold-engineering aesthetic inspired by Linear, Vercel, and xAI, elevating contrast, clarity, and visual prestige while meeting WCAG AA contrast standards.
+- **Rejected Alternatives**:
+  - Direction 2 (Monochrome Carbon & Acid Lime): Rejected due to overly aggressive high-contrast cyberpunk tone that detracts from professional systems engineering.
+  - Direction 3 (Graphite & International Klein Blue): Rejected due to darker blue value having reduced contrast against deep slate backgrounds.

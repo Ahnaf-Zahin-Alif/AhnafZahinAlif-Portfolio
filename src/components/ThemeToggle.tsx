@@ -44,7 +44,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="relative w-14 h-7 rounded-full bg-[#151311] dark:bg-[#151311] light:bg-[#f4f2ee] border border-white/[0.1] dark:border-white/[0.1] light:border-black/[0.08] p-0.5 flex items-center justify-between px-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f07b3f]"
+      className="relative w-14 h-7 rounded-full bg-[#0f121a] dark:bg-[#0f121a] light:bg-[#f4f2ee] border border-white/[0.1] dark:border-white/[0.1] light:border-black/[0.08] p-0.5 flex items-center justify-between px-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f6bff]"
       aria-label={isDark ? "Switch to Alabaster light theme" : "Switch to Obsidian dark theme"}
     >
       <Moon className="w-3.5 h-3.5 text-zinc-400 z-10 pointer-events-none" strokeWidth={1.5} />
@@ -60,7 +60,7 @@ export function ThemeToggle() {
           scaleX: [1, 1.12, 1],
           x: isDark ? 0 : 26,
         }}
-        className="absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-[#f07b3f] shadow-md -z-0"
+        className="absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-[#2f6bff] shadow-md -z-0"
       />
     </button>
   );

@@ -72,7 +72,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
             role="dialog"
             aria-modal="true"
             aria-label="Command Palette"
-            className="relative w-full max-w-xl rounded-2xl bg-[#151311] border border-white/[0.12] shadow-2xl overflow-hidden z-10"
+            className="relative w-full max-w-xl rounded-2xl bg-[#0f121a] border border-white/[0.12] shadow-2xl overflow-hidden z-10"
           >
             <div className="flex items-center gap-3 px-4 py-3.5 border-b border-white/[0.08]">
               <Search className="w-5 h-5 text-zinc-400" strokeWidth={1.5} aria-hidden="true" />
@@ -102,7 +102,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
                       className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-white/[0.06] text-left transition-colors group"
                     >
                       <div className="flex items-center gap-3">
-                        <Icon className="w-4 h-4 text-zinc-400 group-hover:text-[#f07b3f] transition-colors" strokeWidth={1.5} />
+                        <Icon className="w-4 h-4 text-zinc-400 group-hover:text-[#2f6bff] transition-colors" strokeWidth={1.5} />
                         <span className="text-sm font-medium text-zinc-200 group-hover:text-zinc-100">{item.title}</span>
                       </div>
                       <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">{item.category}</span>
@@ -111,7 +111,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
                 })
               )}
             </div>
-            <div className="px-4 py-2 border-t border-white/[0.06] bg-[#0c0a09] flex items-center justify-between text-[11px] font-mono text-zinc-500">
+            <div className="px-4 py-2 border-t border-white/[0.06] bg-[#08090d] flex items-center justify-between text-[11px] font-mono text-zinc-500">
               <span>Navigate &amp; Execute</span>
               <span>ESC to exit</span>
             </div>

@@ -19,10 +19,10 @@ export function CinefilmSeatSimulator() {
   ];
 
   return (
-    <div className="rounded-2xl border border-white/[0.12] dark:border-white/[0.12] light:border-black/[0.12] bg-[#151311] dark:bg-[#151311] light:bg-[#f5f3ef] p-6 card-specular space-y-6">
+    <div className="rounded-2xl border border-white/[0.12] dark:border-white/[0.12] light:border-black/[0.12] bg-[#0f121a] dark:bg-[#0f121a] light:bg-white p-6 card-specular space-y-6">
       <div className="text-center space-y-1">
-        <div className="h-1.5 w-3/4 mx-auto rounded-full bg-gradient-to-r from-transparent via-[#f07b3f] to-transparent shadow-[0_0_12px_rgba(240,123,63,0.5)]" />
-        <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase block">
+        <div className="h-1.5 w-3/4 mx-auto rounded-full bg-gradient-to-r from-transparent via-[#2f6bff] to-transparent shadow-[0_0_12px_rgba(47,107,255,0.6)]" />
+        <span className="text-[10px] font-mono tracking-widest text-slate-500 uppercase block">
           AUDITORIUM 01 // IMMERSIVE AUDIO
         </span>
       </div>
@@ -34,11 +34,11 @@ export function CinefilmSeatSimulator() {
               const seatId = `${r.row}${sIdx + 1}`;
               const isSelected = selectedSeats.includes(seatId);
               const isReserved = st === "reserved";
-              let style = "bg-zinc-800/80 border-white/[0.08] text-zinc-400 hover:border-white/30 cursor-pointer";
+              let style = "bg-slate-800/80 border-white/[0.08] text-slate-400 hover:border-white/30 cursor-pointer";
               if (isSelected) {
-                style = "bg-[#f07b3f] border-[#f07b3f] text-zinc-950 font-bold shadow-[0_0_8px_rgba(240,123,63,0.6)] cursor-pointer";
+                style = "bg-[#2f6bff] border-[#2f6bff] text-white font-bold shadow-[0_0_10px_rgba(47,107,255,0.7)] cursor-pointer";
               } else if (isReserved) {
-                style = "bg-zinc-900 border-zinc-800 opacity-40 cursor-not-allowed text-zinc-600";
+                style = "bg-slate-900 border-slate-800 opacity-40 cursor-not-allowed text-slate-600";
               }
               return (
                 <button
@@ -56,12 +56,12 @@ export function CinefilmSeatSimulator() {
         ))}
       </div>
 
-      <div className="p-3.5 rounded-xl bg-[#0c0a09] dark:bg-[#0c0a09] light:bg-white border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] flex items-center justify-between text-xs font-mono">
+      <div className="p-3.5 rounded-xl bg-[#08090d] dark:bg-[#08090d] light:bg-slate-100 border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] flex items-center justify-between text-xs font-mono">
         <div className="flex items-center gap-2">
-          <Film className="w-4 h-4 text-[#38bdf8]" />
-          <span>SELECTED: <strong className="text-zinc-100 dark:text-zinc-100 light:text-zinc-900">{selectedSeats.join(", ") || "None"}</strong></span>
+          <Film className="w-4 h-4 text-[#5fd4ff]" />
+          <span>SELECTED: <strong className="text-slate-100 dark:text-slate-100 light:text-slate-900">{selectedSeats.join(", ") || "None"}</strong></span>
         </div>
-        <div className="flex items-center gap-2 text-emerald-400 font-bold">
+        <div className="flex items-center gap-2 text-[#5fd4ff] font-bold">
           <CheckCircle2 className="w-3.5 h-3.5" />
           <span>${selectedSeats.length * 12}.00</span>
         </div>

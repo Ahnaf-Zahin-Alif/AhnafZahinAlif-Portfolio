@@ -108,7 +108,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} ${unbounded.variable} dark`}
     >
-      <body className="bg-[#0c0a09] text-zinc-100 min-h-screen antialiased selection:bg-[#f07b3f]/30 selection:text-[#f07b3f]">
+      <body className="bg-[#08090d] text-slate-100 min-h-screen antialiased selection:bg-[#2f6bff]/30 selection:text-[#5fd4ff]">
         <StructuredData />
         {children}
       </body>
