@@ -16,6 +16,7 @@
 | [D-011](#d-011-obsidian-studio-surfaces-concentric-geometry-and-real-showcase-architecture) | Obsidian Studio Surfaces, Concentric Geometry, and Real Showcase Architecture | Accepted | 2026-11-13 |
 | [D-012](#d-012-framer-motion-kinetic-choreography-domain-marquee-and-real-repo-wiring) | Framer Motion Kinetic Choreography, Domain Marquee, and Real Repo Wiring | Accepted | 2026-11-13 |
 | [D-013](#d-013-asymmetric-split-viewport-studio-architecture-and-20-motion-craft-rules) | Asymmetric Split-Viewport Studio Architecture and 20 Motion Craft Rules | Accepted | 2026-11-14 |
+| [D-014](#d-014-taste-skill-25-evolution-5-screen-full-viewport-architecture) | Taste-Skill 2.5 Evolution: 5-Screen Full-Viewport Architecture | Accepted | 2026-11-23 |
 
 ---
 
@@ -169,3 +170,22 @@
   - Preserve 100% of native Next.js App Router SEO metadata on `src/app/page.tsx` as a Server Component, delegating motion to `<PortfolioShell />`.
 - **Why**: Replaces the generic stacked template with a bespoke, tactile studio experience that emphasizes systems engineering and real project substance while meeting all WCAG AA contrast and performance requirements.
 - **Rejected Alternatives**: Retaining a full-screen stacked hero and generic card grids or using unperformant CSS scroll-jack libraries.
+
+---
+
+### D-014: Taste-Skill 2.5 Evolution: 5-Screen Full-Viewport Architecture
+- **Status**: Accepted
+- **Context**: The user invoked `/design-taste-frontend` (tasteskill 2.5.1, the anti-slop frontend skill) aiming for the quality bar of figma.com and x.ai. The asymmetric split-rail layout from D-013, while functional, lacked equal edge symmetry, full-screen deliberate rhythm (House Rule 3 & 4), authoritative display typography, procedural material grain, and live technical UI diagrams (House Rule 7).
+- **Decision**:
+  - Restructure the portfolio into a 5-screen full-viewport system (`100svh`, `--h: 1`):
+    - Screen 00 // Hero & Live SQL Transaction App-Frame (MariaDB ACID simulator with latency telemetry).
+    - Screen 01 // CineFilm Flagship Cinema Engine & Auditorium Seat Simulator.
+    - Screen 02 // Distributed Systems Architecture & Pulse Node Diagram (UAV swarm & MediCare hospital queues).
+    - Screen 03 // Technical Stack Matrix with real full-color brandmarks & Academic Timeline Ledger.
+    - Screen 04 // Terminal Transmission Closing Station & Contact Dispatch.
+  - Implement `Unbounded` display typography via `next/font/google` with negative tracking (`-0.05em`) paired with `JetBrains Mono` and `Inter`.
+  - Add fixed 3.5% SVG procedural fractal film grain overlay on `body::after` and specular card inset bevels (`card-specular`).
+  - Introduce `src/app/icon.svg` studio monogram badge resolving the 404 favicon issue.
+  - Keep all components single-purpose and strictly under 135 lines in `src/components/`, while removing superseded split-layout components (`StudioIdentityRail`, `StudioWorkbench`, `TechStackExplorer`, `SystemsProof`, `FlagshipProjectCard`).
+- **Why**: Replaces uneven scroll density with the figma.com / x.ai design bar: equal container edges, live interactive engineering UI on every screen, physical material depth, zero AI slop words, and 100% native App Router SSR SEO preservation.
+- **Rejected Alternatives**: Remaining in the pinned sidebar layout or copying non-functional art-school gimmicks (like random ticker tapes) that obscure real engineering substance.

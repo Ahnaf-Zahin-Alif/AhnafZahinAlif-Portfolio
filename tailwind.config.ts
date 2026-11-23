@@ -12,6 +12,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "sans-serif"],
         mono: ["var(--font-jetbrains)", "JetBrains Mono", "monospace"],
+        display: ["var(--font-unbounded)", "var(--font-inter)", "sans-serif"],
       },
       colors: {
         accent: {

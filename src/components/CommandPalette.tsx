@@ -40,10 +40,11 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
   };
 
   const commands: CommandItem[] = [
-    { id: "nav-workbench", title: "01 // Systems Workbench & CineFilm", category: "Navigation", action: () => nav("#workbench"), icon: Hash },
-    { id: "nav-stack", title: "02 // Technical Capabilities & Stack", category: "Navigation", action: () => nav("#stack"), icon: Hash },
-    { id: "nav-ledger", title: "03 // Academic & Engineering Ledger", category: "Navigation", action: () => nav("#ledger"), icon: Hash },
-    { id: "nav-proof", title: "04 // Systems Proof & Peer Reviews", category: "Navigation", action: () => nav("#proof"), icon: Hash },
+    { id: "nav-hero", title: "00 // Hero & SQL Transaction App-Frame", category: "Navigation", action: () => nav("#hero"), icon: Hash },
+    { id: "nav-cinefilm", title: "01 // CineFilm Flagship Cinema Engine", category: "Navigation", action: () => nav("#cinefilm"), icon: Hash },
+    { id: "nav-systems", title: "02 // Distributed Systems & Algorithms", category: "Navigation", action: () => nav("#systems"), icon: Hash },
+    { id: "nav-matrix", title: "03 // Capability Matrix & Academic Ledger", category: "Navigation", action: () => nav("#matrix"), icon: Hash },
+    { id: "nav-closing", title: "04 // Contact & Terminal Dispatch", category: "Navigation", action: () => nav("#closing"), icon: Hash },
     { id: "act-email", title: copied ? "Email Copied ✓" : "Copy Email Address", category: "Action", action: copyEmail, icon: copied ? Check : Copy },
     { id: "soc-github", title: "Open GitHub Profile", category: "Social", action: () => { window.open("https://github.com/Ahnaf-Zahin-Alif", "_blank"); onClose(); }, icon: ExternalLink },
     { id: "soc-cf", title: "Open Codeforces Profile", category: "Social", action: () => { window.open("https://codeforces.com", "_blank"); onClose(); }, icon: ExternalLink },
