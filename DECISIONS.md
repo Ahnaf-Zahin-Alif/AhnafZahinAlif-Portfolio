@@ -21,6 +21,7 @@
 | [D-016](#d-016-framer-motion-primitives-and-phase-1-systems-choreography) | Framer Motion Primitives and Phase 1 Systems Choreography | Accepted | 2026-11-23 |
 | [D-017](#d-017-omission-of-phase-2-systems-overhauls-in-favor-of-streamlined-ui) | Omission of Phase 2 Systems Overhauls in Favor of Streamlined UI | Accepted | 2026-11-23 |
 | [D-018](#d-018-editorial-scroll-choreographed-layout-with-warm-sand-slate--terracotta-palette) | Editorial Scroll Layout with Warm Sand, Slate & Terracotta System | Accepted | 2026-11-23 |
+| [D-019](#d-019-top-four-full-bleed-sections-with-blob-reveal-animated-az-signature-parallax-ledger--dual-mode-showcase) | Top Four Full-Bleed Sections (Blob Reveal, AZ Signature, Parallax Ledger, Dual-Mode Showcase) | Accepted | 2026-11-23 |
 
 ---
 
@@ -256,3 +257,26 @@
 - **Rejected Alternatives**:
   - Retaining the Electric Cobalt palette: Rejected because the user found the previous palette unappealing and explicitly requested the Warm Sand, Slate & Terracotta color system.
   - Relying exclusively on CSS scroll-behavior: Rejected because it does not provide smooth momentum/inertia dampening or sync with GSAP scroll choreography.
+
+---
+
+### D-019: Top Four Full-Bleed Sections with Blob Reveal, Animated AZ Signature, Parallax Ledger & Dual-Mode Showcase
+- **Status**: Accepted
+- **Context**: The user requested building the top four full-bleed sections using their existing portfolio content and GSAP ScrollTrigger:
+  1. Interactive Hero (Light `#F4F0EB`): Centered cutout portrait framed against giant condensed display type ("CRAFTING SCALABLE DIGITAL ARCHITECTURE"), subtle topographic lines, a cursor-tracked organic liquid blob reveal mask exposing an architectural wireframe layer underneath, and floating `#EAE4DA` bottom-left Dhaka clock and BUP badge.
+  2. Marquee + Manifesto (Dark `#161617`): Capabilities marquee in giant outlined display type, animated `#C85A32` Terracotta SVG "AZ" signature on scroll, and centered uppercase manifesto highlighting "BACKEND ARCHITECTURES", "ACID DATABASES", and "LOW-LEVEL ALGORITHMS" in `#C85A32`.
+  3. Asymmetric Parallax Ledger (Dark `#161617`): "03 // Academic & Systems Ledger" in staggered asymmetric masonry layout with GSAP ScrollTrigger scrub speeds and `#A39E95` monospace year tags.
+  4. Dual-Mode Split Showcase (Light `#F4F0EB`): Bold 2-column showcase—"SYSTEMS & BACKEND" vs. "FULL-STACK & DISTRIBUTED"—with oversized `#1B1B1C` display titles, expressive `#C85A32` SVG brush underline, and interactive stack details on hover/click.
+- **Decision**:
+  - Implement `HeroPortraitBlob.tsx` with dynamic pointer-tracked radial mask revealing a monochrome high-contrast blueprint wireframe layer with vector grid coordinates.
+  - Implement `HeroTelemetryBadge.tsx` floating the live Dhaka clock and BUP badge in `#EAE4DA` with a `#5A6E58` sage dot.
+  - Implement `InteractiveHero.tsx` combining the giant Oswald condensed headline and topographic background.
+  - Implement `MarqueeManifesto.tsx` with seamless outlined capabilities loop, scroll-driven Terracotta AZ signature stroke, and uppercase editorial manifesto.
+  - Implement `ParallaxLedger.tsx` and `ParallaxLedgerCard.tsx` with GSAP `ScrollTrigger` multi-speed scrub parallax and externalized `ledgerData.ts`.
+  - Implement `SplitShowcase.tsx` and `SplitShowcaseColumn.tsx` with custom Terracotta brush underline, interactive tech pills, and externalized `showcaseData.ts`.
+  - Mount the four sections in `PortfolioShell.tsx` followed by the flagship CineFilm seat simulator, distributed systems diagram, and dispatch station.
+  - Maintain all component files strictly under 130 lines.
+- **Why**: Directly satisfies all four requested full-bleed sections with high-craft editorial aesthetic, rich micro-interactions, GSAP ScrollTrigger integration, zero hydration mismatch, and 100% static compilation.
+- **Rejected Alternatives**:
+  - Canvas-only blob mask: Rejected because SVG / CSS mask gradient offers better GPU acceleration, crispness across Retina displays, and lower memory footprint.
+  - Single massive file for the four sections: Rejected because it violates the 150-line rule; extracted data and components into modular units.

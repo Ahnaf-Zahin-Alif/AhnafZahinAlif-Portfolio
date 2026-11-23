@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { MotionConfig } from "framer-motion";
 import { EditorialHeader } from "./EditorialHeader";
-import { TasteHero } from "./TasteHero";
-import { DomainMarquee } from "./DomainMarquee";
+import { InteractiveHero } from "./InteractiveHero";
+import { MarqueeManifesto } from "./MarqueeManifesto";
+import { ParallaxLedger } from "./ParallaxLedger";
+import { SplitShowcase } from "./SplitShowcase";
 import { TasteFlagshipCinefilm } from "./TasteFlagshipCinefilm";
 import { TasteScreenSystems } from "./TasteScreenSystems";
-import { TasteScreenMatrix } from "./TasteScreenMatrix";
 import { TasteClosingStation } from "./TasteClosingStation";
 import { CommandPalette } from "./CommandPalette";
 import { ProjectModal } from "./ProjectModal";
@@ -32,11 +33,12 @@ export function PortfolioShell() {
 
           {/* Editorial Scroll-Choreographed Architecture */}
           <main className="relative z-10 w-full">
-            <TasteHero />
-            <DomainMarquee />
+            <InteractiveHero />
+            <MarqueeManifesto />
+            <ParallaxLedger />
+            <SplitShowcase />
             <TasteFlagshipCinefilm onSelectProject={(p) => setSelectedProject(p)} />
             <TasteScreenSystems onSelectProject={(p) => setSelectedProject(p)} />
-            <TasteScreenMatrix />
             <TasteClosingStation />
           </main>
         </div>

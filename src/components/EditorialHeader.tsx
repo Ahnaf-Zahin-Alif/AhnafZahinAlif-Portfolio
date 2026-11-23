@@ -14,10 +14,12 @@ interface EditorialHeaderProps {
 
 const navLinks = [
   { id: "hero", label: "00 // INTRO" },
-  { id: "cinefilm", label: "01 // CINEFILM DBMS" },
-  { id: "systems", label: "02 // DISTRIBUTED SYSTEMS" },
-  { id: "matrix", label: "03 // STACK & TIMELINE" },
-  { id: "closing", label: "04 // DISPATCH" },
+  { id: "manifesto", label: "01 // MANIFESTO" },
+  { id: "ledger", label: "02 // ACADEMIC LEDGER" },
+  { id: "showcase", label: "03 // DUAL ARCHITECTURE" },
+  { id: "cinefilm", label: "04 // CINEFILM DBMS" },
+  { id: "systems", label: "05 // SYSTEMS DOSSIER" },
+  { id: "closing", label: "06 // DISPATCH" },
 ];
 
 export function EditorialHeader({ onOpenCommandPalette }: EditorialHeaderProps) {

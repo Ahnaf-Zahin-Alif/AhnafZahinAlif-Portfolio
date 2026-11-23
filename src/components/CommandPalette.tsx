@@ -40,11 +40,13 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
   };
 
   const commands: CommandItem[] = [
-    { id: "nav-hero", title: "00 // Hero & SQL Transaction App-Frame", category: "Navigation", action: () => nav("#hero"), icon: Hash },
-    { id: "nav-cinefilm", title: "01 // CineFilm Flagship Cinema Engine", category: "Navigation", action: () => nav("#cinefilm"), icon: Hash },
-    { id: "nav-systems", title: "02 // Distributed Systems & Algorithms", category: "Navigation", action: () => nav("#systems"), icon: Hash },
-    { id: "nav-matrix", title: "03 // Capability Matrix & Academic Ledger", category: "Navigation", action: () => nav("#matrix"), icon: Hash },
-    { id: "nav-closing", title: "04 // Contact & Terminal Dispatch", category: "Navigation", action: () => nav("#closing"), icon: Hash },
+    { id: "nav-hero", title: "00 // Hero & Liquid Blob Portrait", category: "Navigation", action: () => nav("#hero"), icon: Hash },
+    { id: "nav-manifesto", title: "01 // Capabilities Marquee & AZ Manifesto", category: "Navigation", action: () => nav("#manifesto"), icon: Hash },
+    { id: "nav-ledger", title: "02 // Asymmetric Academic & CP Ledger", category: "Navigation", action: () => nav("#ledger"), icon: Hash },
+    { id: "nav-showcase", title: "03 // Dual-Mode Systems & Fullstack Architecture", category: "Navigation", action: () => nav("#showcase"), icon: Hash },
+    { id: "nav-cinefilm", title: "04 // CineFilm Flagship Cinema Engine", category: "Navigation", action: () => nav("#cinefilm"), icon: Hash },
+    { id: "nav-systems", title: "05 // Distributed Systems & Architecture Spec", category: "Navigation", action: () => nav("#systems"), icon: Hash },
+    { id: "nav-closing", title: "06 // Terminal Dispatch & Socials", category: "Navigation", action: () => nav("#closing"), icon: Hash },
     { id: "act-email", title: copied ? "Email Copied ✓" : "Copy Email Address", category: "Action", action: copyEmail, icon: copied ? Check : Copy },
     { id: "soc-github", title: "Open GitHub Profile", category: "Social", action: () => { window.open("https://github.com/Ahnaf-Zahin-Alif", "_blank"); onClose(); }, icon: ExternalLink },
     { id: "soc-cf", title: "Open Codeforces Profile", category: "Social", action: () => { window.open("https://codeforces.com", "_blank"); onClose(); }, icon: ExternalLink },

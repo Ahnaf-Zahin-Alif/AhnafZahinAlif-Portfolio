@@ -1,0 +1,89 @@
+"use client";
+
+import React from "react";
+import { ArrowDownRight, FolderGit2 } from "lucide-react";
+import { HeroPortraitBlob } from "./HeroPortraitBlob";
+import { HeroTelemetryBadge } from "./HeroTelemetryBadge";
+
+export function InteractiveHero() {
+  return (
+    <section
+      id="hero"
+      className="relative min-h-[92vh] w-full bg-[#F4F0EB] text-[#1B1B1C] flex flex-col justify-between pt-24 pb-8 px-4 sm:px-6 lg:px-12 overflow-hidden border-b border-[#DFD5C6]"
+      aria-label="Introduction and Identity"
+    >
+      {/* Subtle Ambient Contour Lines */}
+      <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <path d="M-100,120 Q300,50 700,180 T1500,100" fill="none" stroke="#DFD5C6" strokeWidth="1.2" />
+          <path d="M-50,260 Q400,180 850,320 T1600,220" fill="none" stroke="#DFD5C6" strokeWidth="1" />
+          <path d="M-80,480 Q350,420 800,520 T1650,450" fill="none" stroke="#DFD5C6" strokeWidth="1.2" />
+          <path d="M0,680 Q500,600 950,710 T1700,660" fill="none" stroke="#DFD5C6" strokeWidth="1" />
+        </svg>
+      </div>
+
+      {/* Top Header Tag */}
+      <div className="relative z-10 w-full flex items-center justify-between text-xs font-mono uppercase tracking-wider text-[#5C5852]">
+        <div className="flex items-center gap-2">
+          <span className="text-[#C85A32] font-bold">00 //</span>
+          <span>SYSTEMS &amp; ALGORITHMIC ARCHITECT</span>
+        </div>
+        <div className="hidden md:flex items-center gap-2">
+          <span>DHAKA, BANGLADESH</span>
+          <span>•</span>
+          <span className="text-[#5A6E58] font-bold">AVAILABLE FOR ENGINEERING ROLES</span>
+        </div>
+      </div>
+
+      {/* Center Hero Stage: Giant Condensed Headline Framing the Portrait */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto my-auto py-6 sm:py-8 flex flex-col items-center">
+        {/* Giant Condensed Display Typography - Line 1 */}
+        <h1 className="font-display font-black text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter uppercase leading-[0.88] select-none text-[#1B1B1C] w-full">
+          CRAFTING SCALABLE
+        </h1>
+
+        {/* Framed Portrait with Liquid Blob Reveal Mask */}
+        <div className="relative my-4 sm:my-6 z-20">
+          <HeroPortraitBlob />
+        </div>
+
+        {/* Giant Condensed Display Typography - Line 2 */}
+        <h2 className="font-display font-black text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter uppercase leading-[0.88] select-none text-[#1B1B1C] w-full">
+          DIGITAL ARCHITECTURE
+        </h2>
+
+        {/* Sub-Manifesto & CTAs */}
+        <div className="mt-6 flex flex-col sm:flex-row items-center gap-4 text-center">
+          <p className="max-w-md text-xs sm:text-sm font-mono text-[#5C5852] leading-relaxed">
+            Md. Ahnaf Zahin Alif — BUP ICT. Designing low-latency backends, ACID relational storage, and deterministic algorithms.
+          </p>
+          <div className="flex items-center gap-2.5">
+            <a
+              href="#manifesto"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#C85A32] hover:bg-[#b04d29] text-[#F4F0EB] text-xs font-mono font-bold tracking-tight shadow-md transition-all active:scale-95"
+            >
+              <span>Explore Manifesto</span>
+              <ArrowDownRight className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href="#showcase"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#EAE4DA] hover:bg-[#DFD5C6] text-[#1B1B1C] border border-[#DFD5C6] text-xs font-mono font-semibold transition-all"
+            >
+              <FolderGit2 className="w-3.5 h-3.5 text-[#5A6E58]" />
+              <span>Stack Specs</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Floating Bar */}
+      <div className="relative z-10 w-full flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-4 border-t border-[#DFD5C6]/60">
+        <HeroTelemetryBadge />
+        <div className="text-[11px] font-mono text-[#5C5852] flex items-center gap-3">
+          <span>SCROLL TO INITIALIZE</span>
+          <span className="animate-bounce">↓</span>
+        </div>
+      </div>
+    </section>
+  );
+}
