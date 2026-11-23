@@ -19,6 +19,7 @@
 | [D-014](#d-014-taste-skill-25-evolution-5-screen-full-viewport-architecture) | Taste-Skill 2.5 Evolution: 5-Screen Full-Viewport Architecture | Accepted | 2026-11-23 |
 | [D-015](#d-015-color-theory-palette-redesign-electric-cobalt--deep-obsidian) | Color Theory Palette Redesign (Electric Cobalt & Deep Obsidian) | Accepted | 2026-11-23 |
 | [D-016](#d-016-framer-motion-primitives-and-phase-1-systems-choreography) | Framer Motion Primitives and Phase 1 Systems Choreography | Accepted | 2026-11-23 |
+| [D-017](#d-017-omission-of-phase-2-systems-overhauls-in-favor-of-streamlined-ui) | Omission of Phase 2 Systems Overhauls in Favor of Streamlined UI | Accepted | 2026-11-23 |
 
 ---
 
@@ -227,3 +228,12 @@
 - **Rejected Alternatives**:
   - Animating height/margin: Rejected due to layout reflow thrashing.
   - Third-party heavy animation libraries (GSAP, Three.js): Explicitly forbidden by stack rules.
+
+---
+
+### D-017: Omission of Phase 2 Systems Overhauls in Favor of Streamlined UI
+- **Status**: Accepted
+- **Context**: Phase 2 of the motion proposal included an interactive project table with hover previews, skill filter chips with reflowing layouts, and scroll-driven SQL locking. The user explicitly commanded: "Ditch the phase 2 execution".
+- **Decision**: Omit Phase 2 implementation entirely. Retain the current streamlined 5-screen full-viewport layout with the existing MariaDB interactive SQL transaction frame, CineFilm auditorium seat simulator, distributed pulse node topology diagram, and academic timeline ledger.
+- **Why**: Directly honors explicit user instruction, prevents unnecessary UI bloat and complexity, maintains pristine performance scores, and leaves the portfolio in its optimal, clean state with Phase 1 motion polish active.
+- **Rejected Alternatives**: Forcing unrequested interactive table filters or scroll-jacking SQL steppers.
