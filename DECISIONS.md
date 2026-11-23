@@ -25,6 +25,7 @@
 | [D-020](#d-020-bottom-four-sections-workbench-hall-of-fame-flagship-spotlight-fan-out-proof-deck-rounded-curtain-footer) | Bottom Four Sections (Workbench, Flagship Spotlight, Fan-Out Deck, Rounded Curtain Footer) | Accepted | 2026-11-23 |
 | [D-021](#d-021-visual--motion-polish-cutout-silhouette-hero-6-col-bento-grid-scroll-driven-fan-out--verified-peer-labels) | Visual & Motion Polish (Cutout Silhouette Hero, 6-Col Bento, Scroll Fan-Out, Verified Labels) | Accepted | 2026-11-23 |
 | [D-022](#d-022-animation-pipeline-and-smoothscrollprovider-overhaul) | Animation Pipeline & SmoothScrollProvider Overhaul | Accepted | 2026-11-24 |
+| [D-023](#d-023-hero-wireframe-removal-and-typographic-scale-tuning) | Hero Wireframe Removal and Typographic Scale Tuning | Accepted | 2026-11-24 |
 
 ---
 
@@ -430,3 +431,18 @@
 - **Rejected Alternatives**:
   - Retaining native CSS smooth scroll: Breaks Lenis interpolation and causes desynchronized GSAP pinning and triggers.
   - Blanket disabling of animations under reduced-motion: Instead of completely disabling GSAP and ScrollTrigger, damped gentle offsets are provided so layout never breaks.
+
+---
+
+### D-023: Hero Wireframe Removal and Typographic Scale Tuning
+- **Status**: Accepted
+- **Context**: The user requested removing the wireframe overlay on the hero image and fixing the text-to-image ratio. The previous `text-9xl` headlines broke onto 4 stacked lines on desktop viewports, causing the oversized portrait (`420px x 580px`) with `-mt-64` to completely obscure the words "DIGITAL" and "ARCHITECTURE". Furthermore, the interactive hover wireframe mask and "HOVER FOR WIREFRAME" badge caused visual clutter.
+- **Decision**:
+  - Remove the wireframe blueprint SVG, hover mask effect, monochrome inverted layer, and "HOVER FOR WIREFRAME" badge from the hero portrait.
+  - Create clean, focused `HeroPortrait.tsx` (retaining `HeroPortraitBlob` backwards compatibility alias) rendering the transparent natural cutout portrait with drop shadow and quiet micro-interaction.
+  - Scale headline typography down from `text-9xl` to `text-3xl sm:text-5xl md:text-6xl lg:text-[4.75rem] xl:text-[5.75rem] 2xl:text-[6.25rem]` with `leading-[0.92]` and `tracking-tight sm:tracking-tighter`, guaranteeing that "CRAFTING SCALABLE" and "DIGITAL ARCHITECTURE" each fit cleanly onto exactly one line across viewports.
+  - Tune portrait dimensions to `w-[210px] sm:w-[250px] md:w-[280px] lg:w-[310px] xl:w-[330px]` and `h-[295px] sm:h-[350px] md:h-[395px] lg:h-[440px] xl:h-[465px]`, with a balanced negative margin (`-mt-10 sm:-mt-14 md:-mt-18 lg:-mt-22 xl:-mt-24`) so the head sits naturally in the space between "DIGITAL" and "ARCHITECTURE" without obstructing text legibility.
+- **Why**: Creates an authentic magazine-cover editorial hierarchy with balanced proportion, eliminates awkward line wrapping, restores 100% legibility to the masthead, and removes distracting wireframe artifacts.
+- **Rejected Alternatives**:
+  - Keeping wireframe on a toggle button: Rejected because user explicitly asked to remove the wireframe on the image.
+  - Placing portrait completely below the text: Rejected because subtle editorial layering creates tangible visual depth when proportions are balanced.

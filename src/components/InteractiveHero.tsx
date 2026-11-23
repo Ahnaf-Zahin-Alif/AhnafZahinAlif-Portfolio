@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowDownRight, FolderGit2 } from "lucide-react";
-import { HeroPortraitBlob } from "./HeroPortraitBlob";
+import { HeroPortrait } from "./HeroPortrait";
 import { HeroTelemetryBadge } from "./HeroTelemetryBadge";
 
 export function InteractiveHero() {
@@ -41,39 +41,39 @@ export function InteractiveHero() {
         {/* Giant Condensed Headline (Layer 1 - z-10) with Staggered Text Reveal */}
         <div className="w-full text-center select-none space-y-1 sm:space-y-2 relative z-10">
           <motion.h1
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
-            className="font-display font-black text-center text-4xl sm:text-6xl md:text-8xl lg:text-9xl tracking-tighter uppercase leading-[0.85] text-[#1B1B1C] w-full"
+            className="font-display font-black text-center text-3xl sm:text-5xl md:text-6xl lg:text-[4.75rem] xl:text-[5.75rem] 2xl:text-[6.25rem] tracking-tight sm:tracking-tighter uppercase leading-[0.92] text-[#1B1B1C] w-full"
           >
             CRAFTING SCALABLE
           </motion.h1>
           <motion.h2
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.25 }}
-            className="font-display font-black text-center text-4xl sm:text-6xl md:text-8xl lg:text-9xl tracking-tighter uppercase leading-[0.85] text-[#1B1B1C] w-full"
+            className="font-display font-black text-center text-3xl sm:text-5xl md:text-6xl lg:text-[4.75rem] xl:text-[5.75rem] 2xl:text-[6.25rem] tracking-tight sm:tracking-tighter uppercase leading-[0.92] text-[#1B1B1C] w-full"
           >
             DIGITAL ARCHITECTURE
           </motion.h2>
         </div>
 
-        {/* Cutout Portrait Layered Directly Over Headline (Layer 2 - z-20) */}
+        {/* Cutout Portrait Layered Elegantly Over Headline (Layer 2 - z-20) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.85, ease: [0.19, 1, 0.22, 1], delay: 0.2 }}
-          className="relative -mt-24 sm:-mt-40 md:-mt-52 lg:-mt-64 z-20 pointer-events-auto"
+          className="relative -mt-10 sm:-mt-14 md:-mt-18 lg:-mt-22 xl:-mt-24 z-20 pointer-events-auto"
         >
-          <HeroPortraitBlob />
+          <HeroPortrait />
         </motion.div>
 
         {/* Sub-Manifesto & CTAs */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1], delay: 0.4 }}
-          className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center gap-4 text-center z-30"
+          className="mt-2 sm:mt-3 flex flex-col sm:flex-row items-center gap-4 text-center z-30"
         >
           <p className="max-w-md text-xs sm:text-sm font-mono text-[#5C5852] leading-relaxed">
             Md. Ahnaf Zahin Alif — BUP ICT. Designing low-latency backends, ACID relational storage, and deterministic algorithms.
