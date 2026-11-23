@@ -31,7 +31,7 @@ export function BackToTop() {
           whileHover={{ y: -3 }}
           whileTap={{ scale: 0.97 }}
           transition={{ type: "spring", stiffness: 280, damping: 26 }}
-          className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#0f121a] border border-white/[0.12] text-[#2f6bff] hover:text-white hover:border-[#2f6bff]/50 shadow-2xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f6bff]"
+          className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[var(--surface-card)] border border-[var(--border-hairline)] text-[#C85A32] hover:text-[var(--text-primary)] hover:border-[#C85A32]/50 shadow-2xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C85A32]"
           aria-label="Back to top of page"
         >
           <ArrowUp className="w-5 h-5" strokeWidth={1.5} aria-hidden="true" />

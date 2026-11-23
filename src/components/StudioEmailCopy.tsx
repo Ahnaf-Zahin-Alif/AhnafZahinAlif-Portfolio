@@ -26,7 +26,7 @@ export function StudioEmailCopy() {
       whileTap={{ scale: 0.96 }}
       animate={copied ? { scale: [1, 1.03, 1] } : {}}
       transition={{ duration: 0.2 }}
-      className="w-full flex items-center justify-between p-3 rounded-xl bg-[#0f121a] dark:bg-[#0f121a] light:bg-white border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] hover:border-white/[0.18] transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f6bff]"
+      className="w-full flex items-center justify-between p-3 rounded-xl bg-[#0f121a] dark:bg-[#0f121a] light:bg-white border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] hover:border-[#C85A32]/40 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C85A32]"
       aria-label={copied ? "Email copied" : "Copy email address"}
     >
       <div className="flex items-center gap-2.5">
@@ -39,7 +39,7 @@ export function StudioEmailCopy() {
               exit={{ opacity: 0, filter: "blur(2px)" }}
               transition={{ duration: 0.15 }}
             >
-              <Check className="w-4 h-4 text-[#5fd4ff]" strokeWidth={1.5} />
+              <Check className="w-4 h-4 text-[var(--accent-sage)]" strokeWidth={1.5} />
             </motion.div>
           ) : (
             <motion.div
@@ -49,11 +49,11 @@ export function StudioEmailCopy() {
               exit={{ opacity: 0, filter: "blur(2px)" }}
               transition={{ duration: 0.15 }}
             >
-              <Copy className="w-4 h-4 text-slate-400 group-hover:text-[#2f6bff] transition-colors" strokeWidth={1.5} />
+              <Copy className="w-4 h-4 text-slate-400 group-hover:text-[#C85A32] transition-colors" strokeWidth={1.5} />
             </motion.div>
           )}
         </AnimatePresence>
-        <span className={`text-xs font-mono transition-colors ${copied ? "text-[#5fd4ff] font-bold" : "text-slate-300 dark:text-slate-300 light:text-slate-800"}`}>
+        <span className={`text-xs font-mono transition-colors ${copied ? "text-[var(--accent-sage)] font-bold" : "text-slate-300 dark:text-slate-300 light:text-slate-800"}`}>
           {copied ? "Copied to Clipboard ✓" : email}
         </span>
       </div>

@@ -2,47 +2,54 @@
 
 @layer base {
   :root {
+    --font-display: 'Oswald', sans-serif;
+    --font-space: 'Space Grotesk', sans-serif;
     --font-inter: 'Inter', sans-serif;
     --font-jetbrains: 'JetBrains Mono', monospace;
-    --font-unbounded: 'Unbounded', sans-serif;
 
-    /* Precision Obsidian & Electric Cobalt (Dark - Default) */
-    --surface-canvas: #08090d;
-    --surface-card: #0f121a;
-    --surface-interactive: #161b26;
-    --surface-elevated: #1d2332;
-    --border-hairline: rgba(255, 255, 255, 0.08);
-    --border-hairline-hover: rgba(255, 255, 255, 0.16);
+    /* Warm Sand, Slate & Terracotta (Dark Canvas: #161617) */
+    --surface-canvas: #161617;
+    --surface-card: #1F1E1D;
+    --surface-interactive: #252422;
+    --surface-elevated: #2E2C29;
+    --border-hairline: #2E2C29;
+    --border-hairline-hover: rgba(244, 240, 235, 0.2);
 
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
+    --text-primary: #F4F0EB;
+    --text-secondary: #A39E95;
+    --text-muted: #7A756D;
 
-    --accent-primary: #2f6bff;
-    --accent-primary-hover: #1a56f0;
-    --accent-cyan: #5fd4ff;
-    --accent-cream: #cfe4ff;
+    --accent-terracotta: #C85A32;
+    --accent-terracotta-hover: #B24B25;
+    --accent-sage: #7D9B7A;
+    --accent-sage-bg: rgba(125, 155, 122, 0.12);
 
-    --ease-studio: cubic-bezier(0.16, 1, 0.3, 1);
+    --topo-stroke: #DFD5C6;
+    --topo-opacity: 0.04;
+
+    --ease-editorial: cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   html.light {
-    /* Ice Alabaster & Royal Blue (Light) */
-    --surface-canvas: #f8fafc;
-    --surface-card: #ffffff;
-    --surface-interactive: #f1f5f9;
-    --surface-elevated: #e2e8f0;
-    --border-hairline: rgba(7, 11, 31, 0.08);
-    --border-hairline-hover: rgba(7, 11, 31, 0.16);
+    /* Warm Sand, Slate & Terracotta (Light Canvas: #F4F0EB) */
+    --surface-canvas: #F4F0EB;
+    --surface-card: #EAE4DA;
+    --surface-interactive: #E2DBD0;
+    --surface-elevated: #DFD5C6;
+    --border-hairline: #DFD5C6;
+    --border-hairline-hover: rgba(27, 27, 28, 0.2);
 
-    --text-primary: #070b1f;
-    --text-secondary: #334155;
-    --text-muted: #64748b;
+    --text-primary: #1B1B1C;
+    --text-secondary: #5C5852;
+    --text-muted: #827C74;
 
-    --accent-primary: #2563eb;
-    --accent-primary-hover: #1d4ed8;
-    --accent-cyan: #0284c7;
-    --accent-cream: #e0f2fe;
+    --accent-terracotta: #C85A32;
+    --accent-terracotta-hover: #B24B25;
+    --accent-sage: #5A6E58;
+    --accent-sage-bg: rgba(90, 110, 88, 0.12);
+
+    --topo-stroke: #1B1B1C;
+    --topo-opacity: 0.055;
   }
 }
 

@@ -32,10 +32,10 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
       <div>
         {/* Header Bar */}
         <div className="p-5 flex items-center justify-between border-b border-white/[0.06]">
-          <span className="font-mono text-xs font-bold tabular-nums text-[#5fd4ff]">
+          <span className="font-mono text-xs font-bold tabular-nums text-[var(--accent-sage)]">
             {project.index}
           </span>
-          <span className="text-[10px] sm:text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-[#161b26] text-[#5fd4ff] border border-[#2f6bff]/30 uppercase font-mono">
+          <span className="text-[10px] sm:text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-[#161b26] text-[var(--accent-sage)] border border-[#C85A32]/30 uppercase font-mono">
             {project.badge}
           </span>
         </div>
@@ -47,7 +47,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
       {/* Content Area */}
       <div className="p-5 flex flex-col justify-between flex-1 space-y-4">
         <div className="space-y-2">
-          <h4 className="text-lg font-bold text-zinc-100 tracking-tight text-balance group-hover:text-[#2f6bff] transition-colors">
+          <h4 className="text-lg font-bold text-zinc-100 tracking-tight text-balance group-hover:text-[#C85A32] transition-colors">
             {project.title}
           </h4>
           <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed text-pretty line-clamp-2">
@@ -56,7 +56,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
         </div>
 
         <div className="pt-2 flex items-center justify-between border-t border-white/[0.06] text-xs font-mono">
-          <span className="text-[#2f6bff] font-semibold inline-flex items-center gap-1">
+          <span className="text-[#C85A32] font-semibold inline-flex items-center gap-1">
             <span>Expand Blueprint</span>
             <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </span>

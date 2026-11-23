@@ -11,13 +11,13 @@ export function TasteScreenMatrix() {
       <div className="taste-wrap space-y-8">
         {/* Section Header */}
         <Reveal>
-          <div className="space-y-2 border-b border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] pb-6">
-            <div className="flex items-center gap-3 font-mono text-xs text-[#5fd4ff] tracking-widest font-semibold">
+          <div className="space-y-2 border-b border-[var(--border-hairline)] pb-6">
+            <div className="flex items-center gap-3 font-mono text-xs text-[var(--accent-sage)] tracking-widest font-semibold">
               <span>03 // CAPABILITY MATRIX &amp; SYSTEMS LEDGER</span>
               <span className="text-slate-600">•</span>
-              <span className="text-slate-400">ENGINEERING DISCIPLINE</span>
+              <span className="text-[var(--text-secondary)]">ENGINEERING DISCIPLINE</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-100 dark:text-slate-100 light:text-slate-950 uppercase text-balance">
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] uppercase text-balance">
               Technical Stack &amp; Academic Timeline
             </h2>
           </div>

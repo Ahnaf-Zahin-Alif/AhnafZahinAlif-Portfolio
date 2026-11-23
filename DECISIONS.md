@@ -20,6 +20,7 @@
 | [D-015](#d-015-color-theory-palette-redesign-electric-cobalt--deep-obsidian) | Color Theory Palette Redesign (Electric Cobalt & Deep Obsidian) | Accepted | 2026-11-23 |
 | [D-016](#d-016-framer-motion-primitives-and-phase-1-systems-choreography) | Framer Motion Primitives and Phase 1 Systems Choreography | Accepted | 2026-11-23 |
 | [D-017](#d-017-omission-of-phase-2-systems-overhauls-in-favor-of-streamlined-ui) | Omission of Phase 2 Systems Overhauls in Favor of Streamlined UI | Accepted | 2026-11-23 |
+| [D-018](#d-018-editorial-scroll-choreographed-layout-with-warm-sand-slate--terracotta-palette) | Editorial Scroll Layout with Warm Sand, Slate & Terracotta System | Accepted | 2026-11-23 |
 
 ---
 
@@ -237,3 +238,21 @@
 - **Decision**: Omit Phase 2 implementation entirely. Retain the current streamlined 5-screen full-viewport layout with the existing MariaDB interactive SQL transaction frame, CineFilm auditorium seat simulator, distributed pulse node topology diagram, and academic timeline ledger.
 - **Why**: Directly honors explicit user instruction, prevents unnecessary UI bloat and complexity, maintains pristine performance scores, and leaves the portfolio in its optimal, clean state with Phase 1 motion polish active.
 - **Rejected Alternatives**: Forcing unrequested interactive table filters or scroll-jacking SQL steppers.
+
+---
+
+### D-018: Editorial Scroll-Choreographed Layout with Warm Sand, Slate & Terracotta System
+- **Status**: Accepted
+- **Context**: The user requested refactoring the portfolio into an editorial, scroll-choreographed layout inspired by landonorris.com, adopting the Warm Sand, Slate & Terracotta color system, integrating Lenis for smooth inertia scrolling and GSAP ScrollTrigger alongside Framer Motion, introducing subtle topographic contour elevation, condensed display typography (Oswald), and a sticky editorial header with stacked name, centered AZ monogram, Terracotta CTA pill, and magnetic menu trigger.
+- **Decision**:
+  - Install `lenis` and `gsap` (with `ScrollTrigger`). Integrate inertia smoothing wrapped in `SmoothScroll.tsx` with `prefers-reduced-motion` bypass.
+  - Configure Warm Sand (`#F4F0EB` / `#EAE4DA`), Slate (`#161617` / `#1F1E1D`), Terracotta (`#C85A32`), and Sage (`#5A6E58` / `#7D9B7A`) design tokens across CSS variables and `tailwind.config.ts`.
+  - Pair `Oswald` (uppercase bold display headlines) with `Space_Grotesk` / `Inter` (body copy) and `JetBrains_Mono` (telemetry/metrics) via `next/font/google`.
+  - Build `TopographicBackground.tsx` using responsive SVG elevation contours adapting dynamic opacity and stroke colors between light and dark sections.
+  - Implement sticky `EditorialHeader.tsx` and modular `EditorialDrawer.tsx` featuring stacked bold author identity, centered geometric monogram, terracotta "COPY EMAIL" pill, and spring-damped `MagneticButton.tsx`.
+  - Update all interactive simulators (`SqlTransactionAppFrame`, `CinefilmSeatSimulator`, `SystemsDiagramCard`, `ProjectPreviewVisual`, `TasteClosingStation`) to the new Terracotta and Sage palette while preserving all project data, bio, Dhaka live clock, and copy verbatim from `Portfolio-content.md`.
+  - Strictly maintain all component files under 150 lines (all under 130 lines).
+- **Why**: Fulfills the user's aesthetic vision for a high-craft editorial design with warm earth tones, tactile physics, and smooth inertia scrolling while preserving 100% static compilation, zero CLS, and full accessibility.
+- **Rejected Alternatives**:
+  - Retaining the Electric Cobalt palette: Rejected because the user found the previous palette unappealing and explicitly requested the Warm Sand, Slate & Terracotta color system.
+  - Relying exclusively on CSS scroll-behavior: Rejected because it does not provide smooth momentum/inertia dampening or sync with GSAP scroll choreography.

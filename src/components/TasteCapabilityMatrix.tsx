@@ -108,16 +108,16 @@ export function TasteCapabilityMatrix() {
       {stack.map((item) => (
         <div
           key={item.name}
-          className="p-3.5 rounded-xl border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-[#0f121a] dark:bg-[#0f121a] light:bg-white hover:border-[#2f6bff]/40 transition-all hover:-translate-y-0.5 group flex items-center gap-3"
+          className="p-3.5 rounded-xl border border-[var(--border-hairline)] bg-[var(--surface-card)] hover:border-[#C85A32]/50 transition-all hover:-translate-y-0.5 group flex items-center gap-3"
         >
-          <div className="p-2 rounded-lg bg-white/[0.04] dark:bg-white/[0.04] light:bg-black/[0.04] shrink-0 group-hover:scale-105 transition-transform">
+          <div className="p-2 rounded-lg bg-[var(--surface-interactive)] shrink-0 group-hover:scale-105 transition-transform">
             {item.iconSvg}
           </div>
           <div className="min-w-0">
-            <div className="text-xs font-mono font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 truncate">
+            <div className="text-xs font-mono font-bold text-[var(--text-primary)] truncate">
               {item.name}
             </div>
-            <div className="text-[10px] font-mono text-slate-400 dark:text-slate-400 light:text-slate-600 truncate">
+            <div className="text-[10px] font-mono text-[var(--text-secondary)] truncate">
               {item.role}
             </div>
           </div>

@@ -18,7 +18,7 @@ export function DomainMarquee() {
         {domain}
       </span>
       <span
-        className="w-1.5 h-1.5 rounded-full bg-[#2f6bff] shadow-[0_0_8px_rgba(47,107,255,0.7)]"
+        className="w-1.5 h-1.5 rounded-full bg-[#C85A32] shadow-[0_0_8px_rgba(200,90,50,0.6)]"
         aria-hidden="true"
       />
     </div>

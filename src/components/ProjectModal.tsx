@@ -52,10 +52,10 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             {/* Header Bar */}
             <div className="p-6 border-b border-white/[0.08] flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="font-mono text-xs font-bold tabular-nums text-[#5fd4ff]">
+                <span className="font-mono text-xs font-bold tabular-nums text-[var(--accent-sage)]">
                   {project.index} // SYSTEM BREAKDOWN
                 </span>
-                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-[#161b26] text-[#5fd4ff] border border-[#2f6bff]/30 uppercase font-semibold">
+                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-[#161b26] text-[var(--accent-sage)] border border-[#C85A32]/30 uppercase font-semibold">
                   {project.badge}
                 </span>
               </div>
@@ -63,7 +63,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 type="button"
                 onClick={onClose}
                 whileTap={{ scale: 0.95 }}
-                className="p-1.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-zinc-400 hover:text-zinc-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f6bff]"
+                className="p-1.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-zinc-400 hover:text-zinc-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C85A32]"
                 aria-label="Close project breakdown modal"
               >
                 <X className="w-5 h-5" strokeWidth={1.5} />

@@ -10,23 +10,39 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
+        display: ["var(--font-display)", "Oswald", "sans-serif"],
+        space: ["var(--font-space)", "Space Grotesk", "sans-serif"],
         sans: ["var(--font-inter)", "Inter", "sans-serif"],
         mono: ["var(--font-jetbrains)", "JetBrains Mono", "monospace"],
-        display: ["var(--font-unbounded)", "var(--font-inter)", "sans-serif"],
       },
       colors: {
         canvas: "var(--surface-canvas)",
-        card: {
+        surface: {
           DEFAULT: "var(--surface-card)",
           interactive: "var(--surface-interactive)",
           elevated: "var(--surface-elevated)",
         },
-        hairline: "var(--border-hairline)",
-        accent: {
-          DEFAULT: "var(--accent-primary)",
-          hover: "var(--accent-primary-hover)",
-          cyan: "var(--accent-cyan)",
-          cream: "var(--accent-cream)",
+        border: "var(--border-hairline)",
+        ink: {
+          DEFAULT: "var(--text-primary)",
+          muted: "var(--text-secondary)",
+          subtle: "var(--text-muted)",
+        },
+        terracotta: {
+          DEFAULT: "#C85A32",
+          hover: "#B24B25",
+        },
+        sage: {
+          DEFAULT: "var(--accent-sage)",
+          bg: "var(--accent-sage-bg)",
+        },
+        sand: {
+          light: "#F4F0EB",
+          surface: "#EAE4DA",
+          border: "#DFD5C6",
+          dark: "#161617",
+          darkSurface: "#1F1E1D",
+          darkBorder: "#2E2C29",
         },
       },
     },

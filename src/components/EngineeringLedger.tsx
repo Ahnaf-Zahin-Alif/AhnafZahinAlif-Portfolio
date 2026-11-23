@@ -49,7 +49,7 @@ export function EngineeringLedger() {
     <section id="ledger" className="w-full space-y-6 scroll-mt-24" aria-labelledby="ledger-heading">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <span className="text-[11px] font-bold tracking-widest text-[#5fd4ff] uppercase block pb-1 font-mono">
+          <span className="text-[11px] font-bold tracking-widest text-[var(--accent-sage)] uppercase block pb-1 font-mono">
             03 // ACADEMIC &amp; SYSTEMS LEDGER
           </span>
           <h2 id="ledger-heading" className="text-2xl sm:text-3xl font-extrabold text-zinc-100 tracking-tight text-balance">
@@ -59,7 +59,7 @@ export function EngineeringLedger() {
 
         <a
           href="mailto:ahnafzahinalif@gmail.com?subject=Request%20CV%20-%20Md.%20Ahnaf%20Zahin%20Alif"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#161b26] hover:bg-[#2f6bff] hover:text-white border border-white/[0.12] text-zinc-200 font-semibold text-xs font-mono transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f6bff]"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#161b26] hover:bg-[#C85A32] hover:text-white border border-white/[0.12] text-zinc-200 font-semibold text-xs font-mono transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C85A32]"
           aria-label="Request CV via email"
         >
           <Download className="w-3.5 h-3.5 text-zinc-950" strokeWidth={1.5} />
@@ -75,12 +75,12 @@ export function EngineeringLedger() {
               <button
                 type="button"
                 onClick={() => setExpandedIdx(isExpanded ? null : idx)}
-                className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f6bff]"
+                className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C85A32]"
                 aria-expanded={isExpanded}
               >
                 <div className="space-y-1.5 flex-1">
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="font-mono text-xs text-[#5fd4ff] tabular-nums font-semibold flex items-center gap-1.5">
+                    <span className="font-mono text-xs text-[var(--accent-sage)] tabular-nums font-semibold flex items-center gap-1.5">
                       <Calendar className="w-3 h-3" />
                       {row.period}
                     </span>
@@ -90,7 +90,7 @@ export function EngineeringLedger() {
                 </div>
                 <ChevronDown
                   className={`w-5 h-5 text-zinc-400 transition-transform duration-200 mt-1 shrink-0 ${
-                    isExpanded ? "rotate-180 text-[#2f6bff]" : ""
+                    isExpanded ? "rotate-180 text-[#C85A32]" : ""
                   }`}
                   strokeWidth={1.5}
                 />

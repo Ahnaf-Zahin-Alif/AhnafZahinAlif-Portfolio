@@ -1,7 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Unbounded } from "next/font/google";
+import { Oswald, Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { StructuredData } from "@/components/StructuredData";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  weight: ["500", "600", "700"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,13 +27,6 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
   display: "swap",
-});
-
-const unbounded = Unbounded({
-  subsets: ["latin"],
-  variable: "--font-unbounded",
-  display: "swap",
-  weight: ["400", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -111,9 +118,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} ${unbounded.variable} dark`}
+      className={`${oswald.variable} ${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} dark`}
     >
-      <body className="bg-[#08090d] text-slate-100 min-h-screen antialiased selection:bg-[#2f6bff]/30 selection:text-[#5fd4ff]">
+      <body className="bg-[#161617] text-[#F4F0EB] min-h-screen antialiased selection:bg-[#C85A32]/25 selection:text-[#C85A32]">
         <StructuredData />
         {children}
       </body>

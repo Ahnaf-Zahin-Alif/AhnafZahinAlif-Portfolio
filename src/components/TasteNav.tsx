@@ -45,10 +45,10 @@ export function TasteNav({ onOpenCommandPalette }: TasteNavProps) {
         <div className="flex items-center gap-4 sm:gap-6">
           <Link
             href="#hero"
-            className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f6bff] rounded-lg"
+            className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C85A32] rounded-lg"
             aria-label="Return to top"
           >
-            <div className="w-9 h-9 rounded-lg bg-[#2f6bff]/10 border border-[#2f6bff]/30 flex items-center justify-center text-[#2f6bff] font-mono font-bold text-sm tracking-tighter transition-all group-hover:scale-105 group-hover:bg-[#2f6bff]/20 group-hover:border-[#2f6bff]/50">
+            <div className="w-9 h-9 rounded-lg bg-[#C85A32]/10 border border-[#C85A32]/30 flex items-center justify-center text-[#C85A32] font-mono font-bold text-sm tracking-tighter transition-all group-hover:scale-105 group-hover:bg-[#C85A32]/20 group-hover:border-[#C85A32]/50">
               AZ
             </div>
             <span className="font-display font-semibold text-xs tracking-tight uppercase hidden md:inline text-slate-300 dark:text-slate-300 light:text-slate-800">
@@ -74,14 +74,14 @@ export function TasteNav({ onOpenCommandPalette }: TasteNavProps) {
                 href={`#${item.id}`}
                 className={`relative px-3 py-1.5 rounded-lg text-xs font-mono tracking-wider transition-colors ${
                   isActive
-                    ? "text-[#5fd4ff] font-semibold"
+                    ? "text-[var(--accent-sage)] font-semibold"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
               >
                 {isActive && (
                   <motion.span
                     layoutId="active-nav-indicator"
-                    className="absolute inset-0 rounded-lg bg-[#2f6bff]/15 border border-[#2f6bff]/30 -z-0"
+                    className="absolute inset-0 rounded-lg bg-[#C85A32]/15 border border-[#C85A32]/30 -z-0"
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
@@ -100,7 +100,7 @@ export function TasteNav({ onOpenCommandPalette }: TasteNavProps) {
             className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] bg-slate-900/60 dark:bg-slate-900/60 light:bg-slate-100/60 hover:border-white/20 transition-all text-xs font-mono text-slate-400 hover:text-slate-200"
             aria-label="Open Command Palette"
           >
-            <Command className="w-3.5 h-3.5 text-[#5fd4ff]" aria-hidden="true" />
+            <Command className="w-3.5 h-3.5 text-[var(--accent-sage)]" aria-hidden="true" />
             <span className="hidden sm:inline">Search</span>
             <kbd className="text-[10px] bg-white/[0.06] px-1.5 py-0.5 rounded border border-white/10">⌘K</kbd>
           </motion.button>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { MotionConfig } from "framer-motion";
-import { TasteNav } from "./TasteNav";
+import { EditorialHeader } from "./EditorialHeader";
 import { TasteHero } from "./TasteHero";
 import { DomainMarquee } from "./DomainMarquee";
 import { TasteFlagshipCinefilm } from "./TasteFlagshipCinefilm";
@@ -12,6 +12,8 @@ import { TasteClosingStation } from "./TasteClosingStation";
 import { CommandPalette } from "./CommandPalette";
 import { ProjectModal } from "./ProjectModal";
 import { BackToTop } from "./BackToTop";
+import { SmoothScroll } from "./SmoothScroll";
+import { TopographicBackground } from "./TopographicBackground";
 import { ProjectItem } from "@/types/projects";
 
 export function PortfolioShell() {
@@ -19,36 +21,41 @@ export function PortfolioShell() {
   const [paletteOpen, setPaletteOpen] = useState(false);
 
   return (
-    <MotionConfig reducedMotion="user">
-      <div className="min-h-screen bg-[var(--surface-canvas)] text-[var(--text-primary)]">
-        {/* Fixed Top Studio Nav */}
-        <TasteNav onOpenCommandPalette={() => setPaletteOpen(true)} />
+    <SmoothScroll>
+      <MotionConfig reducedMotion="user">
+        <div className="relative min-h-screen bg-[var(--surface-canvas)] text-[var(--text-primary)] transition-colors duration-300">
+          {/* Subtle Ambient Topographic Background */}
+          <TopographicBackground />
 
-        {/* 5-Screen Full-Viewport Architecture (Tasteskill Rule 3) */}
-        <main className="w-full">
-          <TasteHero />
-          <DomainMarquee />
-          <TasteFlagshipCinefilm onSelectProject={(p) => setSelectedProject(p)} />
-          <TasteScreenSystems onSelectProject={(p) => setSelectedProject(p)} />
-          <TasteScreenMatrix />
-          <TasteClosingStation />
-        </main>
-      </div>
+          {/* Sticky Editorial Header */}
+          <EditorialHeader onOpenCommandPalette={() => setPaletteOpen(true)} />
 
-      {/* Shared-Element Morphing Project Modal */}
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
+          {/* Editorial Scroll-Choreographed Architecture */}
+          <main className="relative z-10 w-full">
+            <TasteHero />
+            <DomainMarquee />
+            <TasteFlagshipCinefilm onSelectProject={(p) => setSelectedProject(p)} />
+            <TasteScreenSystems onSelectProject={(p) => setSelectedProject(p)} />
+            <TasteScreenMatrix />
+            <TasteClosingStation />
+          </main>
+        </div>
 
-      {/* Cmd+K Quick Command Palette */}
-      <CommandPalette
-        open={paletteOpen}
-        onClose={() => setPaletteOpen(false)}
-      />
+        {/* Shared-Element Morphing Project Modal */}
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
 
-      {/* Spring-Animated Back To Top */}
-      <BackToTop />
-    </MotionConfig>
+        {/* Cmd+K Quick Command Palette */}
+        <CommandPalette
+          open={paletteOpen}
+          onClose={() => setPaletteOpen(false)}
+        />
+
+        {/* Spring-Animated Back To Top */}
+        <BackToTop />
+      </MotionConfig>
+    </SmoothScroll>
   );
 }

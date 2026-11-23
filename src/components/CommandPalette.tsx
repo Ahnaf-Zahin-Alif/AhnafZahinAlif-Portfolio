@@ -102,7 +102,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
                       className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-white/[0.06] text-left transition-colors group"
                     >
                       <div className="flex items-center gap-3">
-                        <Icon className="w-4 h-4 text-zinc-400 group-hover:text-[#2f6bff] transition-colors" strokeWidth={1.5} />
+                        <Icon className="w-4 h-4 text-zinc-400 group-hover:text-[#C85A32] transition-colors" strokeWidth={1.5} />
                         <span className="text-sm font-medium text-zinc-200 group-hover:text-zinc-100">{item.title}</span>
                       </div>
                       <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">{item.category}</span>
