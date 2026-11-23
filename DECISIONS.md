@@ -22,6 +22,7 @@
 | [D-017](#d-017-omission-of-phase-2-systems-overhauls-in-favor-of-streamlined-ui) | Omission of Phase 2 Systems Overhauls in Favor of Streamlined UI | Accepted | 2026-11-23 |
 | [D-018](#d-018-editorial-scroll-choreographed-layout-with-warm-sand-slate--terracotta-palette) | Editorial Scroll Layout with Warm Sand, Slate & Terracotta System | Accepted | 2026-11-23 |
 | [D-019](#d-019-top-four-full-bleed-sections-with-blob-reveal-animated-az-signature-parallax-ledger--dual-mode-showcase) | Top Four Full-Bleed Sections (Blob Reveal, AZ Signature, Parallax Ledger, Dual-Mode Showcase) | Accepted | 2026-11-23 |
+| [D-020](#d-020-bottom-four-sections-workbench-hall-of-fame-flagship-spotlight-fan-out-proof-deck-rounded-curtain-footer) | Bottom Four Sections (Workbench, Flagship Spotlight, Fan-Out Deck, Rounded Curtain Footer) | Accepted | 2026-11-23 |
 
 ---
 
@@ -280,3 +281,24 @@
 - **Rejected Alternatives**:
   - Canvas-only blob mask: Rejected because SVG / CSS mask gradient offers better GPU acceleration, crispness across Retina displays, and lower memory footprint.
   - Single massive file for the four sections: Rejected because it violates the 150-line rule; extracted data and components into modular units.
+
+---
+
+### D-020: Bottom Four Sections (Workbench Hall of Fame, Flagship Spotlight, Fan-Out Proof Deck, Rounded Curtain Footer)
+- **Status**: Accepted
+- **Context**: The user requested building the bottom four sections while preserving all custom telemetry widgets:
+  1. Dark Workbench "Hall of Fame" (Dark `#161617`): Heading "01 // WORKBENCH" on the left, concise intro on the right, bordered dark card grid (`#1F1E1D` surface, `#2E2C29` border) for MediCare, Orion Sentinel, BICE '25 Portal, ProjectTracker, and 30DaysOfPython with preserved telemetry widgets (`94.2% Occupancy`, `98.4% Link`, `3.92 CGPA`, `92% Sprint Velocity`, `30/30 pytest passed`) styled with `#7D9B7A` sage indicators, `#C85A32` border hover glow, and centered `#C85A32` CTA linking to GitHub.
+  2. Flagship Spotlight + Tech Stack Marquee (Light `#F4F0EB`): Dedicated asymmetric spotlight for CineFilm with rectangular `#C85A32` block-wipe reveals, preserving the interactive "AUDITORIUM 01" seat selector and "SQL Latency: ~38ms • ACID Safe" badge in `#5A6E58` sage. Seamless infinite horizontal marquee of monochrome icons for all 14 technologies below it.
+  3. Fan-Out Proof Deck (Light `#F4F0EB`): 5-card `#EAE4DA` deck (3 peer reviews + Codeforces and CodeChef profile cards) smoothly fanning out into a curved arc (-18deg to +18deg) via GSAP ScrollTrigger, above minimal uppercase links (GITHUB • CODEFORCES • LINKEDIN).
+  4. Rounded Curtain Footer (Dark `#161617`): `#161617` container with `rounded-t-[48px]`, subtle topographic lines, giant display headline ("ENGINEERED FOR SCALE."), 2-column section and social directory, centered high-contrast `#C85A32` "GET IN TOUCH" pill, and copyright bar.
+- **Decision**:
+  - Implement `WorkbenchCard.tsx` and `WorkbenchSection.tsx` integrating `ProjectPreviewVisual` and direct GitHub repository links.
+  - Implement `CinefilmBlockWipe.tsx` with Framer Motion rectangular block-wipe and `FlagshipSpotlight.tsx` retaining `CinefilmSeatSimulator.tsx`.
+  - Implement `TechStackMarquee.tsx` cycling all 14 technologies with monochrome icons.
+  - Implement `FanOutProofDeck.tsx` and `ProofDeckCard.tsx` with GSAP `ScrollTrigger` rotation and translation arc scrub (`-18deg` to `+18deg`), externalizing `proofDeckData.ts`.
+  - Implement `RoundedCurtainFooter.tsx` with `rounded-t-[48px]`, topographic contours, interactive email copy/launch, and externalized `footerLinks.ts`.
+  - Keep all component files strictly under 132 lines (well below the 150-line limit).
+- **Why**: Completes the full editorial scroll journey with balanced light/dark rhythmic cadence, preserving all interactive simulators and telemetry data with 100% static Next.js compilation.
+- **Rejected Alternatives**:
+  - Inline reviews within an accordion: Rejected because a fan-out deck provides superior physical tangible depth and editorial delight.
+  - Monolithic footer component: Rejected to keep file length strictly under the 150-line constraint.

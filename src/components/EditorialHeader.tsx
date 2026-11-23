@@ -17,9 +17,10 @@ const navLinks = [
   { id: "manifesto", label: "01 // MANIFESTO" },
   { id: "ledger", label: "02 // ACADEMIC LEDGER" },
   { id: "showcase", label: "03 // DUAL ARCHITECTURE" },
-  { id: "cinefilm", label: "04 // CINEFILM DBMS" },
-  { id: "systems", label: "05 // SYSTEMS DOSSIER" },
-  { id: "closing", label: "06 // DISPATCH" },
+  { id: "workbench", label: "04 // WORKBENCH" },
+  { id: "cinefilm", label: "05 // CINEFILM DBMS" },
+  { id: "proof", label: "06 // PROOF DECK" },
+  { id: "closing", label: "07 // DISPATCH" },
 ];
 
 export function EditorialHeader({ onOpenCommandPalette }: EditorialHeaderProps) {

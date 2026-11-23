@@ -7,9 +7,10 @@ import { InteractiveHero } from "./InteractiveHero";
 import { MarqueeManifesto } from "./MarqueeManifesto";
 import { ParallaxLedger } from "./ParallaxLedger";
 import { SplitShowcase } from "./SplitShowcase";
-import { TasteFlagshipCinefilm } from "./TasteFlagshipCinefilm";
-import { TasteScreenSystems } from "./TasteScreenSystems";
-import { TasteClosingStation } from "./TasteClosingStation";
+import { WorkbenchSection } from "./WorkbenchSection";
+import { FlagshipSpotlight } from "./FlagshipSpotlight";
+import { FanOutProofDeck } from "./FanOutProofDeck";
+import { RoundedCurtainFooter } from "./RoundedCurtainFooter";
 import { CommandPalette } from "./CommandPalette";
 import { ProjectModal } from "./ProjectModal";
 import { BackToTop } from "./BackToTop";
@@ -37,9 +38,10 @@ export function PortfolioShell() {
             <MarqueeManifesto />
             <ParallaxLedger />
             <SplitShowcase />
-            <TasteFlagshipCinefilm onSelectProject={(p) => setSelectedProject(p)} />
-            <TasteScreenSystems onSelectProject={(p) => setSelectedProject(p)} />
-            <TasteClosingStation />
+            <WorkbenchSection onSelectProject={(p) => setSelectedProject(p)} />
+            <FlagshipSpotlight onSelectProject={(p) => setSelectedProject(p)} />
+            <FanOutProofDeck />
+            <RoundedCurtainFooter />
           </main>
         </div>
 
