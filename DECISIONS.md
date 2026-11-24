@@ -27,6 +27,7 @@
 | [D-022](#d-022-animation-pipeline-and-smoothscrollprovider-overhaul) | Animation Pipeline & SmoothScrollProvider Overhaul | Accepted | 2026-11-24 |
 | [D-023](#d-023-hero-wireframe-removal-and-typographic-scale-tuning) | Hero Wireframe Removal and Typographic Scale Tuning | Accepted | 2026-11-24 |
 | [D-024](#d-024-design-taste-frontend-anti-slop-audit-and-copy-hardening) | Design Taste Frontend Anti-Slop Audit & Copy Hardening | Accepted | 2026-11-25 |
+| [D-025](#d-025-golden-ratio-color-architecture-alignment) | Golden Ratio Color Architecture Alignment | Accepted | 2026-11-25 |
 
 ---
 
@@ -460,3 +461,20 @@
 - **Why**: Eliminates machine-generated stylistic artifacts, produces tight, authoritative, fact-driven engineering copy, and satisfies tasteskill 2.5 anti-slop rules.
 - **Rejected Alternatives**:
   - Waiving "robust" in `waivers.json`: Rejected because replacing it with genuine schema facts (e.g., 3NF normalization) significantly strengthens technical credibility.
+
+---
+
+### D-025: Golden Ratio Color Architecture Alignment
+- **Status**: Accepted
+- **Context**: The user requested applying the golden ratio for colors across the portfolio page. An audit revealed legacy cold dark blue values (`#0f121a`, `#08090d`, `#161b26`) remaining in `CommandPalette.tsx`, `ProjectModal.tsx`, `ProjectModalDetails.tsx`, `ProjectPreviewVisual.tsx`, `CinefilmSeatSimulator.tsx`, and `SystemsDiagramCard.tsx`, as well as outdated color tables in `DESIGN.md`.
+- **Decision**:
+  - Unify all modal, simulator, and telemetry components with the Warm Sand, Slate & Terracotta palette engineered to strict Golden Ratio ($\phi \approx 1.618$) principles:
+    - 61.8% Ground: Dark Slate `#161617` / Light Warm Sand `#F4F0EB`.
+    - 30.9% Structure: Cards `#1F1E1D` / `#EAE4DA`, Hairlines `#2E2C29` / `#DFD5C6`, Secondary text `#A39E95` / `#5C5852`.
+    - 7.3% Focal Accent: Terracotta `#C85A32` (Hue $16.5^\circ$) for primary action CTAs and section indices.
+    - ~2% Telemetry: Sage `#7D9B7A` / `#5A6E58`, calculated via the Golden Angle ($16.5^\circ + 137.5^\circ \approx 154^\circ$).
+  - Replace all legacy cold blue hex values across modals and simulators with warm Golden Ratio tokens.
+  - Update `DESIGN.md` to formally specify the Golden Ratio color architecture and luminance intervals.
+- **Why**: Establishes mathematical color harmony, eliminates palette fragmentation in modals and simulators, and satisfies tasteskill 2.5 visual unity standards.
+- **Rejected Alternatives**:
+  - Retaining separate cold slate styling for modal dialogs: Rejected because it breaks visual continuity when switching between page context and modal inspection.

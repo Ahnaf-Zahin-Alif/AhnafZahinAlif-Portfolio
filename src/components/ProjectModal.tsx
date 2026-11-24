@@ -44,18 +44,18 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           <motion.div
             layoutId={`project-${project.id}`}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="relative w-full max-w-2xl rounded-3xl bg-[#0f121a] border border-white/[0.12] shadow-2xl overflow-hidden z-10 max-h-[90vh] flex flex-col"
+            className="relative w-full max-w-2xl rounded-3xl bg-[#1F1E1D] border border-[#2E2C29] shadow-2xl overflow-hidden z-10 max-h-[90vh] flex flex-col"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-title"
           >
             {/* Header Bar */}
-            <div className="p-6 border-b border-white/[0.08] flex items-center justify-between">
+            <div className="p-6 border-b border-[#2E2C29] flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="font-mono text-xs font-bold tabular-nums text-[var(--accent-sage)]">
+                <span className="font-mono text-xs font-bold tabular-nums text-[#7D9B7A]">
                   {project.index} // SYSTEM BREAKDOWN
                 </span>
-                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-[#161b26] text-[var(--accent-sage)] border border-[#C85A32]/30 uppercase font-semibold">
+                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-[#161617] text-[#7D9B7A] border border-[#2E2C29] uppercase font-semibold">
                   {project.badge}
                 </span>
               </div>
@@ -63,7 +63,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 type="button"
                 onClick={onClose}
                 whileTap={{ scale: 0.95 }}
-                className="p-1.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-zinc-400 hover:text-zinc-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C85A32]"
+                className="p-1.5 rounded-full bg-[#2E2C29] hover:bg-[#C85A32] text-[#A39E95] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C85A32]"
                 aria-label="Close project breakdown modal"
               >
                 <X className="w-5 h-5" strokeWidth={1.5} />

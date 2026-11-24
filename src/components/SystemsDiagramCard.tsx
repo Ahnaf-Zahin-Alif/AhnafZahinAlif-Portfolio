@@ -63,7 +63,7 @@ export function SystemsDiagramCard({ onSelectProject }: SystemsDiagramCardProps)
       </div>
 
       {/* Interactive Trigger Card */}
-      <div className="p-3.5 rounded-xl bg-[#08090d]/80 dark:bg-[#08090d]/80 light:bg-slate-100/80 border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] flex items-center justify-between text-xs font-mono">
+      <div className="p-3.5 rounded-xl bg-[#161617] border border-[#2E2C29] flex items-center justify-between text-xs font-mono">
         <div className="flex items-center gap-2">
           <Cpu className="w-4 h-4 text-[#C85A32]" />
           <span>INSPECT ARCHITECTURE SPEC</span>

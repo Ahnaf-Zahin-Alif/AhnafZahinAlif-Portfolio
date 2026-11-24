@@ -48,9 +48,9 @@ export function ProjectModalDetails({ project }: { project: ProjectItem }) {
         </span>
         <div className="grid grid-cols-1 gap-2.5">
           {project.architectureDetails.map((detail, idx) => (
-            <div key={idx} className="p-3 rounded-xl bg-[#08090d] border border-white/[0.06] flex items-start gap-3">
-              <CheckCircle2 className="w-4 h-4 text-[var(--accent-sage)] shrink-0 mt-0.5" strokeWidth={1.5} />
-              <span className="text-xs text-zinc-300 leading-relaxed font-mono">
+            <div key={idx} className="p-3 rounded-xl bg-[#161617] border border-[#2E2C29] flex items-start gap-3">
+              <CheckCircle2 className="w-4 h-4 text-[#7D9B7A] shrink-0 mt-0.5" strokeWidth={1.5} />
+              <span className="text-xs text-[#F4F0EB] leading-relaxed font-mono">
                 {detail}
               </span>
             </div>
@@ -60,14 +60,14 @@ export function ProjectModalDetails({ project }: { project: ProjectItem }) {
 
       {/* Technologies */}
       <motion.div variants={innerItem} className="space-y-2 pt-2">
-        <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 block font-semibold">
+        <span className="text-[11px] font-mono uppercase tracking-wider text-[#A39E95] block font-semibold">
           STACK &amp; PROTOCOLS
         </span>
         <div className="flex flex-wrap gap-1.5">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-xs font-mono px-3 py-1 rounded-full bg-[#161b26] border border-white/[0.08] text-zinc-200"
+              className="text-xs font-mono px-3 py-1 rounded-full bg-[#252422] border border-[#2E2C29] text-[#F4F0EB]"
             >
               {tag}
             </span>
@@ -76,10 +76,10 @@ export function ProjectModalDetails({ project }: { project: ProjectItem }) {
       </motion.div>
 
       {/* Repository Footer CTA */}
-      <motion.div variants={innerItem} className="pt-4 border-t border-white/[0.08] flex items-center justify-between">
-        <div className="text-xs font-mono text-zinc-400">
-          <span className="text-zinc-500">{project.metrics.label}:</span>{" "}
-          <span className="text-[var(--accent-sage)] font-semibold tabular-nums">{project.metrics.value}</span>
+      <motion.div variants={innerItem} className="pt-4 border-t border-[#2E2C29] flex items-center justify-between">
+        <div className="text-xs font-mono text-[#A39E95]">
+          <span className="text-[#A39E95]">{project.metrics.label}:</span>{" "}
+          <span className="text-[#7D9B7A] font-semibold tabular-nums">{project.metrics.value}</span>
         </div>
         <motion.a
           href={project.repoUrl}

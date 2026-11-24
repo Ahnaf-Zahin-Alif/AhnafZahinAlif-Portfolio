@@ -75,25 +75,25 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
             role="dialog"
             aria-modal="true"
             aria-label="Command Palette"
-            className="relative w-full max-w-xl rounded-2xl bg-[#0f121a] border border-white/[0.12] shadow-2xl overflow-hidden z-10"
+            className="relative w-full max-w-xl rounded-2xl bg-[#1F1E1D] border border-[#2E2C29] shadow-2xl overflow-hidden z-10"
           >
-            <div className="flex items-center gap-3 px-4 py-3.5 border-b border-white/[0.08]">
-              <Search className="w-5 h-5 text-zinc-400" strokeWidth={1.5} aria-hidden="true" />
+            <div className="flex items-center gap-3 px-4 py-3.5 border-b border-[#2E2C29]">
+              <Search className="w-5 h-5 text-[#A39E95]" strokeWidth={1.5} aria-hidden="true" />
               <input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Type a command or jump to section..."
                 autoFocus
-                className="w-full bg-transparent text-sm text-zinc-100 placeholder:text-zinc-500 focus:outline-none"
+                className="w-full bg-transparent text-sm text-[#F4F0EB] placeholder:text-[#A39E95] focus:outline-none"
               />
-              <button type="button" onClick={onClose} className="p-1 rounded text-zinc-400 hover:text-zinc-200" aria-label="Close command palette">
+              <button type="button" onClick={onClose} className="p-1 rounded text-[#A39E95] hover:text-[#F4F0EB]" aria-label="Close command palette">
                 <X className="w-4 h-4" strokeWidth={1.5} />
               </button>
             </div>
             <div className="p-2 max-h-72 overflow-y-auto space-y-1">
               {filtered.length === 0 ? (
-                <div className="p-4 text-center text-xs text-zinc-500 font-mono">No commands matching &quot;{query}&quot;</div>
+                <div className="p-4 text-center text-xs text-[#A39E95] font-mono">No commands matching &quot;{query}&quot;</div>
               ) : (
                 filtered.map((item) => {
                   const Icon = item.icon;
@@ -102,19 +102,19 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
                       key={item.id}
                       type="button"
                       onClick={item.action}
-                      className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-white/[0.06] text-left transition-colors group"
+                      className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-[#252422] text-left transition-colors group"
                     >
                       <div className="flex items-center gap-3">
-                        <Icon className="w-4 h-4 text-zinc-400 group-hover:text-[#C85A32] transition-colors" strokeWidth={1.5} />
-                        <span className="text-sm font-medium text-zinc-200 group-hover:text-zinc-100">{item.title}</span>
+                        <Icon className="w-4 h-4 text-[#A39E95] group-hover:text-[#C85A32] transition-colors" strokeWidth={1.5} />
+                        <span className="text-sm font-medium text-[#F4F0EB] group-hover:text-[#C85A32]">{item.title}</span>
                       </div>
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">{item.category}</span>
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#A39E95]">{item.category}</span>
                     </button>
                   );
                 })
               )}
             </div>
-            <div className="px-4 py-2 border-t border-white/[0.06] bg-[#08090d] flex items-center justify-between text-[11px] font-mono text-zinc-500">
+            <div className="px-4 py-2 border-t border-[#2E2C29] bg-[#161617] flex items-center justify-between text-[11px] font-mono text-[#A39E95]">
               <span>Navigate &amp; Execute</span>
               <span>ESC to exit</span>
             </div>

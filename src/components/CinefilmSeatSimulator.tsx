@@ -56,12 +56,12 @@ export function CinefilmSeatSimulator() {
         ))}
       </div>
 
-      <div className="p-3.5 rounded-xl bg-[#08090d] dark:bg-[#08090d] light:bg-slate-100 border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] flex items-center justify-between text-xs font-mono">
+      <div className="p-3.5 rounded-xl bg-[#161617] border border-[#2E2C29] flex items-center justify-between text-xs font-mono">
         <div className="flex items-center gap-2">
           <Film className="w-4 h-4 text-[#C85A32]" />
-          <span>SELECTED: <strong className="text-slate-100 dark:text-slate-100 light:text-slate-900">{selectedSeats.join(", ") || "None"}</strong></span>
+          <span>SELECTED: <strong className="text-[#F4F0EB]">{selectedSeats.join(", ") || "None"}</strong></span>
         </div>
-        <div className="flex items-center gap-2 text-[var(--accent-sage)] font-bold">
+        <div className="flex items-center gap-2 text-[#7D9B7A] font-bold">
           <CheckCircle2 className="w-3.5 h-3.5" />
           <span>${selectedSeats.length * 12}.00</span>
         </div>
