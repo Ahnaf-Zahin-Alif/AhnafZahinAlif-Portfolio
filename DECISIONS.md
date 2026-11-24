@@ -28,6 +28,7 @@
 | [D-023](#d-023-hero-wireframe-removal-and-typographic-scale-tuning) | Hero Wireframe Removal and Typographic Scale Tuning | Accepted | 2026-11-24 |
 | [D-024](#d-024-design-taste-frontend-anti-slop-audit-and-copy-hardening) | Design Taste Frontend Anti-Slop Audit & Copy Hardening | Accepted | 2026-11-25 |
 | [D-025](#d-025-golden-ratio-color-architecture-alignment) | Golden Ratio Color Architecture Alignment | Accepted | 2026-11-25 |
+| [D-026](#d-026-number-pop-in-transition-from-transitionsdev) | Number Pop-in Transition from transitions.dev | Accepted | 2026-11-25 |
 
 ---
 
@@ -478,3 +479,18 @@
 - **Why**: Establishes mathematical color harmony, eliminates palette fragmentation in modals and simulators, and satisfies tasteskill 2.5 visual unity standards.
 - **Rejected Alternatives**:
   - Retaining separate cold slate styling for modal dialogs: Rejected because it breaks visual continuity when switching between page context and modal inspection.
+
+---
+
+### D-026: Number Pop-in Transition from transitions.dev
+- **Status**: Accepted
+- **Context**: The user requested integrating the "Number pop-in" transition from transitions.dev to add mechanical physicality and micro-interaction polish to dynamic numerical indicators across the portfolio.
+- **Decision**:
+  - Pull transition tokens and keyframes from transitions.dev, adding namespaced CSS rules (`.t-digit-group`, `.t-digit-slot`, `.t-digit-old`, `.t-digit`, `[data-stagger]`, `[data-same]`) and tunable motion variables (`--digit-dur: 600ms`, `--digit-exit-dur: 155ms`, `--digit-enter-delay: 50ms`, `--digit-stagger: 40ms`, `--digit-distance: 0.52em`, `--digit-blur`, `--digit-lift`, `--digit-start-scale: 0.7`, `--digit-peak: 1.03`) to `src/app/globals.css`.
+  - Provide complete accessibility support via `@media (prefers-reduced-motion: reduce)`.
+  - Create a modular, single-purpose React component `src/components/NumberPopIn.tsx` (<150 lines) that handles numeric diffing, preserves common leading prefixes (`data-same`), manages 3D drum digit swaps (`.t-digit-slot` and `.t-digit-old`), and staggers trailing cents.
+  - Wire `NumberPopIn` into `src/components/CinefilmSeatSimulator.tsx` for real-time ticket price updates as seats are toggled.
+- **Why**: Enhances physical tactile feedback during seat reservation interactions with high-craft 3D drum number flipping, while respecting motion reduction preferences and maintaining zero layout shift (`em`-based distance tokens).
+- **Rejected Alternatives**:
+  - Using a generic third-party counter package (e.g. `react-countup`): Rejected because it introduces an unnecessary external dependency, lacks the distinctive 3D drum swap motion of transitions.dev, and causes bundle bloat.
+  - Doing a full-string fade transition: Rejected because animating individual changed digits while holding identical leading digits stationary provides far superior visual craft and readability.

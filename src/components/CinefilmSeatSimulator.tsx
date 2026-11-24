@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Film, CheckCircle2 } from "lucide-react";
+import { NumberPopIn } from "./NumberPopIn";
 
 export function CinefilmSeatSimulator() {
   const [selectedSeats, setSelectedSeats] = useState<string[]>(["B6", "B7"]);
@@ -63,7 +64,10 @@ export function CinefilmSeatSimulator() {
         </div>
         <div className="flex items-center gap-2 text-[#7D9B7A] font-bold">
           <CheckCircle2 className="w-3.5 h-3.5" />
-          <span>${selectedSeats.length * 12}.00</span>
+          <NumberPopIn
+            prefix="$"
+            value={(selectedSeats.length * 12).toFixed(2)}
+          />
         </div>
       </div>
     </div>
