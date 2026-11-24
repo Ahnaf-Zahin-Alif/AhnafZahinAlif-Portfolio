@@ -18,7 +18,7 @@ export function FlagshipSpotlight({ onSelectProject }: FlagshipSpotlightProps) {
         id: "cinefilm-flagship",
         index: "01",
         badge: "FLAGSHIP DBMS & CONCURRENCY",
-        title: "CineFilm — Cinema Ticketing & DBMS Engine",
+        title: "CineFilm: Cinema Ticketing & DBMS Engine",
         tagline: "High-Throughput Relational Reservation Engine with Row-Level Locking",
         description:
           "Relational cinema booking system designed to enforce ACID transactions and eliminate double-booking during high-volume seat reservations.",
@@ -60,7 +60,7 @@ export function FlagshipSpotlight({ onSelectProject }: FlagshipSpotlightProps) {
             {/* Block-Wipe Text Reveal on Scroll */}
             <CinefilmBlockWipe>
               <h2 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-[#1B1B1C] leading-[0.95]">
-                CINEFILM — CINEMA TICKETING &amp; DBMS ENGINE
+                CINEFILM: CINEMA TICKETING &amp; DBMS ENGINE
               </h2>
             </CinefilmBlockWipe>
 

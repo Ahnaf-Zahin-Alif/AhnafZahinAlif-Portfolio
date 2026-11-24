@@ -7,17 +7,17 @@ import { LINKS } from "@/lib/links";
 export function TasteAlgorithmsProof() {
   const reviews = [
     {
-      author: "SYSTEMS PEER — BUP ICT",
+      author: "SYSTEMS PEER (BUP ICT)",
       role: "Collaborator Endorsement",
       text: "Collaborated on low-level socket programming and database architectures. Exceptionally rigorous on ACID isolation and edge cases.",
     },
     {
-      author: "FULL-STACK COLLAB — CINEFILM",
+      author: "FULL-STACK COLLAB (CINEFILM)",
       role: "Project Collab Endorsement",
-      text: "Engineered robust backend API contracts with clean data normalization. Always prioritizes schema sanity before touching UI code.",
+      text: "Engineered strict backend API contracts with 3NF data normalization. Always prioritizes schema sanity before touching UI code.",
     },
     {
-      author: "ALGORITHMIC PEER — CP",
+      author: "ALGORITHMIC PEER (CP)",
       role: "Competitive Programming Peer",
       text: "Consistent algorithmic rigor in C++. Strong grasp of asymptotic complexity, shortest path optimizations, and dynamic programming.",
     },

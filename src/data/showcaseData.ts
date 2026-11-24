@@ -34,7 +34,7 @@ export const systemsBackendTech: StackTech[] = [
   {
     name: "Django",
     role: "Python Framework",
-    detail: "Robust backend MVC architecture with ORM query optimization, secure authentication, and REST APIs.",
+    detail: "Structured backend MVC architecture with ORM query optimization, session authentication, and REST APIs.",
     proof: "Full-Stack Project Tracker",
   },
   {

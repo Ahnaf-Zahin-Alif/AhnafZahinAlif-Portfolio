@@ -5,7 +5,7 @@ export const secondaryProjects: ProjectItem[] = [
     id: "medicare",
     index: "02",
     badge: "JAVA OOP & HEALTHCARE",
-    title: "MediCare — Hospital Management System",
+    title: "MediCare: Hospital Management System",
     tagline: "Java OOP Healthcare Administration & Patient Admissions Pipeline",
     description:
       "Full-featured Java OOP hospital administration suite managing inpatient admissions, ICU and general ward occupancy, doctor shifts, and relational medical records.",
@@ -30,7 +30,7 @@ export const secondaryProjects: ProjectItem[] = [
     id: "orion-sentinel",
     index: "03",
     badge: "DISTRIBUTED UAV MESH",
-    title: "Orion Sentinel — Swarm SOS Mesh Interface",
+    title: "Orion Sentinel: Swarm SOS Mesh Interface",
     tagline: "Decentralized UAV Emergency Coordination & Telemetry Broadcaster",
     description:
       "Decentralized UAV swarm communication mesh for emergency coordinate broadcasting, peer-to-peer node heartbeats, and low-bandwidth telemetry synchronization.",
@@ -80,7 +80,7 @@ export const secondaryProjects: ProjectItem[] = [
     id: "project-tracker",
     index: "05",
     badge: "PRODUCTIVITY & WEB",
-    title: "ProjectTracker — Milestone Velocity Engine",
+    title: "ProjectTracker: Milestone Velocity Engine",
     tagline: "Sprint Milestone Tracker & Lead-Time Analytics Pipeline",
     description:
       "Task tracking and sprint milestone engine with progress velocity analytics, lead time metrics, and priority scheduling for engineering projects.",
@@ -105,7 +105,7 @@ export const secondaryProjects: ProjectItem[] = [
     id: "python-suite",
     index: "06",
     badge: "ALGORITHMS & AUTOMATION",
-    title: "30DaysOfPython — Algorithmic Suite",
+    title: "30DaysOfPython: Algorithmic Suite",
     tagline: "Python Algorithmic Problem Solving & Automated Test Harness",
     description:
       "Comprehensive Python codebase demonstrating functional programming, data structures, automated unit testing, and algorithmic problem solutions.",

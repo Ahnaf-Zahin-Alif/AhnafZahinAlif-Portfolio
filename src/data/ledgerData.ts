@@ -3,7 +3,7 @@ import { LedgerItem } from "@/components/ParallaxLedgerCard";
 export const leftLedgerItems: LedgerItem[] = [
   {
     id: "bup-ict",
-    period: "2023 — 2027",
+    period: "2023–2027",
     role: "B.Sc. in Information & Communication Technology",
     institution: "Bangladesh University of Professionals (BUP)",
     badge: "ACADEMIC EXCELLENCE",
@@ -18,7 +18,7 @@ export const leftLedgerItems: LedgerItem[] = [
   },
   {
     id: "dbms-specialization",
-    period: "2024 — ACTIVE",
+    period: "2024–ACTIVE",
     role: "Relational DBMS & Concurrency Architecture",
     institution: "Autonomous Engineering & Projects",
     badge: "SYSTEMS SPECIALIZATION",
@@ -36,7 +36,7 @@ export const leftLedgerItems: LedgerItem[] = [
 export const rightLedgerItems: LedgerItem[] = [
   {
     id: "cp-timeline",
-    period: "2023 — PRESENT",
+    period: "2023–PRESENT",
     role: "Competitive Programming & Algorithmic Rigor",
     institution: "Codeforces & CodeChef Active Contender",
     badge: "ALGORITHMIC DISCIPLINE",

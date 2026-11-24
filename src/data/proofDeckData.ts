@@ -5,7 +5,7 @@ export const deckItems: DeckItem[] = [
   {
     id: "review-systems",
     type: "review",
-    authorOrTitle: "SYSTEMS PEER — BUP ICT",
+    authorOrTitle: "SYSTEMS PEER (BUP ICT)",
     roleOrHandle: "Collaborator Endorsement",
     textOrSpecialty:
       "Collaborated on low-level socket programming and database architectures. Exceptionally rigorous on ACID isolation and edge cases.",
@@ -15,10 +15,10 @@ export const deckItems: DeckItem[] = [
   {
     id: "review-fullstack",
     type: "review",
-    authorOrTitle: "FULL-STACK COLLAB — CINEFILM",
+    authorOrTitle: "FULL-STACK COLLAB (CINEFILM)",
     roleOrHandle: "Project Collab Endorsement",
     textOrSpecialty:
-      "Engineered robust backend API contracts with clean data normalization. Always prioritizes schema sanity before touching UI code.",
+      "Engineered strict backend API contracts with 3NF data normalization. Always prioritizes schema sanity before touching UI code.",
     highlight: "Schema Sanity & APIs",
     icon: "award",
   },
@@ -47,7 +47,7 @@ export const deckItems: DeckItem[] = [
   {
     id: "review-algo",
     type: "review",
-    authorOrTitle: "ALGORITHMIC PEER — CP",
+    authorOrTitle: "ALGORITHMIC PEER (CP)",
     roleOrHandle: "Competitive Programming Peer",
     textOrSpecialty:
       "Consistent algorithmic rigor in C++. Strong grasp of asymptotic complexity, shortest path optimizations, and state machines.",

@@ -76,7 +76,7 @@ export function InteractiveHero() {
           className="mt-2 sm:mt-3 flex flex-col sm:flex-row items-center gap-4 text-center z-30"
         >
           <p className="max-w-md text-xs sm:text-sm font-mono text-[#5C5852] leading-relaxed">
-            Md. Ahnaf Zahin Alif — BUP ICT. Designing low-latency backends, ACID relational storage, and deterministic algorithms.
+            Md. Ahnaf Zahin Alif (BUP ICT): Designing low-latency backends, ACID relational storage, and deterministic algorithms.
           </p>
           <div className="flex items-center gap-2.5">
             <a

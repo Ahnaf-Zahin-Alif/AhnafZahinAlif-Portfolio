@@ -57,7 +57,7 @@ export function TasteHero() {
                 Md. Ahnaf Zahin Alif
               </h1>
               <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed font-space max-w-xl">
-                Engineering high-throughput backend services, relational ACID database schemas, and robust algorithms. BUP ICT student focused on systems architecture and competitive programming in C++.
+                Engineering high-throughput backend services, relational ACID database schemas, and deterministic algorithms. BUP ICT student focused on systems architecture and competitive programming in C++.
               </p>
             </motion.div>
 

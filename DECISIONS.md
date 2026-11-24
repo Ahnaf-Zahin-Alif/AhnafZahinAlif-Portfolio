@@ -26,6 +26,7 @@
 | [D-021](#d-021-visual--motion-polish-cutout-silhouette-hero-6-col-bento-grid-scroll-driven-fan-out--verified-peer-labels) | Visual & Motion Polish (Cutout Silhouette Hero, 6-Col Bento, Scroll Fan-Out, Verified Labels) | Accepted | 2026-11-23 |
 | [D-022](#d-022-animation-pipeline-and-smoothscrollprovider-overhaul) | Animation Pipeline & SmoothScrollProvider Overhaul | Accepted | 2026-11-24 |
 | [D-023](#d-023-hero-wireframe-removal-and-typographic-scale-tuning) | Hero Wireframe Removal and Typographic Scale Tuning | Accepted | 2026-11-24 |
+| [D-024](#d-024-design-taste-frontend-anti-slop-audit-and-copy-hardening) | Design Taste Frontend Anti-Slop Audit & Copy Hardening | Accepted | 2026-11-25 |
 
 ---
 
@@ -446,3 +447,16 @@
 - **Rejected Alternatives**:
   - Keeping wireframe on a toggle button: Rejected because user explicitly asked to remove the wireframe on the image.
   - Placing portrait completely below the text: Rejected because subtle editorial layering creates tangible visual depth when proportions are balanced.
+
+---
+
+### D-024: Design Taste Frontend Anti-Slop Audit and Copy Hardening
+- **Status**: Accepted
+- **Context**: The user invoked `/design-taste-frontend` to audit and align the codebase with tasteskill 2.5 standards. Running `copy-lint.mjs` flagged AI-tell words ("robust" in `proofDeckData.ts` and `showcaseData.ts`), excessive em-dash frequency (budget is 2 across body text), and non-standard project subtitle delimiters.
+- **Decision**:
+  - Replace the banned slop word "robust" with concrete technical specifics: "3NF data normalization", "session authentication", and "deterministic algorithms".
+  - Replace em dashes in date ranges with typographically proper en dashes (`–`), and replace em dashes in project headings and peer credentials with colons and parentheses.
+  - Re-run `copy-lint.mjs` against `.next/server/app/index.html` to confirm 0 FAILs, 100% static production compilation, and passing verification suite.
+- **Why**: Eliminates machine-generated stylistic artifacts, produces tight, authoritative, fact-driven engineering copy, and satisfies tasteskill 2.5 anti-slop rules.
+- **Rejected Alternatives**:
+  - Waiving "robust" in `waivers.json`: Rejected because replacing it with genuine schema facts (e.g., 3NF normalization) significantly strengthens technical credibility.

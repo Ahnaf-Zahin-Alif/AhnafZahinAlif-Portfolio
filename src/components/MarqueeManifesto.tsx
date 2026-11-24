@@ -89,7 +89,7 @@ export function MarqueeManifesto() {
         <div className="pt-2 flex flex-col items-center gap-2">
           <div className="w-16 h-0.5 bg-[#C85A32]/60" />
           <p className="font-mono text-xs sm:text-sm uppercase tracking-wider text-[#A39E95]">
-            MD. AHNAF ZAHIN ALIF — B.SC. IN ICT • BANGLADESH UNIVERSITY OF PROFESSIONALS
+            MD. AHNAF ZAHIN ALIF (B.SC. IN ICT) • BANGLADESH UNIVERSITY OF PROFESSIONALS
           </p>
         </div>
       </div>
